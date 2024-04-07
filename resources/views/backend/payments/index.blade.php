@@ -11,13 +11,11 @@
 <!-- payments List Table -->
 <div class="card">
   <div class="card-header header-elements">
-    <div class="row">
-      <div class="col-6">
-        <h5 class="">{{__('Payments list')}}</h5>
-      </div>
-      <div class="col-6">
-        <h5>Total: <span class="text-danger">{{number_format($totalAmount)}}</span> VND</h5>
-      </div>
+    <div class="col-6">
+      <h5 class="">{{__('Payments list')}}</h5>
+    </div>
+    <div class="col-6">
+      <h5>Total: <span class="text-danger">{{number_format($totalAmount)}}</span> VND</h5>
     </div>
   </div>
   <div class="card-body">
