@@ -18,7 +18,7 @@
       <div class="col-6">
         <h5>Total: <span class="text-danger">{{number_format($totalAmount)}}</span> VND</h5>
       </div>
-    <div class="row">
+    </div>
   </div>
   <div class="card-body">
     <form class="">
