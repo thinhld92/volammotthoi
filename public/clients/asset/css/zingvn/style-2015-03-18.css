@@ -1,0 +1,321 @@
+body {
+  background: url(../../images/zingvn/skin/bg-loop.gif) repeat;
+  color: #bab097;
+}
+a:link,
+a:visited {
+  color: #bab097;
+  text-decoration: none;
+}
+a:hover {
+  color: #ebab23;
+  text-decoration: none;
+}
+.WrapperBG {
+  margin: 0px auto;
+  width: 100%;
+  background: url(../../images/zingvn/skin/header.jpg) no-repeat top center;
+}
+#wrapper {
+  margin: 0px auto;
+  width: 100%;
+  background: -webkit-linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* Standard syntax (must be last) */
+}
+#wrapperIn {
+  margin: 0 auto;
+  width: 1000px;
+  position: relative;
+}
+#header {
+  height: 500px;
+  overflow: hidden;
+}
+#footer {
+  height: 215px;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  background: url(../../images/zingvn/skin/footer.jpg) no-repeat bottom center;
+}
+#footerWrapper {
+  width: 1000px;
+  height: 215px;
+  position: relative;
+  margin: 0 auto;
+}
+#footer a.VNG {
+  background: url(../../images/zingvn/skin/logo-vng.png) no-repeat;
+  display: block;
+  width: 35px;
+  height: 53px;
+  text-indent: -9999px;
+  position: absolute;
+  top: 130px;
+  left: 140px;
+}
+#footer a.KingSoft {
+  background: url(../../images/zingvn/skin/logo-kingsoft.png) no-repeat;
+  display: block;
+  width: 85px;
+  height: 16px;
+  text-indent: -9999px;
+  position: absolute;
+  top: 148px;
+  left: 203px;
+}
+#footer .rating a {
+  background: url(../../images/zingvn/skin/rating.png) no-repeat;
+  width: 157px;
+  height: 75px;
+  position: absolute;
+  top: 118px;
+  left: 797px;
+  text-indent: -9999px;
+}
+#footer p {
+  width: 960px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 11px;
+  position: absolute;
+  top: 134px;
+  left: 304px;
+}
+.Main {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+a.Logo {
+  background: url(../../images/zingvn/skin/logo1.png) no-repeat 0 0
+    rgba(0, 0, 0, 0);
+  display: block;
+  height: 174px;
+  left: 15px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  top: 0;
+  width: 230px;
+  z-index: 100;
+}
+.InsideMainContent {
+  width: 630px;
+  float: left;
+  overflow: hidden;
+}
+
+ul.MainSidebar {
+  background: url(../../images/zingvn/skin/sidebar-bg.jpg) no-repeat scroll 0 0
+    rgba(0, 0, 0, 0);
+  bottom: 20%;
+  height: 131px;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  width: 62px;
+  z-index: 1000;
+}
+.MainSidebar li {
+  float: left;
+}
+.MainSidebar li a {
+  background: url(../../images/zingvn/skin/sidebar-bt.png) no-repeat;
+  display: block;
+  width: 52px;
+  height: 38px;
+  text-indent: -9999px;
+}
+.MainSidebar li a:hover {
+  background: url(../../images/zingvn/skin/sidebar-bt-hover.png) no-repeat;
+}
+.MainSidebar li a.BtnSidebar-1 {
+  background-position: 0 0;
+  margin: 12px 0 0 5px;
+}
+.MainSidebar li a.BtnSidebar-2 {
+  background-position: -52px 0;
+  margin: 8px 0 0 5px;
+}
+.MainSidebar li a.BtnSidebar-3 {
+  width: 42px;
+  height: 27px;
+  background-position: -104px 0;
+  margin: 8px 0 0 10px;
+}
+
+/* rebuilt navigation scroll */
+div.bg-nav-scroll {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: url("../../images/zingvn/skin/bg-nav-scroll.jpg") repeat scroll 0
+    0;
+  z-index: 105;
+}
+
+ul#nav.nav-scroll {
+  position: fixed;
+  width: 815px;
+  z-index: 107;
+  margin-left: -40px;
+}
+
+ul#nav.nav-scroll li a {
+  background: url("../../images/zingvn/skin/nav-rebuilt.png") no-repeat scroll 0
+    0;
+  height: 60px !important;
+}
+ul#nav.nav-scroll li a span {
+  display: none !important;
+}
+
+ul#nav.nav-scroll li a.Nav-1 {
+  background-position: -3px -0px;
+  width: 183px;
+}
+ul#nav.nav-scroll li a.Nav-1:hover,
+ul#nav.nav-scroll li.Active a.Nav-1,
+ul#nav.nav-scroll li.Hilite a.Nav-1 {
+  background-position: -3px -126px;
+  width: 183px;
+}
+
+ul#nav.nav-scroll li a.Nav-2 {
+  background-position: -3px -693px;
+  width: 110px;
+}
+ul#nav.nav-scroll li a.Nav-2:hover,
+ul#nav.nav-scroll li.Active a.Nav-2,
+ul#nav.nav-scroll li.Hilite a.Nav-2 {
+  background-position: -3px -630px;
+}
+
+ul#nav.nav-scroll li a.Nav-3 {
+  background-position: -3px -441px;
+  width: 111px;
+}
+ul#nav.nav-scroll li a.Nav-3:hover,
+ul#nav.nav-scroll li.Active a.Nav-3,
+ul#nav.nav-scroll li.Hilite a.Nav-3 {
+  background-position: -3px -378px;
+}
+
+ul#nav.nav-scroll li a.Nav-4 {
+  background-position: -3px -252px;
+  width: 129px;
+}
+ul#nav.nav-scroll li a.Nav-4:hover,
+ul#nav.nav-scroll li.Active a.Nav-4,
+ul#nav.nav-scroll li.Hilite a.Nav-4 {
+  background-position: -3px -189px;
+}
+
+ul#nav.nav-scroll li a.Nav-5 {
+  background-position: -3px -567px;
+  width: 110px;
+}
+ul#nav.nav-scroll li a.Nav-5:hover,
+ul#nav.nav-scroll li.Active a.Nav-5,
+ul#nav.nav-scroll li.Hilite a.Nav-5 {
+  background-position: -3px -504px;
+}
+
+ul#nav.nav-scroll li a.Nav-6 {
+  background-position: -3px -63px;
+  width: 168px;
+}
+ul#nav.nav-scroll li a.Nav-6:hover,
+ul#nav.nav-scroll li.Active a.Nav-6,
+ul#nav.nav-scroll li.Hilite a.Nav-6 {
+  background-position: -3px -315px;
+  width: 168px;
+}
+
+#watchYoutube {
+  border: 5px solid #000;
+  background: #000;
+  width: 840px;
+  height: 474px;
+  position: fixed;
+  margin: 0;
+  z-index: 1001;
+}
+.watchYoutubeContent {
+  width: 840px;
+  height: 474px;
+  position: relative;
+}
+.watchYoutubeContent .Close {
+  position: absolute;
+  top: -5px;
+  right: -37px;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  background: url(../../images/zingvn/skin/event/icon.png) no-repeat 0 0;
+}
+.watchYoutubeContent .Close:hover {
+  color: #fff;
+  background: url(../../images/zingvn/skin/event/icon-hover.png) no-repeat 0 0;
+}
+
+ .Main .MainContent {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+ .Main .MainContent .search {
+  background: url(../../images/zingvn/skin/bg-input-search-sub.jpg) no-repeat;
+  width: 228px;
+  height: 31px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 1;
+}
+
+ .Main  .MainContent .search form .search__button {
+  background: url(../../images/zingvn/skin/btn-search.jpg) no-repeat;
+  border: 0;
+  width: 31px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-indent: -9999px;
+}
+
+.Main  .MainContent .search form .search__field {
+  background: 0;
+  border: 0;
+  width: 180px;
+  height: 31px;
+  color: #fffec1;
+  padding: 0 0 0 10px;
+}

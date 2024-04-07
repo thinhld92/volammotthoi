@@ -1,0 +1,89 @@
+.bg-menu-theme .menu-sub > .menu-item > .menu-link:before {
+  display: none;
+}
+
+.app-brand-logo.demo {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  width: 4rem;
+  height: 3rem;
+}
+
+.app-brand-logo img,
+.app-brand-logo svg {
+  display: block;
+  width: 100%;
+}
+
+.was-validated.custom-validate .invalid-feedback {
+  display: block;
+}
+
+.was-validated.custom-validate .form-control.custom-invalid {
+  border-color: var(--bs-form-invalid-color) !important;
+}
+
+.menu-vertical .menu-icon {
+  width: 1rem !important;
+  font-size: 1rem !important;
+}
+
+.menu-vertical .menu-sub .menu-link {
+  padding-left: 1.875rem !important;
+}
+
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item .menu-link .menu-icon.sub-menu-icon-custom {
+  display: block;
+}
+.menu-vertical .menu-sub .menu-icon.sub-menu-icon-custom {
+  margin-right: 0.5rem;
+}
+
+.pagination{
+  justify-content: end;
+}
+
+.button-click{
+  cursor: pointer;
+}
+
+.thumbnail {
+  position: relative;
+  width: 16rem;
+}
+
+.table th.actions, .table th.status, .table th.thumbnail, .table th.banner-type{
+  width: 6rem;  
+}
+
+.table th.order{
+  width: 6.5rem;  
+}
+
+.ck.ck-content.ck-editor__editable {
+  min-height: 20rem;
+}
+
+.ck.ck-powered-by{
+  display: none;
+}
+
+.payment-thumbnail{
+  width: 5rem;
+}
+
+.modal-content.custom-content{
+  background-color: transparent;
+}
+
+.modal-simple .modal-content.custom-content {
+  padding: 0;
+}
+
+img.payment-thumbnail{
+  cursor: pointer;
+}

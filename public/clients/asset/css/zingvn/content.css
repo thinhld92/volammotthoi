@@ -1,0 +1,811 @@
+/* General */
+.MainContent{
+	float: right; 
+	margin: 0 auto;
+	width: 100%;
+}
+.MainTab{
+	display: none;
+}
+#static {
+    margin: 0 auto;
+    min-height: 500px;
+    position: relative;
+	color: #000;
+}
+.StaticOuter {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #000000;
+    padding: 2px;
+}
+.StaticInner {
+    background: none repeat scroll 0 0 #D6D6D6;
+	padding-bottom: 50px;
+}
+.StaticMain {
+    margin: 0;
+    padding: 0 30px;
+}
+.StaticMain a:link, .StaticMain a:visited {
+	color: #2f9800;
+	text-decoration: underline;
+}
+.StaticMain a:hover {
+	color: #e65c0f;
+	text-decoration: none;
+}
+/* END. General */
+.InfoGraphic {
+	width: 569px;
+	height: 997px;
+	position: relative;
+}
+.InfoGraphic .HuongDanTanThu {
+	position: absolute;
+	width: 570px;
+	height: 100px;
+	top: 90px;
+	left: 10px;
+}
+.InfoGraphic .HuongDanTanThu li {
+	float: left;
+	width: 140px;
+	color: #63eeff;
+}
+.InfoGraphic .TinhNang1 {
+	position: absolute;
+	width: 570px;
+	height: 100px;
+	top: 430px;
+	left: 15px;
+}
+.InfoGraphic .TinhNang1 li {
+	float: left;
+	width: 170px;
+	color: #63eeff;
+}
+.InfoGraphic .TinhNang2 {
+	position: absolute;
+	width: 570px;
+	height: 100px;
+	top: 703px;
+	left: 87px;
+}
+.InfoGraphic .TinhNang2 li {
+	float: left;
+	width: 182px;
+	color: #63eeff;
+}
+.InfoGraphic ul li a {
+	color: #63eeff !important;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 12px !important;
+}
+/* Top Panel */
+.StaticTopPanel {
+	background: url(../../images/zingvn/skin/bg-content-top.jpg) right top no-repeat;
+    display: block;
+    height: 115px;
+    margin: 0 0 28px;
+    position: relative;
+}
+
+.StaticTopPanel img {
+    height: 95px;
+    padding: 10px;
+    width: 100px;
+}
+/* Main title */
+
+.StaticTopPanel h2.TitleMain {
+    border-bottom: 2px solid #000000;
+    box-shadow: 0 1px #5B5B44;
+    clear: both;
+    color: #EEBD05;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    height: 65px;
+    left: 115px;
+    line-height: 85px;
+    margin: 0 10px;
+    position: absolute;
+    text-shadow: 1px -1px #1E394D;
+    top: 0;
+    width: 80%;
+}
+.StaticTopPanel .BoxSearch {
+	background:url(../../images/zingvn/skin/bg-input-search-sub.jpg) no-repeat;
+	width: 228px;
+	height: 31px;
+	position: absolute;
+	top: 50px;
+	right: 30px;
+}
+.StaticTopPanel .BoxSearch .BgTextbox {
+	background: none;
+	border: none;
+	width: 258px;
+	height: 31px;
+	color: #fffec1;
+	padding: 0 0 0 10px;
+}
+.StaticTopPanel .BoxSearch .SearchBtn {
+	background:url(../../images/zingvn/skin/btn-search.jpg) no-repeat;
+	border: none;
+	width: 31px;
+	height: 30px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-indent: -9999px;
+}
+.StaticTopPanel .BoxSearch .SearchBtn:hover {
+	background-position: 0 -30px;
+}
+/* END. Main title */
+
+/* Breadcrumbs */
+
+
+ul#breadcrumbs {
+    left: 115px;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px;
+    position: absolute;
+    top: 65px;
+}
+ul#breadcrumbs li {
+	text-align: left;
+	font-size: 14px;
+	float: left;
+	color: #7b791a;
+}
+ul#breadcrumbs li a:link,  ul#breadcrumbs li a:visited {
+	color: #bbba70;
+	text-decoration: none;
+}
+ul#breadcrumbs li a:link span,  ul#breadcrumbs li a:visited span {
+	color: #bbba70;
+	padding: 0 5px 0 5px;
+}
+ul#breadcrumbs li span.Active {
+	color: #fffec1;
+	font-weight: bold;
+	padding-left: 5px;
+}
+ul#breadcrumbs li.active a {
+	color: #fffec1;
+	font-weight: 500;
+	padding-left: 5px;
+}
+
+ul#breadcrumbs li a:hover {
+	color: #ffad00;
+}
+ul#breadcrumbs li a:hover span {
+	color: #ffad00;
+}
+/* END. Breadcrumbs */
+/* END. Top Panel */
+
+/* Tab */
+
+.StaticMain ul#tabHeader {
+	background: url(../../images/zingvn/skin/bg-tabcontent.jpg) no-repeat right top;
+    border-top: medium none;
+    height: 38px;
+    margin: 20px 0 10px;
+    overflow: hidden;
+    padding: 8px 0 0 15px;
+}
+.StaticMain ul#tabHeader li {
+	display: inline;
+	float: left;
+	padding: 0 2px 0 0;
+	font-weight: bolder;
+}
+ul#tabHeader li a:link, 
+ul#tabHeader li a:visited {
+	display: block;
+	padding: 1px 11px;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	float: left;
+	color: #fffec1;
+	height: 32px;
+	line-height: 32px;
+}
+ul#tabHeader li a:hover {
+	padding: 0 10px;
+	text-decoration: none;
+	border: 1px solid #000;
+	background: url(../../images/zingvn/skin/tab-active.gif) repeat-x;
+}
+ul#tabHeader li.Active a:link,
+ul#tabHeader li.Active a:visited,
+ul#tabHeader li a:hover {
+	padding: 0 10px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid #000;
+	background: url(../../images/zingvn/skin/tab-active.gif) repeat-x;
+}
+/* END. Tab */
+
+/* Anchor Links */
+
+ul.AnchorLink {
+    background: none repeat scroll 0 0 #E5E3DC;
+    border: 1px solid #560F0F;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+ul.AnchorLink li {
+	background: url(../../images/zingvn/skin/icon-anchor.gif) 0 11px no-repeat;
+	float: left;
+	width: 220px;
+	padding: 0 0 5px 12px;
+	font-weight: bolder;
+}
+ul.AnchorLink li a:link,  
+ul.AnchorLink li a:visited {
+	text-decoration: none;
+}
+ul.AnchorLink li a:hover {
+	text-decoration: underline;
+}
+ul.AnchorLink li a:active {
+	text-decoration: none;
+	color: #e65c0f;
+}
+ul.AnchorLink li a.Active:link,  
+ul.AnchorLink li a.Active:visited, 
+ ul.AnchorLink li a.Active:hover {
+	color: #e65c0f;
+	text-decoration: underline;
+}
+/* END. Anchor Links */
+
+/* Content blocks*/
+.ContentBlock {
+	padding-bottom: 20px;
+	clear: both;
+}
+.ContentBlock p {
+	margin-bottom: 10px;
+	text-align: justify;
+	padding-right: 3px;
+}
+.ContentBlock p.TextCenter {
+	text-align: center;
+}
+.StaticMain p.ImgCenter {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.StaticMain h4 {
+	padding: 10px 0 1px 30px;
+	line-height: 26px;
+	font-size: 18px;
+	font-family: Arial;
+	background: url(../../images/zingvn/skin/h4.png) left 15px no-repeat;
+	margin: 0 0 5px;
+	color: #c73212;
+	/* height: 26px; */
+	font-family: Arial, Helvetica, sans-serif;
+}
+.StaticMain h1 {
+	padding: 10px 0 1px 48px;
+	line-height: 26px;
+	font-size: 18px;
+	font-family: Arial;
+	background: url(../../images/zingvn/skin/icon-tags.png) 8px 3px no-repeat;
+	margin: 0 0 5px;
+	color: #674921;
+	/* height: 31px; */
+}
+
+.StaticMain #single-post-content h2 {
+	padding: 16px 0 1px 40px;
+	line-height: 30px;
+	font-size: 18px;
+	font-family: Arial;
+	background: url(../../images/zingvn/skin/h2.png) left 15px no-repeat;
+	margin: 0 0 5px;
+	color: #c30;
+	/* height: 26px; */
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContentH4 {
+	margin: 0 0 20px 30px;
+}
+.ContentH4 p {
+	margin-bottom: 10px;
+	text-align: justify;
+	padding-right: 3px;
+}
+.StaticMain h5 {
+	padding: 0 0 0 15px;
+	margin: 0 0 5px 30px;
+	line-height: 22px;
+	font-size: 18px;
+	font-family: Arial;
+	background: url(../../images/zingvn/skin/h5.png) left 6px no-repeat;
+	color: #674921;
+}
+.ContentH5 {
+    margin: 0 0 20px 45px;
+}
+.ContentH5 p {
+	margin-bottom: 10px;
+	text-align: justify;
+	padding-right: 3px;
+}
+.ImagesBlock {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.ImagesH4 {
+	text-align: center;
+	margin: 0 0 20px 30px;
+}
+.ImagesH5 {
+	text-align: center;
+	margin: 0 0 20px 45px;
+}
+.FirstChar {
+	padding: 4px 4px 0 0;
+	line-height: 30px;
+	font-size: 40px;
+	float: left;
+}
+/* END. Content blocks */
+
+/* Tables */
+.MyTable {
+	margin: 0 auto 10px;
+	border-collapse: collapse;
+}
+.MyTable thead tr th {
+    background: none repeat scroll 0 0 #27292D;
+    border: 1px solid #520909;
+    color: #DDFFAA;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+.OddRow {
+	background: #e5e3dc;
+}
+.EvenRow {
+	background: #eefdde;
+}
+.MyTable tbody tr td {
+	padding: 3px 10px;
+	border: 1px solid #520909;
+	border-top: none;
+}
+.MyTable .HorzRight {
+	text-align: right !important;
+}
+.MyTable .HorzCenter {
+	text-align: center !important;
+}
+.MyTable .VeztTop {
+	vertical-align: top !important;
+}
+/* END. Tables */
+
+/* Notice box */
+.NoticeBox {
+    background: none repeat scroll 0 0 #E5E3DC;
+    border: 1px solid #520909;
+    padding: 10px;
+}
+p.Legend {
+	font-size: 14px;
+	font-weight: bolder;
+	padding: 0 17px 0 16px;
+	color: #ddffaa;
+	background: #27292d;
+	border: #520909 solid 1px;
+	height: 22px;
+	margin: -20px 0 10px;
+	float: left;
+}
+.NoteContent {
+	width: 100%;
+	overflow: hidden;
+	text-align: justify;
+}
+a.NoteLink:link, a.NoteLink:visited {
+	text-decoration: underline;
+}
+a.NoteLink:hover {
+	text-decoration: none;
+}
+/* END. Notice box */
+
+/* Pagination */
+.PagingWrapper {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+.PagingControl {
+	position: relative;
+	/*left: -50%;
+		float: right;*/
+		display:inline-block;
+	padding: 0;
+	margin: 0;
+}
+.CenterWrapper {
+	position: relative;
+	/*left: 50%;*/
+		padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.PagingControl span.PagingFirstPageLnk,  .PagingControl span.PagingPrevPageLnk,  .PagingControl span.PagingNextPageLnk,  .PagingControl span.PagingLastPageLnk,  .PagingControl a.PagingFirstPageLnk,  .PagingControl a.PagingPrevPageLnk,  .PagingControl a.PagingNextPageLnk,  .PagingControl a.PagingLastPageLnk {
+	display: block;
+	width: 30px;
+	height: 0;
+	padding: 26px 0 0;
+	overflow: hidden;
+	text-indent: -1000em;
+	float: left;
+	position: relative;
+	background: url(../../images/zingvn/skin/bg-btn-pagination.gif) no-repeat 0 0;
+}
+.PagingControl span.PagingFirstPageLnk,  .PagingControl span.PagingPrevPageLnk,  .PagingControl span.PagingNextPageLnk,  .PagingControl span.PagingLastPageLnk {
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+/* Normal states */
+.PagingControl span.PagingFirstPageLnk {
+    background-color: #36363A;
+    background-position: 0 0;
+    border: 1px solid #000000;
+    margin: 0 5px 0 0;
+    padding: 26px 0 0;
+    width: 30px;
+}
+.PagingControl a.PagingFirstPageLnk {
+    background-color: #36363A;
+    background-position: 0 0;
+    border: 1px solid #000000;
+    margin: 0 5px 0 0;
+    padding: 26px 0 0;
+    width: 30px;
+}
+.PagingControl a.PagingPrevPageLnk {
+    background-color: #36363A;
+    background-position: -32px 0;
+    border: 1px solid #000000;
+    margin: 0 5px 0 0;
+    width: 28px;
+}
+.PagingControl span.PagingPrevPageLnk {
+    background-color: #36363A;
+    background-position: -32px 0;
+    border: 1px solid #000000;
+    margin: 0 5px 0 0;
+    width: 28px;
+}
+.PagingControl span.PagingNextPageLnk {
+    background-color: #36363A;
+    background-position: -58px 0;
+    border: 1px solid #000000;
+    margin: 0 0 0 5px;
+    width: 30px;
+}
+
+.PagingControl a.PagingNextPageLnk {
+    background-color: #36363A;
+    background-position: -58px 0;
+    border: 1px solid #000000;
+    margin: 0 0 0 5px;
+    width: 30px;
+}
+.PagingControl a.PagingLastPageLnk {
+    background-color: #36363A;
+    background-position: -88px 0;
+    border: 1px solid #000000;
+    margin: 0 0 0 5px;
+    padding: 26px 0 0;
+    width: 30px;
+}
+.PagingControl span.PagingLastPageLnk {
+    background-color: #36363A;
+    background-position: -88px 0;
+    border: 1px solid #000000;
+    margin: 0 0 0 5px;
+    padding: 26px 0 0;
+    width: 30px;
+}
+/* Hover&Disabled states */
+.PagingControl a.PagingFirstPageLnk:hover {
+	background-color: #8c0900;
+}
+.PagingControl a.PagingPrevPageLnk:hover {
+	background-color: #8c0900;
+}
+.PagingControl a.PagingNextPageLnk:hover {
+	background-color: #8c0900;
+}
+.PagingControl a.PagingLastPageLnk:hover {
+	background-color: #8c0900;
+}
+/* Number list */
+
+.PagingControl ul.PageList {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.PagingControl ul.PageList li {
+    border: 1px solid #000000;
+    float: left;
+    font-weight: bold;
+    height: 26px;
+    margin: 0 3px;
+    overflow: hidden;
+    padding: 0;
+}
+.PagingControl ul.PageList li span {
+    background: url(../../images/zingvn/skin/paging-act-bg.gif) repeat;
+    box-shadow: -2px -2px #000000;
+    color: #F4EBDE;
+    display: block;
+    float: left;
+    height: 26px;
+    line-height: 25px;
+    padding: 1px 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.PagingControl ul.PageList li a:link, .PagingControl ul.PageList li a:visited {
+    background: none repeat scroll 0 0 #2B2B2F;
+    color: #C8E9D9;
+    display: block;
+    float: left;
+    height: 26px;
+    line-height: 25px;
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.PagingControl ul.PageList li a:hover {
+	text-decoration: none;
+    background: url(../../images/zingvn/skin/paging-act-bg.gif) repeat;
+	color: #F4EBDE;
+}
+/* END. Pagination */
+
+
+/* Text styles */
+p.TextCenter {
+	text-align: center;
+}
+.Strong01 {
+	font-weight: bolder;
+}
+.Strong02, .RedText {
+	color: #ff0000;
+	font-weight: bolder;
+}
+.TextFont15 {
+	font-size: 15px;
+	font-weight: bolder;
+	font-family: Arial;
+}
+.TextFont16 {
+	font-size: 16px;
+	font-weight: bolder;
+	font-family: Arial;
+}
+.TextFont17 {
+	font-size: 17px;
+	font-weight: bolder;
+	font-family: Arial;
+}
+/* END. Text styles */
+
+/* Image styles */
+.NoBorderImg {
+	border: none;
+	background: none;
+	padding: 0;
+}
+.BorderImg {
+	border: 1px solid #2f3c5e;
+	padding: 0px;
+}
+.ImgLeft {
+	float: left;
+	margin: 0 10px 5px 0;
+}
+.ImgRight {
+	float: right;
+	margin: 0 0 5px 10px;
+}
+/* END. Image styles */
+
+/* List styles */
+ul.Decimal {
+	margin: 0px 0px 10px 25px;
+}
+ul.Decimal li {
+	list-style-type: decimal;
+	margin-bottom: 10px;
+	text-align: justify;
+}
+ul.UpperAlpha {
+	margin: 0px 0px 10px 25px;
+}
+ul.UpperAlpha li {
+	list-style-type: upper-alpha;
+	margin-bottom: 10px;
+	text-align: justify;
+}
+ul.LowerAlpha {
+	margin: 0px 0px 10px 25px;
+}
+ul.LowerAlpha li {
+	list-style-type: lower-alpha;
+	margin-bottom: 10px;
+	text-align: justify;
+}
+ul.Icon {
+	margin: 0px 0px 10px 5px;
+}
+ul.Icon li {
+	margin-bottom: 10px;
+	background: url(../../images/zingvn/skin/icon.gif) 0 6px no-repeat;
+	padding-left: 15px;
+	list-style-type: none;
+	text-align: justify;
+}
+ul.Icon li ul.LowerAlpha li {
+	list-style-type: lower-alpha;
+	margin-bottom: 10px;
+	background: none;
+	padding-left: 0px;
+}
+ul.Dash {
+	margin: 0px 0px 10px 5px;
+}
+ul.Dash li {
+	margin-bottom: 10px;
+	background: url(../../images/zingvn/skin/icon-dash.gif) 0 10px no-repeat;
+	padding-left: 15px;
+	list-style-type: none;
+	text-align: justify;
+}
+ul.Disc {
+	margin: 0px 0px 10px 5px;
+}
+ul.Disc li {
+	list-style-type: none;
+	background: url(../../images/zingvn/skin/icon-list.gif) 3px 9px no-repeat;
+	margin-bottom: 10px;
+	padding: 0 0 0 15px;
+	text-align: justify;
+}
+ul.Decimal li ul {
+	padding-top: 5px;
+}
+ul.Decimal li ul li {
+}
+ul.UpperAlpha li ul {
+	padding-top: 5px;
+}
+ul.LowerAlpha li ul {
+	padding-top: 5px;
+}
+ul.Icon li ul {
+	padding-top: 5px;
+}
+ul.Dash li ul {
+	padding-top: 5px;
+}
+ul.Disc li ul {
+	padding-top: 5px;
+}
+/* END. List styles */
+
+.Popup {
+	position: absolute;
+	display: block;
+	background: #fff;
+	width: 598px;
+	padding: 0;
+	z-index: 100;
+	border: 1px solid #000;
+}
+.Popup .Title {
+	color: #fff;
+	font-size: 14px;
+	padding: 9px 0 10px 20px;
+}
+.Popup .PopupWrapper {
+	position: relative;
+	width: 100%;
+	background: url(../../images/zingvn/skin/bg-survey.jpg) no-repeat 0 0;
+}
+.Popup .PopupClose:link, .Popup .PopupClose:visited {
+	position: absolute;
+	top: 14px;
+	right: 18px;
+	display: block;
+	width: 8px;
+	height: 8px;
+	color: #fff;
+	text-indent: -9999px;
+	background: url(../../images/zingvn/skin/survey-close.jpg) no-repeat 0 0;
+}
+.Popup .PopupClose:hover {
+	text-decoration: none;
+	background-position: 0 -8px;
+}
+.Popup .InnerContent {
+	color: #000;
+	padding: 10px 10px 5px 10px;
+	width: auto;
+	height: auto;
+}
+.PopupWrapper .Decimal {
+	padding: 15px 0 0 20px;
+}
+
+#static .BoxSearchSub {
+	background:url(../../images/zingvn/skin/bg-input-search-sub.jpg) no-repeat;
+	width: 228px;
+	height: 31px;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	z-index: 100;
+}
+#static .BoxSearchSub .BgTextbox {
+	background: none;
+	border: none;
+	width: 180px;
+	height: 31px;
+	color: #fffec1;
+	padding: 0 0 0 10px;
+}
+#static .BoxSearchSub .SearchBtn {
+	background:url(../../images/zingvn/skin/btn-search.jpg) no-repeat;
+	border: none;
+	width: 31px;
+	height: 30px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-indent: -9999px;
+}
+#static .BoxSearchSub .SearchBtn:hover {
+	background-position: 0 -30px;
+}
+
+.PagingControl ul.PageList li.disabled span {
+	background: #2B2B2F;
+}

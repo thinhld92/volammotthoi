@@ -1,0 +1,135 @@
+/* Events List */
+ul.ListEvent {
+    margin: 0;
+    overflow: hidden;
+}
+
+ul.ListEvent li {
+    width: 100%;
+    float: left;
+    padding: 0 0 15px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #8c8d90;
+}
+
+ul.ListEvent li.Last {
+    background: none;
+}
+
+ul.ListEvent li a {
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+ul.ListEvent li a img {
+    display: block;
+    border: 1px solid #2f3c5e;
+    margin-top: 5px;
+}
+
+ul.ListEvent li a:hover img {
+    border: 1px solid #e8c500;
+}
+
+ul.ListEvent li .EventContent {
+    width: 770px;
+    padding: 0;
+    float: right;
+    overflow: hidden;
+    color: #252628;
+}
+
+ul.ListEvent li .EventContent h3 {
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+}
+
+ul.ListEvent li .EventContent h3 a:link, ul.ListEvent li .EventContent h3 a:visited {
+    color: #980006;
+    text-decoration: none;
+}
+
+ul.ListEvent li .EventContent h3 a:hover {
+    color: #ffad00;
+    text-decoration: none;
+}
+
+ul.ListEvent li .EventContent .Date {
+    float: left;
+    font-size: 12px;
+    padding: 0;
+    text-align: left;
+    width: 165px;
+}
+
+.TitleEventNews {
+    padding: 4px 0 10px 0px;
+    line-height: 26px;
+    font-size: 20px;
+    font-family: Arial;
+    margin: 0 0 0px;
+    color: #000;
+    float: left;
+}
+
+.DateDetailsEvent {
+    float: right;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    width: 180px;
+    padding-top: 5px;
+}
+
+.TextGreen {
+}
+
+.Wrapper .DateDetails {
+    padding-top: 9px;
+}
+
+/* Related events list */
+ul.ListEvent li .EventContent ul.ListEContent {
+    clear: both;
+    width: 100%;
+    margin: 0 0 0 0px;
+    overflow: hidden;
+}
+
+ul.ListEvent li .EventContent ul.ListEContent li {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url(../images/icon-relative.gif) no-repeat left 9px;
+    border-bottom: none;
+    font-size: 13px;
+}
+
+ul.ListEvent li .EventContent ul.ListEContent li a:link, ul.ListEvent li .EventContent ul.ListEContent li a:visited {
+    padding: 0 0 0 10px;
+    text-decoration: none;
+    color: #aa4f10;
+}
+
+ul.ListEvent li .EventContent ul.ListEContent li a:hover {
+    text-decoration: none;
+    color: #e65c0f;
+}
+
+.EShortContent {
+    clear: both;
+    width: 100%;
+    font-size: 13px;
+}
+
+/* END. Related events list */
+/* END. Events List */

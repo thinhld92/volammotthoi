@@ -1,0 +1,234 @@
+.Equipbox {
+	position: relative;
+	z-index: 150;
+	width: 860px;
+	margin: 0px auto;
+}
+/******* tab Skill ***********/
+ul.EquipTabs {
+	padding: 0 0 20px;
+	overflow: hidden;
+	background: url(../images/equipitems-line.png) no-repeat center bottom;
+}
+ul.EquipTabs li {
+	background: url(../images/btn-trangbi.png) no-repeat left 10px;
+	float: left;
+	width: 170px;
+	height: 50px;
+	border: none;
+}
+ul.EquipTabs li a:link, 
+ul.EquipTabs li a:visited {
+	width: 135px;
+	height: 35px;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000;
+	padding: 15px 0 0 35px;
+	text-decoration: none;
+}
+ul.EquipTabs li a:hover, 
+ul.EquipTabs li.Active a, 
+ul.EquipTabs li.Active a:hover {
+	background: url(../images/btn-trangbi-hov.png) no-repeat left 10px;
+	color: #ff4800;
+	font-weight: bold;
+}
+/*************/
+/* Tab he phai*/
+ul.SectsTabs {
+    margin: 0 auto 20px;
+    overflow: hidden;
+    width: 690px;
+    height: 40px;
+}
+ul.SectsTabs li {
+	background: url(../images/btn-trangbi-mini.png) no-repeat left 10px;
+	float: left;
+	width: 230px;
+	height: 40px;
+	border: none;
+}
+ul.SectsTabs li a:link,  
+ul.SectsTabs li a:visited {
+	display: block;
+	padding: 10px 0 0 25px;
+	text-decoration: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000;
+	width: 200px;
+	height: 25px;
+}
+ul.SectsTabs li a:hover, 
+ul.SectsTabs li.Active a, 
+ul.SectsTabs li.ui-state-active a {
+	background: url(../images/btn-trangbi-mini-hov.png) no-repeat left 10px;
+	color: #ff4800;
+	font-weight: bold;
+}
+
+.SectsTabsContent {
+	background: url(../images/bg-skill.jpg) no-repeat;
+	width: 560px;
+	height: 420px;
+	display: none;
+    margin: 0 auto;
+	position: relative;
+}
+.SectsTabsContent > ul {
+	position: absolute;
+}
+.SectsTabsContent > ul > li {
+	position: relative;
+}
+.SectsTabsContent > ul > li > img.SmallImg {
+	border: 1px solid #635b05;
+	cursor: pointer;
+	margin: 1px 0 9px 1px;
+}
+
+ul.KyNang_Trai {
+	width: 32px;
+	left: 60px;
+	top: 100px;
+}
+ul.KyNang_Giua {
+	width: 42px;
+	left: 130px;
+	top: 70px;
+}
+ul.KyNang_Phai {
+	width: 42px;
+	left: 210px;
+	top: 125px;
+}
+ul.KyNang_Trai li {
+	width: 32px;
+}
+ul.KyNang_Giua li, 
+ul.KyNang_Phai li {
+	width: 38px;
+}
+ul.KyNang_Trai li img.SmallImg {
+	width: 28px;
+}
+ul.KyNang_Giua li img.SmallImg, 
+ul.KyNang_Phai li img.SmallImg {
+	width: 38px;
+}
+ul.KyNang_Trai li img.SmallImg:hover, 
+ul.KyNang_Giua li img.SmallImg:hover, 
+ul.KyNang_Phai li img.SmallImg:hover {
+	border: 2px solid #ff9000;
+	margin: 0 0 8px;
+}
+.TipsImg {
+	background: #03331b;
+	position: absolute;
+	z-index: 1000;
+	width: 310px;
+	padding: 5px;
+	overflow: hidden;
+}
+.BigImg {
+	position: absolute;
+	right: 60px;
+	top: 70px;
+	width: 200px;
+	height: 295px;
+}
+.NhanVat_ImgLeft {
+	float: left;
+}
+.NhanVat_ChieuThuc {
+	background: url(../images/bg-chieuthuc.jpg) no-repeat;
+	width: 540px;
+	height: 480px;
+	position: relative;
+	z-index: 50;
+}
+.NhanVat_KyNang {
+	background: url(../images/bg-kynang.jpg) no-repeat;
+	width: 540px;
+	height: 480px;
+	position: relative;
+	z-index: 50;
+}
+
+.TipsImg {
+	background: #03331b;
+	position: absolute;
+	z-index: 1000;
+	width: 310px;
+	padding: 5px;
+	overflow: hidden;
+}
+.ItemTips {
+	position: absolute;
+	z-index: 500;
+}
+/*******/
+ul.ListSkills {
+	width: 450px;
+	__width: 470px;
+	height: 510px;
+	padding: 50px 0 0 45px;
+	__padding: 50px 0 0 25px;
+}
+ul.ListSkills li {
+	list-style-type: none;
+	float: left;
+	margin: 10px 15px 15px;
+}
+ul.ListSkills li img {
+	display: block;
+}
+.PluginFB, .PluginFB1 {
+	display: none;
+}
+/***********/
+ul.ListItem {
+	width: 650px;	
+	margin: 10px auto 0;
+}
+ul.ListItem li {
+	width: 46px;
+	height: 46px;
+	margin: 0 7px 7px 0;	
+	position: relative;
+	display: inline-block;
+}
+ul.ListItem li a {	
+	width: 44px;
+	height: 44px;
+	float: left;		
+	padding: 1px;
+	background: #a4a397;	
+}
+ul.ListItem li a:hover {
+	background: #f86f05;
+}
+ul.ListItem li a img.ShowTips {
+	width: 44px;
+	height: 44px;
+
+
+}
+
+
+
+
+
+.KyNang {
+	background: url(../images/bg-titlekynang.gif) no-repeat 290px 25px;
+	text-align: center;
+	height: 25px;
+	color: #938dff;
+	width: 125px;
+	padding: 25px 0 0 290px;
+	font-weight: bold;
+	line-height: 22px;
+}

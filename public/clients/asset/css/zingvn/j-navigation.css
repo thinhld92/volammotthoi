@@ -1,0 +1,348 @@
+/* MENU LEVEL 0 */
+
+#boxNav {
+    width: 720px;
+    height: 137px;
+    position: absolute;
+    z-index: 90;
+    top: 0px;
+    left: 239px;
+    line-height: 19px;
+}
+
+ul#nav {
+    width: 720px;
+    height: 137px;
+}
+
+ul#nav li {
+    float: left;
+    list-style-type: none;
+    position: relative;
+}
+
+ul#nav li a:link,
+ul#nav li a:visited {
+    display: block;
+    color: #661a00;
+    text-indent: -9999px;
+    font-weight: normal;
+}
+
+ul#nav li a {
+    background: url(../../images/zingvn/skin/menu.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    position: relative;
+    overflow: hidden;
+}
+
+ul#nav li a span {
+    text-indent: -9999px;
+    position: absolute;
+    top: -100px;
+    right: 0;
+}
+
+ul#nav li a:hover span, ul#nav li.Active a span, ul#nav li.Hilite a span {
+    animation: Menu linear 0.2s forwards;
+    -moz-animation: Menu linear 0.2s forwards;
+    -webkit-animation: Menu linear 0.2s forwards;
+    -o-animation: Menu linear 0.2s forwards;
+}
+
+/*----------*/
+ul#nav li a.Nav-1 {
+    background-position: 0 0;
+    width: 134px;
+    height: 111px;
+}
+
+ul#nav li a.Nav-1:hover, ul#nav li.Active a.Nav-1, ul#nav li.Hilite a.Nav-1 {
+    background-position: 0 -137px;
+}
+
+ul#nav li a.Nav-1 span {
+    background: url(../../images/zingvn/skin/icon-home.png) no-repeat;
+    display: block;
+    width: 78px;
+    height: 57px;
+}
+
+ul#nav li.Off a.Nav-1 {
+    cursor: default;
+    background-position: 0 -274px;
+}
+
+/*----------*/
+ul#nav li a.Nav-2 {
+    background-position: -134px 0;
+    width: 111px;
+    height: 99px;
+}
+
+ul#nav li a.Nav-2:hover, ul#nav li.Active a.Nav-2, ul#nav li.Hilite a.Nav-2 {
+    background-position: -134px -137px;
+}
+
+ul#nav li a.Nav-2 span {
+    background: url(../../images/zingvn/skin/icon-tintuc.png) no-repeat;
+    display: block;
+    width: 65px;
+    height: 68px;
+}
+
+ul#nav li.Off a.Nav-2 {
+    cursor: default;
+    background-position: -134px -274px;
+}
+
+/*----------*/
+ul#nav li a.Nav-3 {
+    background-position: -245px 0;
+    width: 112px;
+    height: 98px;
+}
+
+ul#nav li a.Nav-3:hover, ul#nav li.Active a.Nav-3, ul#nav li.Hilite a.Nav-3 {
+    background-position: -245px -137px;
+}
+
+ul#nav li a.Nav-3 span {
+    background: url(../../images/zingvn/skin/icon-sukien.png) no-repeat;
+    display: block;
+    width: 67px;
+    height: 58px;
+}
+
+ul#nav li.Off a.Nav-3 {
+    cursor: default;
+    background-position: -245px -274px;
+}
+
+/*----------*/
+ul#nav li a.Nav-4 {
+    background-position: -356px 0;
+    width: 129px;
+    height: 107px;
+}
+
+ul#nav li a.Nav-4:hover, ul#nav li.Active a.Nav-4, ul#nav li.Hilite a.Nav-4 {
+    background-position: -356px -137px;
+}
+
+ul#nav li a.Nav-4 span {
+    background: url(../../images/zingvn/skin/icon-camnang.png) no-repeat;
+    display: block;
+    width: 95px;
+    height: 62px;
+}
+
+ul#nav li.Off a.Nav-4 {
+    cursor: default;
+    background-position: -356px -274px;
+}
+
+/*----------*/
+ul#nav li a.Nav-5 {
+    background-position: -484px 0;
+    width: 111px;
+    height: 119px;
+}
+
+ul#nav li a.Nav-5:hover, ul#nav li.Active a.Nav-5, ul#nav li.Hilite a.Nav-5 {
+    background-position: -484px -137px;
+}
+
+ul#nav li a.Nav-5 span {
+    background: url(../../images/zingvn/skin/icon-canbiet.png) no-repeat;
+    display: block;
+    width: 76px;
+    height: 58px;
+}
+
+ul#nav li.Off a.Nav-5 {
+    cursor: default;
+    background-position: -484px -274px;
+}
+
+/*----------*/
+ul#nav li a.Nav-6 {
+    background-position: -595px 0;
+    width: 121px;
+    height: 137px;
+}
+
+ul#nav li a.Nav-6:hover, ul#nav li.Active a.Nav-6, ul#nav li.Hilite a.Nav-6 {
+    background-position: -595px -137px;
+}
+
+ul#nav li a.Nav-6 span {
+    background: url(../../images/zingvn/skin/icon-diendan.png) no-repeat;
+    display: block;
+    width: 87px;
+    height: 54px;
+}
+
+ul#nav li.Off a.Nav-6 {
+    cursor: default;
+    background-position: -595px -274px;
+}
+
+ul#nav li.Off a:hover span {
+    animation: none;
+    -moz-animation: none;
+    -webkit-animation: none;
+    -o-animation: none;
+}
+
+@keyframes Menu {
+    0% {
+        top: -100px;
+    }
+    50% {
+        top: -50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@-moz-keyframes Menu {
+    0% {
+        top: -100px;
+    }
+    50% {
+        top: -50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@-webkit-keyframes Menu {
+    0% {
+        top: -100px;
+    }
+    50% {
+        top: -50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@-o-keyframes Menu {
+    0% {
+        top: -100px;
+    }
+    50% {
+        top: -50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+ul#nav li.Active a:link,
+ul#nav li.Active a:visited,
+ul#nav li.Hilite a:link,
+ul#nav li.Hilite a:visited,
+ul#nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+/* SUB-MENU LEVEL 1 */
+ul#nav li ul {
+    width: 176px;
+    position: absolute;
+    top: 52px;
+    display: none;
+    font-size: 13px;
+    background: url(../../../../../img.org.vcdn.vn/volamthuphi/skin/jxthuphi_2014_06/images/menu-sub-bottom.png) 0px bottom no-repeat;
+    padding-bottom: 22px;
+    padding-top: 4px;
+}
+
+ul#nav li ul.ToRight {
+    left: auto;
+    right: 0;
+}
+
+ul#nav li ul li {
+    float: left;
+    color: #baaf9a;
+    text-indent: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+}
+
+ul#nav li.Active ul li.Top {
+    height: 50px;
+}
+
+ul#nav li.Active ul li.Top a:link,
+ul#nav li.Active ul li.Top a:visited,
+ul#nav li.Active ul li.Top a:hover {
+    padding-top: 20px;
+
+}
+
+ul#nav li ul li a {
+    height: 30px;
+}
+
+ul#nav li.Active ul li a:link,
+ul#nav li.Active ul li a:visited {
+    width: 150px;
+    line-height: 23px;
+    color: #baaf9a;
+    text-indent: 0;
+    background: url(../../../../../img.org.vcdn.vn/volamthuphi/skin/jxthuphi_2014_06/images/menu-sub.png) 0 1px repeat-y;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+ul#nav li.Active ul li.Active a:link,
+ul#nav li.Active ul li.Active a:visited {
+    color: #ebab23;
+}
+
+ul#nav li.Active ul li.Off a:link,
+ul#nav li.Active ul li.Off a:visited,
+ul#nav li.Active ul li.Off a:hover {
+    color: #5e3737;
+    cursor: default;
+}
+
+ul#nav li.Active ul li a:hover {
+    color: #ebab23;
+}
+
+/*
+				
+				ul#nav li.Active ul li.HasChild.Active.bottom a:link,
+				ul#nav li.Active ul li.HasChild.Active.bottom a:visited{
+					background-position:0 0;
+				}
+				*/
+
+/* MODIFIED : set active o day, muon hightlight cai nao thi phai style = class Hilite */
+ul#nav li.Active ul li.Hilite a:link,
+ul#nav li.Active ul li.Hilite a:visited,
+ul#nav li.Active ul li.Hilite a:hover {
+    color: #ff6600;
+}
+
+/* end. MODIFIED */
+
+ul#nav li.Active ul li.Hilite a.NoLine:link,
+ul#nav li.Active ul li.Hilite a.NoLine:visited {
+    color: #ff6600;
+
+}
+
+	
+

@@ -1,0 +1,147 @@
+/* Block sign */
+
+.BlockSign {
+    border-top: 2px solid #000000;
+    display: block;
+    font-size: 12px;
+    margin: 10px 30px 20px;
+    overflow: hidden;
+    padding: 15px 0 10px;
+    position: relative;
+}
+
+.BlockSign p {
+    float: left;
+}
+
+.BlockSign .ZingMe {
+    width: 145px;
+    background: url(../images/icon-zing.gif) no-repeat;
+    padding: 0 0 0 35px;
+    line-height: 25px;
+    margin: 0 0 0 25px;
+}
+
+.BlockSign .FaceBook {
+    background: url(../images/icon-face.gif) no-repeat;
+    line-height: 25px;
+    padding: 0 0 0 35px;
+    width: 180px;
+}
+
+.BlockSign .ZingMe a:link, .BlockSign .ZingMe a:visited, .BlockSign .FaceBook a:link, .BlockSign .FaceBook a:visited {
+    color: #2f9800;
+    font-size: 12px;
+}
+
+.BlockSign .ZingMe a:hover, .BlockSign .FaceBook a:hover {
+    color: #e65c0f;
+    text-decoration: none !important;
+}
+
+.BlockSign .Author {
+    color: #3C3C3C;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    padding-right: 10px;
+    text-align: right;
+    width: 200px;
+}
+
+/* END. Block sign */
+/* Block list news */
+
+.BlockListNews {
+    padding: 10px 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.BlockListNews h4 {
+    background: url(../images/bg-tabcontent.jpg) no-repeat right top;
+    color: #fffccd;
+    font-size: 18px;
+    height: 20px;
+    line-height: 20px;
+    padding: 7px 10px 7px 10px;
+    margin: 0;
+    overflow: hidden;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.BlockListNews ul.ListNews {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.BlockListNews ul.ListNews li {
+    margin: 0;
+    overflow: hidden;
+    float: left;
+    height: 30px;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px dotted #0b496c;
+}
+
+.BlockListNews ul.ListNews li.Last {
+    border-bottom: none;
+}
+
+.BlockListNews ul.ListNews li a:link, .BlockListNews ul.ListNews li a:visited {
+    line-height: 20px;
+    height: 20px;
+    text-decoration: none;
+    background: url(../images/icon-relative.gif) 0 center no-repeat;
+    padding: 5px 0 5px 13px;
+    display: block;
+    font-size: 15px;
+    color: #8f420d;
+}
+
+.BlockListNews ul.ListNews li a:hover {
+    text-decoration: underline;
+    color: #e65c0f;
+}
+
+.BlockListNews ul.ListNews li .Date {
+    float: right;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: normal;
+}
+
+/* END. Block list news */
+
+.BlockNameEvent {
+    clear: both;
+    overflow: hidden;
+    margin: 0 0 10px;
+    padding: 0 30px;
+}
+
+.BlockNameEvent h3.DetailNews {
+    color: #c73212;
+    font-size: 18px;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    float: left;
+    line-height: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.DateDetails {
+    color: #000;
+    float: right;
+    text-align: right;
+    width: 80px;
+    padding-top: 5px;
+}
+
+.GPTextNotice {
+    padding: 0 0 0 11px;
+}

@@ -1,0 +1,157 @@
+/* Content blocks*/
+.ContentBlock {
+    padding-bottom: 20px;
+    clear: both;
+}
+
+.BlockBtnCN {
+    background: url(../images/bg-block-btn-cn.png) no-repeat;
+    height: 110px;
+    margin: 0 auto;
+    padding: 20px 0 0 20px;
+    width: 840px;
+}
+
+.BlockBtnCN ul {
+    width: 100%;
+}
+
+.BlockBtnCN ul li {
+    float: left;
+    width: 190px;
+    height: 90px;
+    margin-right: 20px;
+}
+
+.BlockBtnCN ul li a {
+    background: url(../images/block-btn-cn.png) no-repeat;
+    display: block;
+    width: 190px;
+    height: 90px;
+    text-indent: -9999px;
+}
+
+.BlockBtnCN ul li a.BtnCN-1 {
+    background-position: 0 0;
+}
+
+.BlockBtnCN ul li a.BtnCN-1:hover {
+    background-position: 0 -90px;
+}
+
+.BlockBtnCN ul li a.BtnCN-2 {
+    background-position: -190px 0;
+}
+
+.BlockBtnCN ul li a.BtnCN-2:hover {
+    background-position: -190px -90px;
+}
+
+.BlockBtnCN ul li a.BtnCN-3 {
+    background-position: -380px 0;
+}
+
+.BlockBtnCN ul li a.BtnCN-3:hover {
+    background-position: -380px -90px;
+}
+
+.BlockBtnCN ul li a.BtnCN-4 {
+    background-position: -570px 0;
+}
+
+.BlockBtnCN ul li a.BtnCN-4:hover {
+    background-position: -570px -90px;
+}
+
+.BlockAccordion {
+    margin: 0 auto;
+    width: 859px;
+}
+
+.accordionButton {
+    background: url(../images/accordion-btn.png) no-repeat;
+    width: 859px;
+    height: 96px;
+    cursor: pointer;
+    text-indent: -9999px;
+    margin: 10px 0 0;
+    position: relative;
+}
+
+.accordionButton.Active {
+    z-index: 100;
+    background: url(../images/accordion-btn-active.png) no-repeat;
+}
+
+.accordionContent {
+    background: url(../images/bg-acc-content.jpg) repeat-y;
+    display: none;
+    margin: -6px 0 0 0;
+    padding: 30px 15px 44px 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordionContent:after {
+    background: url(../images/bg-acc-content-bot.jpg) no-repeat;
+    content: "";
+    width: 859px;
+    height: 44px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.TanThu {
+    background-position: 0 0 !important;
+}
+
+.TinhNang {
+    background-position: 0 -96px !important;
+}
+
+.TrangBi {
+    background-position: 0 -191px !important;
+}
+
+.ColumnContent {
+    width: 200px;
+    float: left;
+    padding: 0;
+}
+
+.ColumnContent h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #F58369;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.ColumnContent ul {
+    padding-left: 12px;
+}
+
+.ColumnContent ul li {
+
+}
+
+.ColumnContent ul li a:link,
+.ColumnContent ul li a:visited {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #dddddd;
+    text-decoration: none;
+    padding-left: 7px;
+    line-height: 25px;
+}
+
+.ColumnContent ul li a:hover, .ColumnContent ul li.Hilite a {
+    color: #e8c01e;
+    border-left: 3px solid #e86a1e;
+    text-decoration: none;
+    padding-left: 4px;
+}

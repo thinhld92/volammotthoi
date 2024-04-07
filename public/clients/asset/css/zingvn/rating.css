@@ -1,0 +1,73 @@
+.Rating {    
+    width: 150px;
+    height: 90px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 1025px) {
+    .Rating_margintop {
+        top: 170px;
+    }
+}
+.Rating_vng_0 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/vng-0.jpg) no-repeat ;
+}
+.Rating_vng_12 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/vng-12.jpg) no-repeat ;
+}
+.Rating_vng_18 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/vng-18.jpg) no-repeat ;
+}
+
+.Rating_long-dinh_0 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/long-dinh-0.jpg) no-repeat ;
+}
+.Rating_long-dinh_12 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/long-dinh-12.jpg) no-repeat ;
+}
+.Rating_long-dinh_18 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/long-dinh-18.jpg) no-repeat ;
+}
+
+
+.Rating_minh-phuong-thinh_0 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/minh-phuong-thinh-0.jpg) no-repeat ;
+}
+.Rating_minh-phuong-thinh_12 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/minh-phuong-thinh-12.jpg) no-repeat ;
+}
+.Rating_minh-phuong-thinh_18 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/minh-phuong-thinh-18.jpg) no-repeat ;
+}
+
+
+.Rating_nguyen-bao_0 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/nguyen-bao-0.jpg) no-repeat ;
+}
+.Rating_nguyen-bao_12 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/nguyen-bao-12.jpg) no-repeat ;
+}
+.Rating_nguyen-bao_18 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/nguyen-bao-18.jpg) no-repeat ;
+}
+
+
+.Rating_bp_0 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/bp-0.jpg) no-repeat ;
+}
+.Rating_bp_12 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/bp-12.jpg) no-repeat ;
+}
+.Rating_bp_18 {
+    background: url(http://img.zing.vn/products/vendor/general/rating/images/bp-18.jpg) no-repeat ;
+}
+
+
+
+

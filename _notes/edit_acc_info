@@ -1,0 +1,180 @@
+
+
+
+USE [SHXT2]
+GO
+
+/****** Object:  Table [dbo].[Account_Info]    Script Date: 01/18/2024 11:59:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Account_Info_bak](
+	[iid] [bigint] IDENTITY(1,1) NOT NULL,
+	[cAccName] [varchar](32) NOT NULL,
+	[cPassWord] [varchar](99) NOT NULL,
+	[cSecPassword] [varchar](99) NULL,
+	[cRealName] [varchar](50) NULL,
+	[dBirthDay] [datetime] NULL,
+	[cArea] [varchar](60) NULL,
+	[cIDNum] [varchar](30) NULL,
+	[dRegDate] [datetime] NULL,
+	[cPhone] [varchar](50) NULL,
+	[iClientID] [bigint] NULL,
+	[dLoginDate] [varchar](20) NULL,
+	[dLogoutDate] [varchar](20) NULL,
+	[iTimeCount] [tinyint] NULL,
+	[cQuestion] [varchar](250) NULL,
+	[cAnswer] [varchar](250) NULL,
+	[cSex] [varchar](4) NULL,
+	[cDegree] [varchar](16) NULL,
+	[cEMail] [varchar](128) NULL,
+	[iLock] [int] NULL,
+	[gCode] [int] NULL,
+	[nMac] [int] NULL,
+	[remember_token] [varchar](100) NULL,
+	[avatar] [varchar](200) NULL,
+ CONSTRAINT [PK_Account_Info_bak] PRIMARY KEY CLUSTERED 
+(
+	[iid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+-- copy Data
+
+insert INTO Account_Info_bak (cAccName, cPassWord, cSecPassword, cRealName, dRegDate, dLoginDate, dLogoutDate, nMac, cEMail, avatar) select cAccName, cPassWord, cSecPassword, cRealName, dRegDate, dLoginDate, dLogoutDate, nMac, cEMail, avatar from Account_Info
+
+-- disable drop trigger
+USE [SHXT2]
+GO
+DISABLE TRIGGER [drop_table] ON DATABASE
+GO
+
+-- drop table acc_info
+USE [SHXT2]
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[DF_Account_Info_dRegDate]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Account_Info] DROP CONSTRAINT [DF_Account_Info_dRegDate]
+END
+
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[DF__Account_I__iGame__77BFCB91]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Account_Info] DROP CONSTRAINT [DF__Account_I__iGame__77BFCB91]
+END
+
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[DF_Account_Info_iLock]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Account_Info] DROP CONSTRAINT [DF_Account_Info_iLock]
+END
+
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[DF_Account_Info_gCode]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Account_Info] DROP CONSTRAINT [DF_Account_Info_gCode]
+END
+
+GO
+
+USE [SHXT2]
+GO
+
+/****** Object:  Table [dbo].[Account_Info]    Script Date: 01/18/2024 12:15:55 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Account_Info]') AND type in (N'U'))
+DROP TABLE [dbo].[Account_Info]
+GO
+
+
+
+
+
+-- creat acc_info
+
+USE [SHXT2]
+GO
+
+/****** Object:  Table [dbo].[Account_Info]    Script Date: 01/18/2024 12:02:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Account_Info](
+	[iid] [bigint] IDENTITY(1,1) NOT NULL,
+	[cAccName] [varchar](32) NOT NULL,
+	[cPassWord] [varchar](99) NOT NULL,
+	[cSecPassword] [varchar](99) NULL,
+	[cRealName] [varchar](50) NULL,
+	[dBirthDay] [datetime] NULL,
+	[cArea] [varchar](60) NULL,
+	[cIDNum] [varchar](30) NULL,
+	[dRegDate] [datetime] NULL,
+	[cPhone] [varchar](50) NULL,
+	[iClientID] [bigint] NULL,
+	[dLoginDate] [varchar](20) NULL,
+	[dLogoutDate] [varchar](20) NULL,
+	[iTimeCount] [tinyint] NULL,
+	[cQuestion] [varchar](250) NULL,
+	[cAnswer] [varchar](250) NULL,
+	[cSex] [varchar](4) NULL,
+	[cDegree] [varchar](16) NULL,
+	[cEMail] [varchar](128) NULL,
+	[iLock] [int] NULL,
+	[gCode] [int] NULL,
+	[nMac] [int] NULL,
+	[remember_token] [varchar](100) NULL,
+  [avatar] [varchar](200) NULL,
+ CONSTRAINT [PK_Account_Info] PRIMARY KEY CLUSTERED 
+(
+	[iid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Account_Info] ADD  CONSTRAINT [DF_Account_Info_dRegDate]  DEFAULT (getdate()) FOR [dRegDate]
+GO
+
+ALTER TABLE [dbo].[Account_Info] ADD  CONSTRAINT [DF__Account_I__iGame__77BFCB91]  DEFAULT ((0)) FOR [iClientID]
+GO
+
+ALTER TABLE [dbo].[Account_Info] ADD  CONSTRAINT [DF_Account_Info_iLock]  DEFAULT ((0)) FOR [iLock]
+GO
+
+ALTER TABLE [dbo].[Account_Info] ADD  CONSTRAINT [DF_Account_Info_gCode]  DEFAULT ((0)) FOR [gCode]
+GO
+
+
+insert INTO Account_Info (cAccName, cPassWord, cSecPassword, cRealName, dRegDate, dLoginDate, dLogoutDate, nMac, cEMail, avatar) select cAccName, cPassWord, cSecPassword, cRealName, dRegDate, dLoginDate, dLogoutDate, nMac, cEMail, avatar from Account_Info_bak
+
+
+
+-- ENABLE drop trigger
+USE [SHXT2]
+GO
+ENABLE TRIGGER [drop_table] ON DATABASE
+GO
+

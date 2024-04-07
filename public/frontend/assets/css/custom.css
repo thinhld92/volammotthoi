@@ -1,0 +1,71 @@
+/* PLACE YOU CUSTOM STYLES IN THIS FILE */
+/* nk-nav nk-nav-right d-none d-lg-table-cell nk-nav-web */
+
+.nk-navbar {
+  font-size: 0.9rem;
+}
+.nk-navbar .nk-nav.nk-nav-web > li > a {
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  max-width: 10rem;
+  white-space: wrap;
+  text-align: center;
+}
+
+.nk-navbar .nk-nav li > a {
+  font-weight: 600;
+  text-transform: capitalize;
+  -webkit-transition: .15s color;
+  -o-transition: .15s color;
+  transition: .15s color;
+}
+
+.nk-navbar .nk-nav > li {
+  vertical-align: top;
+}
+
+/* 2BC6
+2B9F
+*/
+.nk-navbar .nk-nav .nk-drop-item > a::after {
+  content: " \2BC6";
+  color: rgb(129 160 245);
+}
+
+.nk-navbar .nk-nav .nk-drop-item:hover > a::after {
+  color: #dd163b;
+}
+
+/* .nk-social-links > li > *.nk-social-dropbox:hover, .nk-social-links > li > *.nk-social-dropbox.hover, .nk-social-links.nk-social-links-3 > li > *.nk-social-dropbox:hover, .nk-social-links.nk-social-links-3 > li > *.nk-social-dropbox.hover,
+.nk-social-links-2 > li > *.nk-social-dropbox:hover,
+.nk-social-links-2 > li > *.nk-social-dropbox.hover,
+.nk-social-links-2.nk-social-links-3 > li > *.nk-social-dropbox:hover,
+.nk-social-links-2.nk-social-links-3 > li > *.nk-social-dropbox.hover,
+.nk-social-links-3 > li > *.nk-social-dropbox:hover,
+.nk-social-links-3 > li > *.nk-social-dropbox.hover,
+.nk-social-links-3.nk-social-links-3 > li > *.nk-social-dropbox:hover,
+.nk-social-links-3.nk-social-links-3 > li > *.nk-social-dropbox.hover {
+    color: #fff;
+    background-color: #4d86d9;
+} */
+
+.nk-social-links-3 > li > * > svg, .nk-social-links-3 > li > * > span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 0;
+  margin-left: 0;
+  width: 100%;
+  height: auto;
+}
+
+figure.table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure.table > table{
+  margin-left: auto;
+  margin-right: auto;
+}

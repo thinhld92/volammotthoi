@@ -1,0 +1,190 @@
+#static .BoxSearch {
+	background: none repeat scroll 0 0 #E5E3DC;
+	border: 1px solid #000000;
+	color: #390B00;
+	height: 88px;
+	margin: 0;
+	padding: 17px 0 5px 15px;
+	position: relative;
+}
+.BoxSearch .BlockFormItem {
+	float: left;
+	overflow: hidden;
+	width: 546px;
+}
+#gameranking_content .BoxSearch {
+	border: 1px solid #999;
+	padding: 10px 40px 5px;
+}
+.FormItem {
+	float: left;
+	padding: 0 20px 0 0;
+	margin: 0;
+}
+
+#static .BoxSearch .FormItem {
+    height: 32px;
+    padding: 0 10px 10px 0;
+    position: relative;
+    width: 252px;
+}
+#gameranking_content .FormItem {
+	margin: 0 0 5px;
+}
+
+.FormItem label {
+    float: left;
+    font-weight: bold;
+    padding: 3px 5px 0 0;
+    width: 65px;
+}
+/*input.TextInput {
+			font-size: 12px;
+			color: #84cd5a;
+			width: 134px;
+			background: #021a27;
+			border: none;
+			box-shadow: 1px 1px #194a6b, -2px -2px #01090e;
+			height: 19px;
+			line-height: 19px;
+			padding: 2px 5px 2px 0;
+			margin: 0 0 0 95px;
+		}
+		#static input.TextInput {
+			margin: 0 !important;
+			padding: 7px 10px 8px 5px;
+			background: url(../images/searchnews.jpg) 0 0 no-repeat;
+			width: 180px;
+			border: none;
+			outline: none;
+		}*/
+.FormItem select {
+	width: 139px;
+}
+.FormItem input.TextInput01 {
+	font-size: 12px;
+	line-height: 17px;
+	height: 17px;
+	width: 180px;
+	padding: 2px 5px 2px;
+	margin: 0;
+	border: 1px solid #40c0e1;
+}
+.FormItem input.TextInput {
+	background: none repeat scroll 0 0 #3A3F46;
+	border: 1px solid #000000;
+	box-shadow: 1px 1px #FFFFFF;
+	color: #BAAF9A;
+	height: 20px;
+	line-height: 20px;
+	margin: 0;
+	padding: 5px;
+	width: 170px;
+}
+
+#static input.TextInputAlt {
+    background: url(../images/input-date.gif) no-repeat right center #3A3F46;
+    float: left;
+    width: 170px;
+}
+#static input.TextInputAlt2 {
+/*width: 196px;
+			background: url(../images/searchnews3.jpg) 0 0 no-repeat;
+			float: left;
+			padding-right: 0 !important;*/
+}
+.StaticOuter input.SubmitBtn01 {
+	background: url(../images/bt-search.gif) 0 0 no-repeat;
+    border: medium none;
+    cursor: pointer;
+    font-size: 0;
+    height: 28px;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999px;
+    width: 70px;
+	position: absolute;
+	top: 18px;
+}
+input.SubmitBtn01:hover {
+	background-position: 0 -28px;
+}
+#gameranking_content input.SubmitBtn01 {
+	float: left;
+}
+.StaticMain ul.Results {
+	width: 100%;
+	overflow: hidden;
+	margin: 0 0 20px;
+}
+
+.StaticMain ul.Results li {
+    border-bottom: 1px solid #000000;
+    box-shadow: 1px 2px #C5C2C1;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 0 25px;
+}
+.StaticMain ul.Results li.Last {
+	background: none;
+}
+.StaticMain ul.Results li .SearchTitle {
+	font-size: 15px;
+	font-weight: bold;
+}
+.StaticMain ul.Results li a:link,  .StaticMain ul.Results li a:visited {
+	color: #2f2b1b;
+	text-decoration: none;
+}
+.StaticMain ul.Results li a:hover {
+	color: #980006;
+	text-decoration: none;
+}
+.BgKeySearch {
+	background: #980006;
+	padding-right: 3px;
+	color: #fff;
+}
+.BoxSearch select {
+	float: left;
+	display: block;
+	background: none repeat scroll 0 0 #3A3F46;
+	border: 1px solid #000000;
+	box-shadow: 1px 1px #FFFFFF;
+	color: #BAAF9A;
+	margin: 0;
+	padding: 5px;
+	width: 182px;
+}
+.SearchSuggest {
+	background: #1A3251;
+	border: 1px solid #203F66;
+	padding: 0 0 0 5px;
+	position: absolute;
+	top: 577px;
+	left: 152px;
+	width: 172px;
+	z-index: 1000;
+	color: #000;
+}
+.StaticBlockSearch {
+	top: 410px !important;
+	left: 741px !important;
+	width: 193px !important;
+	background: #3b271d;
+	border: 1px solid #000000;
+	color: #cc9966;
+}
+.SearchSubpage {
+	top: 23px !important;
+	left: 372px !important;
+}
+#content .SearchSubpage {
+	top: 253px !important;
+	left: 89px !important;
+	width: 205px !important;
+}
+#search_info .Strong02 {
+	color: #ff6400;
+}
