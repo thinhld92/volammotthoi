@@ -28,21 +28,35 @@ class PaymentController extends Controller
             $query->where('cAccName', 'like', "%{$search}%");
         }
         if ($status > 0) {
-            $payments = $query->where('status', $status);
+            $query->where('status', $status);
         }
         $payments = $query
             ->orderBy('created_at', 'desc')
             ->paginate(10);
+        
         $payments->appends([
             'search'=> $search,
             'status'=> $status,
         ]);
+
+        // tính tổng số tiền
+        $totalAmount = 0;
+        $queryAmount = Payment::query();
+        if ($search) {
+            $queryAmount->where('cAccName', 'like', "%{$search}%");
+        }
+        if ($status > 0) {
+            $queryAmount->where('status', $status);
+        }
+        $totalAmount = $queryAmount->sum('amount');
+
         return view('backend.payments.index', compact(
             'payments',
             'search',
             'paymentStatuses',
             'status',
             'array_accept',
+            'totalAmount',
         ));
     }
 
