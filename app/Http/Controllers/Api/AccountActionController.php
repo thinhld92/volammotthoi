@@ -71,7 +71,13 @@ class AccountActionController extends Controller
                     }
                 }
             }
-            if ($coinchange != 0) {
+
+            $newDate = date('Y-m-d');
+            $currentDateHaBit = LogAccountHabitus::where('cAccName', $cAccName)
+                ->where('logtime', '>', $newDate)
+                ->where('ip', '<>', '222')
+                ->orderBy('created_at', 'desc')->first();
+            if ($coinchange != 0 || (!isset($currentDateHaBit) && $ip != '222')) {
                 $dataCreateLogHabits = [
                     "playerindex" => trim($habit[0]),
                     "cAccName" => $cAccName,
