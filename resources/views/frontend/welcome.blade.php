@@ -134,7 +134,7 @@
             -->
             {{-- <div class="nk-gap-2"></div> --}}
             <div class="nk-countdown nk-countdown-center" style="position: absolute;
-            bottom: 13%;
+            bottom: 15%;
             width: 100%;"
                 data-end="{{getWebsiteConfig('opening_time') ?? '2024-02-19 19:00'}}" 
                 data-timezone="Asia/Ho_Chi_Minh"
