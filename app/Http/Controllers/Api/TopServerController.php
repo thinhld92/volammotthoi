@@ -15,7 +15,7 @@ class TopServerController extends Controller
      */
     public function index()
     {
-        return 333;
+        return "Volammotthoi";
     }
 
     /**
