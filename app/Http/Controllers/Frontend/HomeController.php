@@ -15,7 +15,25 @@ class HomeController extends Controller
 {
     public function index(){
         {
-            return view('frontend.welcome');
+            $welcomeBanners = Banner::query()
+                ->where('type', BannerType::WELCOME)
+                ->get();
+            $opening_time = array();
+            if (getWebsiteConfig('opening_time')) {
+                $opening_date = strtotime(getWebsiteConfig('opening_time'));
+                $opening_time['show'] = 1;
+                if (strtotime("now") > $opening_date) {
+                    $opening_time['show'] = 0;
+                }
+                $opening_time['year'] = date('Y', $opening_date);
+                $opening_time['month'] = date('m', $opening_date);
+                $opening_time['day'] = date('d', $opening_date);
+                $opening_time['hour'] = date('H', $opening_date);
+            }
+            return view('frontend.welcome', compact(
+                'welcomeBanners',
+                'opening_time',
+            ));
         }
     }
 

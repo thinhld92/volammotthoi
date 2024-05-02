@@ -1,373 +1,276 @@
 <!DOCTYPE html>
-
-    
-<html lang="en">
+<html dir="ltr" lang="en-US">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{ config('app.name', 'Võ Lâm Tiên Kiếm') }}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="keywords" content="game, gaming, premium, VLTK">
+	<meta name="author" content="Promickey">
+	<meta name="description" content="VLTK - {{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
+	<link rel="icon" type="image/png" href="{{getWebsiteConfig('site_icon') ?? asset('clients/asset/images/icon.ico')}}">
 
-    <meta name="description" content="GoodGames - {{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
-    <meta name="keywords" content="game, gaming, premium">
-    <meta name="author" content="Promickey">
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="{{getWebsiteConfig('site_icon') ?? asset('clients/asset/images/icon.ico')}}">
+	<!-- Core Style -->
+	<link rel="stylesheet" href="{{asset('welcome/assets/css/style.css')}}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="{{asset('welcome/assets/css/font-icons.css')}}">
 
-    <!-- START: Styles -->
+	<!-- Plugins/Components CSS -->
+	<link rel="stylesheet" href="{{asset('welcome/assets/css/swiper.css')}}">
+	@include('mylib.fontawesome')
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{{asset('welcome/assets/css/custom.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
+	<!-- Document Title
+	============================================= -->
+	<title>{{ config('app.name', 'Võ Lâm Tiên Kiếm') }}</title>
 
-    <!-- FontAwesome -->
-    @include('mylib.fontawesome')
+	<style>
+		.swiper-pagination {
+			bottom: 40px !important;
+			--cnvs-swiper-bar-color: var(--cnvs-contrast-300);
+			--cnvs-swiper-bar-active-color: var(--cnvs-contrast-900);
+			--cnvs-swiper-bar-title-color: var(--cnvs-contrast-800);
+			--cnvs-swiper-bar-width: 140px;
+			--cnvs-swiper-bar-height: 4px;
+			--cnvs-swiper-bar-gap: 25px;
+			--cnvs-swiper-autoplay-speed: 5000ms;
+		}
 
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/vendor/ionicons/css/ionicons.min.css')}}">
+		.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+			margin-right: var(--cnvs-swiper-bar-gap);
+			background: transparent !important;
+		}
 
-    <!-- Flickity -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/vendor/flickity/dist/flickity.min.css')}}">
+		.swiper-pagination span.swiper-pagination-bullet-active, .swiper-pagination span:hover {
+			background-color: transparent !important;
+		}
 
-    <!-- Photoswipe -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/vendor/photoswipe/dist/photoswipe.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/vendor/photoswipe/dist/default-skin/default-skin.css')}}">
+		.swiper-pagination span {
+			position: relative;
+			width: var(--cnvs-swiper-bar-width);
+			height: auto;
+			text-align: left;
+			border-radius: 3px;
+			opacity: 1;
+			border: 0;
+		}
+		.swiper-pagination span.slider-name {
+			font-size: 15px;
+			line-height: 40px;
+			font-weight: 400;
+			color: var(--cnvs-swiper-bar-title-color);
+			text-transform: capitalize;
+			background: transparent !important;
+		}
+		.swiper-pagination span.slider-bar {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: var(--cnvs-swiper-bar-height);
+			background-color: var(--cnvs-swiper-bar-color);
+			overflow: hidden;
+			border-radius: 3px;
+		}
+		.swiper-pagination span.slider-bar-active {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+			width: 0%;
+			border-radius: 3px;
+			height: var(--cnvs-swiper-bar-height);
+			background-color: var(--cnvs-swiper-bar-active-color) !important;
+		}
 
-    <!-- Seiyria Bootstrap Slider -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css')}}">
+		.swiper-pagination span:hover span.slider-bar {
+			background-color: var(--cnvs-swiper-bar-color) !important;
+		}
 
-    <!-- Summernote -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/vendor/summernote/dist/summernote-bs4.css')}}">
+		.swiper-pagination-bullet-active {
+			background-color: transparent;
+		}
+		.swiper-pagination-bullet-active span.slider-bar-active {
+			animation-name: swiperBarAnim;
+			animation-duration: var(--cnvs-swiper-autoplay-speed);
+			animation-timing-function: ease-in;
+			animation-iteration-count: 1;
+			animation-direction: alternate;
+			animation-fill-mode: forwards;
+		}
 
-    <!-- GoodGames -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/goodgames.css')}}">
+		@keyframes swiperBarAnim {
+			0% {
+				width: 0%;
+			}
+			100% {
+				width: 100%;
+			}
+		}
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}">
-    
-    <!-- END: Styles -->
+		.swiper-slide-active .swiper-slide-bg {
+			-webkit-animation: kenburns-top 14s ease-out both;
+	        animation: kenburns-top 14s ease-out both;
+		}
 
-    <!-- jQuery -->
-    <script src="{{asset('frontend/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
-    
-    <style>
-      .nk-feature-1{
-        justify-content: center;
-      }
-      .nk-feature-1 .nk-feature-cont{
-        padding-top: 8px;
-        padding-left: 0;
-        
-      }
-      .item-center{
-        justify-content: center;
-      }
-      .nk-page-background-fixed{
-        filter: brightness(100%);
-        /* object-fit: contain; */
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-      .nk-social-links-2 > li > * {
-        width: 40px;
-        height: 40px;
-        margin: 3px 5px;
-        font-size: 1.8em;
-        line-height: 40px;
-        background-color: #fff;
-        border-radius: 30px;
-      }
+		#block-countdown-3 .countdown-section {
+			padding: 20px;
+			margin-left: 15px;
+			background-color: #F1F1F1;
+			border: 0;
+			border-radius: 4px;
+		}
 
-      .nk-fullscreen-block-top a img{
-        max-width: 500px;
-      }
+		#block-countdown-3 .countdown-section:first-child { margin-left: 0; }
 
-      .nk-fullscreen-block{
-        position: relative;
-      }
-      
-      .nk-feature-1{
-        padding: 3px;
-      }
-
-    </style>
+		/*@keyframes kenburns-top {
+			0% {
+				-webkit-transform: scale(1);
+						transform: scale(1);
+				-webkit-transform-origin: 50% 50%;
+						transform-origin: 50% 50%;
+			}
+			100% {
+				-webkit-transform: scale(1.15);
+						transform: scale(1.15);
+				-webkit-transform-origin: top;
+						transform-origin: top;
+			}
+		}*/
+	</style>
 </head>
 
+<body class="stretched">
 
-<!--
-    Additional Classes:
-        .nk-page-boxed
--->
-<body>
-    
-    
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+		<header id="header" class="transparent-header" data-sticky-class="not-dark">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
 
-    <div class="nk-main">
-        
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-5">
+							<a href="{{ route('home') }}">
+								<img class="logo-default" srcset="{{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}, {{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}" src="{{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}" alt="{{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
+								<img class="logo-dark" srcset="{{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}, {{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}" src="{{getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png')}}" alt="{{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
+							</a>
+						</div><!-- #logo end -->
 
-        
-<div class="nk-fullscreen-block">
-    {{-- <div class="nk-fullscreen-block-top">
-        <div class="text-center">
-            <div class="nk-gap-2"></div>
-            <a href="{{ route('home') }}"><img src="{{asset('frontend/assets/images/volam/logo-mkh.png')}}" alt="GoodGames"></a>
-            <div class="nk-gap-2"></div>
-        </div>
-    </div> --}}
-    <div class="nk-fullscreen-block-middle">
-        <div class="container text-center">
-            {{-- <h1 class="h3">Coming Soon</h1> --}}
+						<div class="header-misc ms-lg-auto">
+							@if ($opening_time['show'])
+								<h2 id="block-countdown-3" class="countdown countdown-medium" data-year="{{$opening_time['year']}}" data-month="{{$opening_time['month']}}" data-day="{{$opening_time['day']}}" data-hour="{{$opening_time['hour']}}" data-format="dHMS"></h2>
+							@endif
+						</div>
 
-            <!--
-                START: Countdown
-22qwwertgml
+						<div class="primary-menu-trigger">
+							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+							</button>
+						</div>
 
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                Additional Classes:
-                    .nk-countdown-center
-                    .nk-countdown-right
-            -->
-            {{-- <div class="nk-gap-2"></div> --}}
-            <div class="nk-countdown nk-countdown-center" style="position: absolute;
-            bottom: 15%;
-            width: 100%;"
-                data-end="{{getWebsiteConfig('opening_time') ?? '2024-02-19 19:00'}}" 
-                data-timezone="Asia/Ho_Chi_Minh"
-            >
-            </div>
-            {{-- <div class="nk-countdown nk-countdown-center" data-end="2024-01-19 19:00" data-timezone="Asia/Ho_Chi_Minh"></div> --}}
-            <!-- END: Countdown -->
+							<ul class="menu-container">
+								<li class="menu-item">
+									<a class="menu-link" href="{{ route('home') }}"><div>Trang chủ</div></a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="{{ route('register') }}"><div>Đăng ký</div></a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="{{ route('login') }}"><div>Đăng nhập</div></a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="{{getWebsiteConfig('download_link') ?? '#'}}"><div>Tải Game</div></a>
+								</li>
+							</ul>
+							
+						</nav><!-- #primary-menu end -->
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
 
-            <!-- START: Features -->
-        {{-- <div class="nk-gap-2"></div>
-        <h3 class="text-main-1">KHAI MỞ MÁY CHỦ MỚI</h3>
-        <div class="nk-gap"></div> --}}
-        <div class="row vertical-gap item-center" style="position: absolute;
-        bottom: 2.5%;
-        width: 100%;">
-            {{-- <div class="col-lg-2"></div> --}}
+		<!-- Content
+		============================================= -->
+		<section id="content" class="include-header">
+			<div class="content-wrap py-0">
 
-            <div class="col-lg-2">
-                <div class="nk-feature-1">
-                    <div class="nk-feature-cont">
-                        <h3 class="nk-feature-title"><a href="{{ route('home') }}"><i class="fas fa-home"></i></a></h3>
-                        <h3 class="nk-feature-title text-main-3"><a href="{{ route('home') }}">Trang Chủ</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="nk-feature-1">
-                    <div class="nk-feature-cont">
-                        <h3 class="nk-feature-title"><a href="{{ route('register') }}"><i class="fa-solid fa-plane"></i></a></h3>
-                        <h3 class="nk-feature-title text-main-3"><a href="{{ route('register') }}">Đăng ký</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="nk-feature-1">
-                    <div class="nk-feature-cont">
-                        <h3 class="nk-feature-title"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a></h3>
-                        <h3 class="nk-feature-title text-main-3"><a href="{{ route('login') }}">Đăng nhập</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="nk-feature-1">
-                    <div class="nk-feature-cont">
-                        <h3 class="nk-feature-title"><a href="{{getWebsiteConfig('download_link') ?? '#'}}"><i class="fa-solid fa-cloud-arrow-down"></i></a></h3>
-                        <h3 class="nk-feature-title text-main-3"><a href="{{getWebsiteConfig('download_link') ?? '#'}}">Tải game</a></h3>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="col-lg-2"></div> --}}
+				<!-- Hero Section
+				============================================= -->
+				<div class="slider-element swiper_wrapper dark min-vh-100 customjs">
+					<div class="swiper swiper-parent">
+						<div class="swiper-wrapper">
+							@if ($welcomeBanners->count() > 0)
+								@foreach ($welcomeBanners as $banner)
+									<div class="swiper-slide">
+										<div class="swiper-slide-bg" style="background-image: url('{{$banner->image}}');"></div>
+									</div>
+								@endforeach
+							@else
+								<div class="swiper-slide">
+									<div class="swiper-slide-bg" style="background-image: url('{{asset("welcome/assets/images/1.jpg")}}');"></div>
+								</div>
+							@endif
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
 
-        </div>
-        <!-- END: Features -->
-            <div class="nk-gap-3"></div>
-        </div>
-    </div>
-    {{-- <div class="nk-fullscreen-block-bottom">
-        <ul class="nk-social-links-2 nk-social-links-center">
-            <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a></li>
-            <li><a class="nk-social-youtube" href="#"><span class="fab fa-youtube"></span></a></li>
-        </ul>
-        <div class="nk-gap-2"></div>
-    </div> --}}
-</div>
+			</div>
+		</section><!-- #content end -->
 
 
-        
-    </div>
+	</div><!-- #wrapper end -->
 
-    
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
 
-    
-        <!-- START: Page Background -->
+	<!-- JavaScripts
+	============================================= -->
+	<script src="{{asset('welcome/assets/js/plugins.min.js')}}"></script>
+	<script src="{{asset('welcome/assets/js/functions.bundle.js')}}"></script>
 
-    <div class="nk-page-background-fixed" style="background-image: url('{{asset('frontend/assets/images/volam/vlmt_background.jpg')}}');"></div>
-    {{-- <div class="nk-page-background-fixed" style="background-image: url('{{asset('frontend/assets/images/volam/volam_coming.jpg')}}');"></div> --}}
-    {{-- <video class="nk-page-background-fixed" autoplay muted loop>
-        <source src="{{asset('frontend/assets/images/video.mp4')}}" type="video/mp4">
-        <source src="{{asset('frontend/assets/images/video.webm')}}" type="video/webm">
-    </video> --}}
-
-<!-- END: Page Background -->
-
-    
-
-    
-        <!-- START: Search Modal -->
-<div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="ion-android-close"></span>
-                </button>
-
-                <h4 class="mb-0">Search</h4>
-
-                <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form nk-form-style-1">
-                    <input type="text" value="" name="search" class="form-control" placeholder="Type something and press Enter" autofocus>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END: Search Modal -->
-    
-
-    
-        <!-- START: Login Modal -->
-<div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="ion-android-close"></span>
-                </button>
-
-                <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
-
-                <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form text-white">
-                    <div class="row vertical-gap">
-                        <div class="col-md-6">
-                            Use email and password:
-
-                            <div class="nk-gap"></div>
-                            <input type="email" value="" name="email" class=" form-control" placeholder="Email">
-
-                            <div class="nk-gap"></div>
-                            <input type="password" value="" name="password" class="required form-control" placeholder="Password">
-                        </div>
-                        <div class="col-md-6">
-                            Or social account:
-
-                            <div class="nk-gap"></div>
-
-                            <ul class="nk-social-links-2">
-                                <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a></li>
-                                <li><a class="nk-social-google-plus" href="#"><span class="fab fa-google-plus"></span></a></li>
-                                <li><a class="nk-social-twitter" href="#"><span class="fab fa-twitter"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="nk-gap-1"></div>
-                    <div class="row vertical-gap">
-                        <div class="col-md-6">
-                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</a>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mnt-5">
-                                <small><a href="#">Forgot your password?</a></small>
-                            </div>
-                            <div class="mnt-5">
-                                <small><a href="#">Not a member? Sign up</a></small>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END: Login Modal -->
-
-    
-
-    
-<!-- START: Scripts -->
-
-<!-- Object Fit Polyfill -->
-<script src="{{asset('frontend/assets/vendor/object-fit-images/dist/ofi.min.js')}}"></script>
-
-<!-- GSAP -->
-<script src="{{asset('frontend/assets/vendor/gsap/src/minified/TweenMax.min.js')}}"></script>
-<script src="{{asset('frontend/assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js')}}"></script>
-
-<!-- Popper -->
-<script src="{{asset('frontend/assets/vendor/popper.js/dist/umd/popper.min.js')}}"></script>
-
-<!-- Bootstrap -->
-<script src="{{asset('frontend/assets/vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
-<!-- Sticky Kit -->
-<script src="{{asset('frontend/assets/vendor/sticky-kit/dist/sticky-kit.min.js')}}"></script>
-
-<!-- Jarallax -->
-<script src="{{asset('frontend/assets/vendor/jarallax/dist/jarallax.min.js')}}"></script>
-<script src="{{asset('frontend/assets/vendor/jarallax/dist/jarallax-video.min.js')}}"></script>
-
-<!-- imagesLoaded -->
-<script src="{{asset('frontend/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-
-<!-- Flickity -->
-<script src="{{asset('frontend/assets/vendor/flickity/dist/flickity.pkgd.min.js')}}"></script>
-
-<!-- Photoswipe -->
-<script src="{{asset('frontend/assets/vendor/photoswipe/dist/photoswipe.min.js')}}"></script>
-<script src="{{asset('frontend/assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js')}}"></script>
-
-<!-- Jquery Validation -->
-<script src="{{asset('frontend/assets/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-
-<!-- Jquery Countdown + Moment -->
-<script src="{{asset('frontend/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js')}}"></script>
-<script src="{{asset('frontend/assets/vendor/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('frontend/assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js')}}"></script>
-
-<!-- Hammer.js -->
-<script src="{{asset('frontend/assets/vendor/hammerjs/hammer.min.js')}}"></script>
-
-<!-- NanoSroller -->
-<script src="{{asset('frontend/assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js')}}"></script>
-
-<!-- SoundManager2 -->
-<script src="{{asset('frontend/assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js')}}"></script>
-
-<!-- Seiyria Bootstrap Slider -->
-<script src="{{asset('frontend/assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js')}}"></script>
-
-<!-- Summernote -->
-<script src="{{asset('frontend/assets/vendor/summernote/dist/summernote-bs4.min.js')}}"></script>
-
-<!-- nK Share -->
-<script src="{{asset('frontend/assets/plugins/nk-share/nk-share.js')}}"></script>
-
-<!-- GoodGames -->
-<script src="{{asset('frontend/assets/js/goodgames.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/goodgames-init.js')}}"></script>
-<!-- END: Scripts -->
+	<script>
+		window.addEventListener( 'load', function() {
+			var cssVarSpeed = getComputedStyle(document.querySelector('.swiper-pagination'));
+			var swiperSpeed = (cssVarSpeed.getPropertyValue('--cnvs-swiper-autoplay-speed')).split('ms');
 
 
-    
+			var swiper = new Swiper('.swiper', {
+				slidesPerView: '1',
+				loop: true,
+				autoplayDisableOnInteraction: false,
+				autoplay: {
+					delay: Number( swiperSpeed[0] )
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: 'true',
+					type: 'bullets',
+					renderBullet: function (index, className) {
+						return '<span class="' + className + '">' + '<span class="slider-bar"></span>' + '<span class="slider-bar-active"></span>'  + '</span>';
+					},
+				}
+			});
+		});
+  </script>
+
 </body>
 </html>

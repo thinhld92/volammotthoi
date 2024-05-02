@@ -1,0 +1,12 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+.menu-link {
+	font-size: 1rem;
+	-webkit-text-stroke: red 0.3px;
+}
+

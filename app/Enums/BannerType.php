@@ -15,4 +15,5 @@ final class BannerType extends Enum
     const HEADER    =   2;
     const SIDEBAR   =   3;
     const FOOTER    =   4;
+    const WELCOME   =   5;
 }
