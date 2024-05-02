@@ -154,7 +154,7 @@
             <div>{{ __('Banners list') }}</div>
           </a>
         </li>
-        <li class="menu-item {{ (request()-> is('admin/configs/create')) ? 'active' : '' }}">
+        <li class="menu-item {{ (request()-> is('admin/banners/create')) ? 'active' : '' }}">
           <a href="{{route('admin.banners.create')}}" class="menu-link">
             <i class="menu-icon sub-menu-icon-custom fa-solid fa-image"></i>
             <div>{{ __('Banner add') }}</div>
