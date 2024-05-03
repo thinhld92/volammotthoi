@@ -36,7 +36,7 @@ class PaymentController extends Controller
             $query->where('created_at', '>=', $fromdate);
         }
         if ($todate) {
-            $query->where('created_at', '<=', $todate);
+            $query->where('created_at', '<=', $todate.' 23:59:59');
         }
         $payments = $query
             ->orderBy('created_at', 'desc')
