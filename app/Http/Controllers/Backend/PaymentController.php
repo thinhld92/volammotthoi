@@ -62,7 +62,7 @@ class PaymentController extends Controller
             $queryAmount->where('created_at', '>=', $fromdate);
         }
         if ($todate) {
-            $queryAmount->where('created_at', '<=', $todate);
+            $queryAmount->where('created_at', '<=', $todate.' 23:59:59');
         }
         $totalAmount = $queryAmount->sum('amount');
 
