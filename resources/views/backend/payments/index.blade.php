@@ -35,7 +35,7 @@
             />
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <select 
             name="status" 
             id="" 
@@ -50,6 +50,38 @@
               {{__(mb_strtoupper($value))}}</option>
           @endforeach
           </select>
+        </div>
+        <div class="col-1">
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="multicol-fromdate">Từ ngày:</label>
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            name="fromdate"
+            id="multicol-fromdate"
+            class="form-control dob-picker"
+            placeholder="{{ __('YYYY-MM-DD') }}"
+            value="{{$fromdate ?? '2024-05-03'}}"
+            onchange="submit();"
+          />
+        </div>
+        <div class="col-1">
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="multicol-todate">Đến Ngày:</label>
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            name="todate"
+            id="multicol-todate"
+            class="form-control dob-picker"
+            placeholder="{{ __('YYYY-MM-DD') }}"
+            value="{{$todate ?? ''}}"
+            onchange="submit();"
+          />
         </div>
       </div>
     </form>
@@ -128,13 +160,16 @@
 @endsection
 
 @section('link_css')
+  <link rel="stylesheet" href="{{asset('backend/assets/vendor/libs/flatpickr/flatpickr.css')}}" />
   <link rel="stylesheet" href="{{asset('backend/assets/vendor/libs/select2/select2.css')}}" />
-
 @endsection
 
 @section('script')
+  <script src="{{asset('backend/assets/vendor/libs/flatpickr/flatpickr.js')}}"></script>
   <script src="{{asset('backend/assets/vendor/libs/select2/select2.js')}}"></script>
+
   <script src="{{asset('backend/assets/js/forms-selects.js')}}"></script>
+  <script src="{{asset('backend/assets/js/form-layouts.js')}}"></script>
   <script>
     function submitFormUpdate(event, id, status) {
       event.preventDefault();

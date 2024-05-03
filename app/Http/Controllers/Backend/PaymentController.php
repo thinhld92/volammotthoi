@@ -21,6 +21,8 @@ class PaymentController extends Controller
             PaymentStatus::PENDING
         ];
         $status = $request->status ?? PaymentStatus::PENDING;
+        $fromdate = $request->fromdate;
+        $todate = $request->todate;
         $paymentStatuses = PaymentStatus::asSelectArray();
         $search = $request->get('search');
         $query = Payment::query();
@@ -30,6 +32,12 @@ class PaymentController extends Controller
         if ($status > 0) {
             $query->where('status', $status);
         }
+        if ($fromdate) {
+            $query->where('created_at', '>=', $fromdate);
+        }
+        if ($todate) {
+            $query->where('created_at', '<=', $todate);
+        }
         $payments = $query
             ->orderBy('created_at', 'desc')
             ->paginate(10);
@@ -37,6 +45,8 @@ class PaymentController extends Controller
         $payments->appends([
             'search'=> $search,
             'status'=> $status,
+            'fromdate'=> $fromdate,
+            'todate'=> $todate,
         ]);
 
         // tính tổng số tiền
@@ -48,6 +58,12 @@ class PaymentController extends Controller
         if ($status > 0) {
             $queryAmount->where('status', $status);
         }
+        if ($fromdate) {
+            $queryAmount->where('created_at', '>=', $fromdate);
+        }
+        if ($todate) {
+            $queryAmount->where('created_at', '<=', $todate);
+        }
         $totalAmount = $queryAmount->sum('amount');
 
         return view('backend.payments.index', compact(
@@ -57,6 +73,8 @@ class PaymentController extends Controller
             'status',
             'array_accept',
             'totalAmount',
+            'fromdate',
+            'todate',
         ));
     }
 
