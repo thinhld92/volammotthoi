@@ -21,6 +21,7 @@ class CreateTopServersTable extends Migration
             $table->bigInteger('exp')->nullable();
             $table->bigInteger('expnext')->nullable();
             $table->string("ip")->nullable();
+            $table->string("faction")->nullable();
             $table->string("logtime")->nullable();
             $table->timestamps();
         });

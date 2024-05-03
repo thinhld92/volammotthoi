@@ -48,6 +48,7 @@ class TopServerController extends Controller
             $exp = (int) trim($player[3]);
             $expnext = (int) trim($player[4]);
             $ip = trim($player[5]);
+            $faction = trim($player[6]);
 
             $dataCreateLevelPlayer = [
                 "cAccName" => $cAccName,
@@ -56,6 +57,7 @@ class TopServerController extends Controller
                 "exp" => $exp,
                 "expnext" => $expnext,
                 "ip" => $ip,
+                "faction" => $faction,
                 "logtime" => $logtime
             ];
             TopServer::create($dataCreateLevelPlayer);

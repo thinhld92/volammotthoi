@@ -16,6 +16,7 @@ class TopServer extends Model
         "exp",
         "expnext",
         "ip",
+        "faction",
         "logtime",
     ];
 }
