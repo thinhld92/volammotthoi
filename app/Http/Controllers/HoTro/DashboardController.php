@@ -25,6 +25,7 @@ class DashboardController extends Controller
 
         $payments = Payment::query()
                 ->where('cAccName', $user->cAccName)
+                ->where('created_at', '>', '2024-05-03')
                 ->orderBy('created_at', 'desc')
                 ->get()
                 ;
