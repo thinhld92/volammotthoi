@@ -12,6 +12,7 @@
       <div class="card-header">
         <h5 class="">{{ __('Payment receive info') }}</h5>
         <p class="text-danger">Vui lòng chuyển khoản vào <strong>1 trong 2 tài khoản</strong> dưới đây, sau đó gởi hình ảnh xác nhận.</p>
+        <p class="text-danger">Sau khi được xác nhận bạn sẽ phải <strong>thoát ra và đăng nhập lại</strong>, đến tiền trang để rút xu. cảm ơn rất nhiều!</p>
       </div>
       <div class="card-body">
         <img width="100%" src="{{getWebsiteConfig('bank_transfer_info') ?? 'https://via.placeholder.com/900x600&text=Xin%20l%E1%BB%97i,%20th%C3%B4ng%20tin%20%C4%91ang%20%C4%91%C6%B0%E1%BB%A3c%20c%E1%BA%ADp%20nh%E1%BA%ADt'}}" alt="">

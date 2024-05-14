@@ -101,6 +101,9 @@ class PaymentController extends Controller
         }
         $payment->update();
         $message = 'Hoàn thành xác nhận thanh toán cho User ' .$payment->cAccName;
+        if($status == PaymentStatus::CANCEL){
+            $message = 'Bạn đã từ chối thanh toán cho User ' .$payment->cAccName;
+        }
         User::sendMessageToTelegram($message);
         return redirect()->route('admin.payments.index')->with('success', 'Cập nhật thành công');
     }
