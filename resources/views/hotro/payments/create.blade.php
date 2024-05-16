@@ -18,7 +18,7 @@
         <div class="col-12 mb-4">
           <ul class="text-danger">
             <li><span class="text-danger">100k VND 🚀🚀 1k xu</span></li>
-            <li><span class="text-danger"><strong>🎉Siêu hot: Nạp ngay hôm nay đầu được x2 số xu🎉</strong></span></li>
+            <li><span class="text-danger"><strong>🎉Siêu hot: Nạp ngay hôm nay được x2 số xu🎉</strong></span></li>
             {{-- <li><span class="text-danger">Trên 100k thêm 10%, 500k thêm 20%, 1 triệu được thêm 30%, trên 2 triệu được thêm 50%</span></li> --}}
           </ul>
         </div>
