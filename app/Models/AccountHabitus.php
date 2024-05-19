@@ -27,4 +27,10 @@ class AccountHabitus extends Model
     public function user(){
         return $this->belongsTo(User::class, 'cAccName', 'cAccName');
     }
+
+    public function getEndDateAttribute()
+    {
+        $end_date = date('d/m/Y', strtotime($this->dEndDate));
+        return $end_date;
+    }
 }

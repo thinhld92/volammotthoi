@@ -48,6 +48,8 @@ Route::group([
     // Route::get('users-data', [UserController::class, 'usersData'])->name('users-data');
     Route::post('categories/sort-order', [CategoryController::class, 'sortOrder'])->name('categories.sort-order');
     Route::resource('users', UserController::class);
+    // Route::match(['put', 'patch'], 'users/update-enddate', [UserController::class, 'updateEnddate'])->name('users.update-enddate');
+    Route::post('users/update-enddate', [UserController::class, 'updateEnddate'])->name('users.update-enddate');
     Route::resource('categories', CategoryController::class);
     Route::resource('posts', PostController::class);
     Route::resource('admins', AdminController::class);

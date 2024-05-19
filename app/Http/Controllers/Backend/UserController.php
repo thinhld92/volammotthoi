@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-        $query = User::query();
+        $query = User::query()->with('account_habitus');
         if ($search) {
             $query->where('cAccName', 'like', "%{$search}%")
                 ->orWhere('cEmail', 'like', "%{$search}%")
@@ -119,6 +119,12 @@ class UserController extends Controller
 
             Payment::create($dataPayment);
         }
+
+        if ($request->dEndDate) {
+            $user->account_habitus->update([
+                'dEndDate' => $request->dEndDate
+            ]);
+        }
         return redirect()->route('admin.users.index')->with('success', 'Cập nhật tài khoản người dùng thành công');
     }
 
@@ -138,6 +144,27 @@ class UserController extends Controller
 
     public function usersList(){
         return view('backend.users.users-list');
+    }
+
+    public function updateEnddate(Request $request){
+        $active = $request->active;
+        $iid = $request->iid;
+        $cAccName = $request->cAccName;
+        $habitus = AccountHabitus::where('cAccName', '=', $cAccName)->first();
+        if ($habitus) {
+            if ($active) {
+                $dEndDate = date('Y-m-d', strtotime('+1 month'));
+            }else {
+                $dEndDate = date('Y-m-d', strtotime('-1 month'));
+            }
+            $habitus->dEndDate = $dEndDate;
+            $habitus->save();
+        }
+        return response()->json([
+            'statusCode' => "200",
+            'status' => "success",
+            'dEndDate' => date('d/m/Y', strtotime($dEndDate)),
+        ]);
     }
 
 }

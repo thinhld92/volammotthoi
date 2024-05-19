@@ -235,6 +235,20 @@
               <div class="invalid-feedback">{{$message}}</div>
             @endforeach
           </div>
+          <div class="col-md-6">
+            <label class="form-label" for="multicol-dEndDate">Hạn sử dụng </label>
+            <input
+              type="text"
+              name="dEndDate"
+              id="multicol-dEndDate"
+              class="form-control dob-picker"
+              placeholder="{{ __('YYYY-MM-DD') }}"
+              value="{{old('dEndDate') ?? $user->account_habitus->dEndDate}}"
+            />
+            @foreach ($errors->get('dEndDate') as $message)
+              <div class="invalid-feedback">{{$message}}</div>
+            @endforeach
+          </div>
           
         </div>
 

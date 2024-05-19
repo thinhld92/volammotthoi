@@ -96,6 +96,7 @@
 </div> --}}
 <!-- Users List Table -->
 <div class="card">
+  @csrf
   <div class="card-header header-elements">
     <h5 class="">{{__('User list')}}</h5>
     <form class="input-group input-group-merge">
@@ -119,6 +120,7 @@
           <th>Real Name</th>
           <th>Email</th>
           <th>Register Date</th>
+          <th>End Date</th>
           <th class="status">Status</th>
           <th class="actions">Actions</th>
         </tr>
@@ -136,9 +138,22 @@
             <td>
               {{ $user->registerDate }}
             </td>
+            <td id="endDate{{$user->iid}}">
+              {{ $user->account_habitus->endDate }}
+            </td>
             <td>
+              @php
+                if ($user->account_habitus->dEndDate >= now()) {
+                  $checked = "checked";
+                }else{
+                  $checked = "";
+                }
+              @endphp
               <label class="switch switch-success">
-                <input type="checkbox" class="switch-input" checked />
+                <input type="checkbox" 
+                  class="switch-input" {{$checked}}
+                  onclick="changeStatusUser(event, {{$user->iid}}, '{{$user->cAccName}}')"
+                />
                 <span class="switch-toggle-slider">
                   {{-- <span class="switch-on">
                     <i class="ti ti-check"></i>
@@ -214,6 +229,32 @@
       // if ($confirm) {
       //   document.getElementById('form-delete-' + iid).submit();
       // }
+    }
+
+    function changeStatusUser(event, iid, cAccName) {
+      // event.preventDefault();
+      let active = 0;
+      if (event.target.checked) {
+        active = 1;
+      }
+      endDateEle = document.getElementById('endDate'+iid);
+      const token = $("input[name='_token']").val();
+      const data = new FormData();
+      data.append('iid', iid);
+      data.append('active', active);
+      data.append('cAccName', cAccName);
+      data.append('_token', token);
+      fetch("{{route('admin.users.update-enddate')}}", {
+        method: 'POST',
+        body: data
+      }).then(
+        response => response.json() // if the response is a JSON object
+      ).then(
+        // success
+        (data) => {endDateEle.innerHTML = data.dEndDate} // Handle the success response object
+      ).catch(
+        error => console.log(error) // Handle the error response object
+      );
     }
   </script>
 @endsection
