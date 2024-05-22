@@ -61,6 +61,10 @@
             <i class="fa fa-calendar-days"></i>
             <span class="fw-medium mx-2 text-heading">{{ __('Register Date') }}:</span>{{ $user->registerDate }}<span></span>
           </li>
+          <li class="d-flex align-items-center mb-3">
+            <i class="fa fa-calendar-days"></i>
+            <span class="fw-medium mx-2 text-heading">{{ __('End Date') }}:</span>{{ $user->account_habitus->endDate }}<span></span>
+          </li>
         </ul>
       </div>
     </div>

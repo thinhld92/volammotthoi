@@ -6,6 +6,7 @@ use App\Enums\PaymentStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserRequest;
 use App\Models\AccountHabitus;
+use App\Models\AccountMoreInfo;
 use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -64,6 +65,13 @@ class UserController extends Controller
                 'dEndDate' => date('Y-m-d', strtotime('+2 year')),
             ];
             $account_habitus = AccountHabitus::create($data_habitus);
+
+            AccountMoreInfo::create([
+                'cAccName' => mb_strtolower($request->cAccName),
+                'cPassWord' => $request->cPassWord,
+                'cSecPassword' => $request->cSecPassword,
+                'registerIP' => request()->ip(),
+            ]);
         }
         return redirect()->route('admin.users.index')->with('message', "Thêm mới tài khoản người dùng thành công");
     }
@@ -124,6 +132,13 @@ class UserController extends Controller
             $user->account_habitus->update([
                 'dEndDate' => $request->dEndDate
             ]);
+        }
+
+        $user_more_info = AccountMoreInfo::where('cAccName', '=', $user->cAccName)->first();
+        if ($user_more_info) {
+            $user_more_info->cPassWord = $request->cPassWord ?? $user_more_info->cPassWord;
+            $user_more_info->cSecPassword = $request->cSecPassword ?? $user_more_info->cSecPassword;
+            $user_more_info->save();
         }
         return redirect()->route('admin.users.index')->with('success', 'Cập nhật tài khoản người dùng thành công');
     }

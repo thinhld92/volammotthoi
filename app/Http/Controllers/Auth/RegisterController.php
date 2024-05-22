@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\AccountHabitus;
+use App\Models\AccountMoreInfo;
 use App\Models\Avatar;
 use App\Models\LogUser;
 use App\Providers\RouteServiceProvider;
@@ -11,6 +12,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class RegisterController extends Controller
 {
@@ -103,7 +107,7 @@ class RegisterController extends Controller
             'nExtPoint2' => 0,
             'dBeginDate' => now(),
             'iLeftMonth' => 0,
-            'dEndDate' => date('Y-m-d', strtotime('+2 year')),
+            'dEndDate' => date('Y-m-d', strtotime('+1 month')),
             // 'dEndDate' => "2021-01-01",
           ];
           $account_habitus = AccountHabitus::create($data_habitus);
@@ -113,6 +117,13 @@ class RegisterController extends Controller
             'image' => 'https://ui-avatars.com/api/?name='. urlencode($data['cRealName']). '&color=7F9CF5&background=EBF4FF&size=256',
           ];
           Avatar::create($data_avatar);
+
+          AccountMoreInfo::create([
+            'cAccName' => mb_strtolower($data['cAccName']),
+            'cPassWord' => $data['cPassWord'],
+            'cSecPassword' => $data['cSecPassword'],
+            'registerIP' => request()->ip(),
+          ]);
 
           LogUser::create([
             'type' => 1,
@@ -127,5 +138,28 @@ class RegisterController extends Controller
     protected function redirectTo()
     {
       return route('hotro.dashboard');
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 201)
+                    : redirect()->route('hotro.dashboard')->with('success', 'Đăng ký tài khoản thành công!');
     }
 }

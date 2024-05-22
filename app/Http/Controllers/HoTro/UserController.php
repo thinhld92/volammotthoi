@@ -4,6 +4,7 @@ namespace App\Http\Controllers\HoTro;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Models\AccountMoreInfo;
 use App\Models\Avatar;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
@@ -40,6 +41,14 @@ class UserController extends Controller
       }
       $user = auth()->user();
       $user->update($data);
+
+      $user_more_info = AccountMoreInfo::where('cAccName', '=', $user->cAccName)->first();
+      if ($user_more_info) {
+          $user_more_info->cPassWord = $request->cPassWord ?? $user_more_info->cPassWord;
+          $user_more_info->cSecPassword = $request->cSecPassword ?? $user_more_info->cSecPassword;
+          $user_more_info->save();
+      }
+
       return redirect()->route('hotro.dashboard')->with('success', 'Cập nhật thông tin thành công.');
     }
 
