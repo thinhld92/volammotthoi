@@ -90,46 +90,49 @@ class PaymentController extends Controller
         return response()->json($data);
     }
 
+    private function calulateCoin($amount){
+        $coin = $amount*10/1000;
+        $user = auth()->user();
+        $payments = Payment::query()
+            ->where('cAccName', '=', $user->cAccName)
+            ->where(function($query){
+                $query->where('status', '=', PaymentStatus::PENDING)
+                ->orWhere('status', '=', PaymentStatus::COMPLETED)
+                ->orWhere('status', '=', PaymentStatus::INIT);
+            })
+            ->get();
+        if ($payments->count()) {
+            if ($amount >= 2000000) {
+                $coin = $coin * 1.5;
+            }elseif ($amount >= 1000000) {
+                $coin = $coin * 1.3;
+            }elseif ($amount >= 500000) {
+                $coin = $coin * 1.2;
+            }elseif ($amount >= 100000) {
+                $coin = $coin * 1.1;
+            }
+        }
+        else{
+            $coin = $coin * 2;
+        }
+
+        return $coin;
+    }
+
     // private function calulateCoin($amount){
     //     $coin = $amount*10/1000;
-    //     $user = auth()->user();
-    //     $payments = Payment::query()
-    //         ->where('cAccName', '=', $user->cAccName)
-    //         ->where(function($query){
-    //             $query->where('status', '=', PaymentStatus::PENDING)
-    //             ->orWhere('status', '=', PaymentStatus::COMPLETED)
-    //             ->orWhere('status', '=', PaymentStatus::INIT);
-    //         })
-    //         ->get();
-    //     if ($payments->count()) {
-    //         if ($amount >= 2000000) {
-    //             $coin = $coin * 1.5;
-    //         }elseif ($amount >= 1000000) {
-    //             $coin = $coin * 1.3;
-    //         }
-    //     }
-    //     else{
-    //         $coin = $coin * 2;
+    //     if ($amount >= 2000000) {
+    //         $coin = $coin * 1.5;
+    //     }elseif ($amount >= 1000000) {
+    //         $coin = $coin * 1.3;
+    //     }elseif ($amount >= 500000) {
+    //         $coin = $coin * 1.2;
+    //     }elseif ($amount >= 100000) {
+    //         $coin = $coin * 1.1;
     //     }
 
     //     return $coin;
     // }
-
-    private function calulateCoin($amount){
-        $coin = $amount*10/1000;
-        $coin = $coin*2;
-        // if ($amount >= 2000000) {
-        //     $coin = $coin * 1.5;
-        // }elseif ($amount >= 1000000) {
-        //     $coin = $coin * 1.3;
-        // }elseif ($amount >= 500000) {
-        //     $coin = $coin * 1.2;
-        // }elseif ($amount >= 100000) {
-        //     $coin = $coin * 1.1;
-        // }
-
-        return $coin;
-    }
 
     // function này sai, khôgn tính toán dựa trên số xu được vì có bước nhảy
     private function calulateAmount($coin){

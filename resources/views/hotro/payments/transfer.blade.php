@@ -11,12 +11,45 @@
     <div class="card">
       <div class="card-header">
         <h5 class="">{{ __('Payment receive info') }}</h5>
-        <p class="text-danger">Vui lòng chuyển khoản vào <strong>1 trong 2 tài khoản</strong> dưới đây, sau đó gởi hình ảnh xác nhận.</p>
-        <p class="text-danger">Sau khi được xác nhận bạn sẽ phải <strong>thoát ra và đăng nhập lại</strong>, đến tiền trang để rút xu. cảm ơn rất nhiều!</p>
+        <p class="text-danger">Vui lòng chuyển khoản vào <strong>1 trong các tài khoản</strong> dưới đây, sau đó gởi hình ảnh xác nhận.</p>
+        <p class="text-danger">Sau khi được xác nhận bạn sẽ phải <strong>thoát ra và đăng nhập lại</strong>, đến tiền trang để rút xu. Xin cảm ơn rất nhiều!</p>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 mb-4">
+            <div class="card card-border-shadow-success h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2 pb-1">
+                  <div class="avatar me-2">
+                    <img src="{{asset('clients/asset/images/logo_vcb.png')}}" alt="">
+                  </div>
+                  <h4 class="ms-1 mb-0">Vietcombank</h4>
+                </div>
+                <p class="mb-1">STK: {{getWebsiteConfig('vietcombank_address')}}</p>
+                <p class="mb-1">Tên TK: {{getWebsiteConfig('vietcombank_name')}}</p>
+                <img class="card-img-top mt-2" src="{{getWebsiteConfig('vietcombank_image')}}" alt="">
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-6 col-sm-6 mb-4">
+            <div class="card card-border-shadow-danger h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2 pb-1">
+                  <div class="avatar me-2">
+                    <img src="{{asset('clients/asset/images/momo_logo.png')}}" alt="">
+                  </div>
+                  <h4 class="ms-1 mb-0">Momo</h4>
+                </div>
+                <p class="mb-1">STK: {{getWebsiteConfig('momo_address')}}</p>
+                <p class="mb-1">Tên TK: {{getWebsiteConfig('momo_name')}}</p>
+                <img class="card-img-top mt-2" src="{{getWebsiteConfig('momo_image')}}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
+      {{-- <div class="card-body">
         <img width="100%" src="{{getWebsiteConfig('bank_transfer_info') ?? 'https://via.placeholder.com/900x600&text=Xin%20l%E1%BB%97i,%20th%C3%B4ng%20tin%20%C4%91ang%20%C4%91%C6%B0%E1%BB%A3c%20c%E1%BA%ADp%20nh%E1%BA%ADt'}}" alt="">
-      </div>
+      </div> --}}
     </div>
     
   </div>
