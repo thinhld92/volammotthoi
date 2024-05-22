@@ -20,6 +20,7 @@ class PaymentController extends Controller
         $array_accept = [
             PaymentStatus::PENDING
         ];
+        $opening_time = getWebsiteConfig('opening_time') ?? '2024-05-03';
         $status = $request->status ?? PaymentStatus::PENDING;
         $fromdate = $request->fromdate;
         $todate = $request->todate;
@@ -75,6 +76,7 @@ class PaymentController extends Controller
             'totalAmount',
             'fromdate',
             'todate',
+            'opening_time',
         ));
     }
 

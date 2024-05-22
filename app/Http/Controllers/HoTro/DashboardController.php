@@ -22,10 +22,10 @@ class DashboardController extends Controller
             PaymentStatus::INIT
         ];
         $user = auth()->user();
-
+        $opening_time = getWebsiteConfig('opening_time') ?? '2024-05-03';
         $payments = Payment::query()
                 ->where('cAccName', $user->cAccName)
-                ->where('created_at', '>', '2024-05-03')
+                ->where('created_at', '>', $opening_time)
                 ->orderBy('created_at', 'desc')
                 ->get()
                 ;

@@ -61,6 +61,14 @@ class DatabaseSeeder extends Seeder
                 'config_name' => 'opening_time',
                 'config_value' => '',
             ],
+            [
+                'config_name' => 'layout_website',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'site_logo',
+                'config_value' => 'Võ Lâm Một Thời',
+            ],
         ];
 
         WebsiteConfig::insert($dataWebsiteConfig);

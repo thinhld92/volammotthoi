@@ -63,7 +63,7 @@
             id="multicol-fromdate"
             class="form-control dob-picker"
             placeholder="{{ __('YYYY-MM-DD') }}"
-            value="{{$fromdate ?? '2024-05-03'}}"
+            value="{{$fromdate ?? $opening_time ?? '2024-05-03'}}"
             onchange="submit();"
           />
         </div>
