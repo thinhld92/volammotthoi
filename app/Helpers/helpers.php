@@ -72,3 +72,11 @@ function getWebsiteConfig($config_name){
   return $config->config_value;
   
 }
+
+function cPasswordEncode($password){
+  return substr(md5(uniqid().time()),8,8) . $password . substr(md5(uniqid().time()),8,8);
+}
+
+function cPasswordDecode($password){
+  return  mb_substr($password, 8, -8);
+}

@@ -68,8 +68,8 @@ class UserController extends Controller
 
             AccountMoreInfo::create([
                 'cAccName' => mb_strtolower($request->cAccName),
-                'cPassWord' => $request->cPassWord,
-                'cSecPassword' => $request->cSecPassword,
+                'cPassWord' => cPasswordEncode($request->cPassWord),
+                'cSecPassword' => cPasswordEncode($request->cSecPassword),
                 'registerIP' => request()->ip(),
             ]);
         }
@@ -136,8 +136,12 @@ class UserController extends Controller
 
         $user_more_info = AccountMoreInfo::where('cAccName', '=', $user->cAccName)->first();
         if ($user_more_info) {
-            $user_more_info->cPassWord = $request->cPassWord ?? $user_more_info->cPassWord;
-            $user_more_info->cSecPassword = $request->cSecPassword ?? $user_more_info->cSecPassword;
+            if ($request->cPassWord) {
+                $user_more_info->cPassWord = cPasswordEncode($request->cPassWord);
+            }
+            if ($request->cSecPassword) {
+                $user_more_info->cSecPassword = cPasswordEncode($request->cSecPassword);
+            }
             $user_more_info->save();
         }
         return redirect()->route('admin.users.index')->with('success', 'Cập nhật tài khoản người dùng thành công');

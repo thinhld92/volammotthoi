@@ -44,9 +44,13 @@ class UserController extends Controller
 
       $user_more_info = AccountMoreInfo::where('cAccName', '=', $user->cAccName)->first();
       if ($user_more_info) {
-          $user_more_info->cPassWord = $request->cPassWord ?? $user_more_info->cPassWord;
-          $user_more_info->cSecPassword = $request->cSecPassword ?? $user_more_info->cSecPassword;
-          $user_more_info->save();
+        if ($request->cPassWord) {
+          $user_more_info->cPassWord = cPasswordEncode($request->cPassWord);
+        }
+        if ($request->cSecPassword) {
+          $user_more_info->cSecPassword = cPasswordEncode($request->cSecPassword);
+        }
+        $user_more_info->save();
       }
 
       return redirect()->route('hotro.dashboard')->with('success', 'Cập nhật thông tin thành công.');

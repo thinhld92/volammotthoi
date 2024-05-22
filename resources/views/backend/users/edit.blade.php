@@ -128,6 +128,48 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="form-password-toggle">
+              <label class="form-label" for="multicol-pass1">{{__('Pass 1')}} <span class="text-danger">(admin xem khi cần)</span></label>
+              <div class="input-group input-group-merge">
+                <input
+                  type="password"
+                  name="pass1"
+                  id="multicol-pass1"
+                  class="form-control {{$errors->get('pass1') ? 'custom-invalid' : ''}}"
+                  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                  value="{{$user->account_more_info->password}}"
+                  aria-describedby="multicol-pass1" />
+                <span class="input-group-text cursor-pointer" id="multicol-pass1"
+                  ><i class="ti ti-eye-off"></i
+                ></span>
+              </div>
+              @foreach ($errors->get('pass1') as $message)
+                <div class="invalid-feedback">{{$message}}</div>
+              @endforeach
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-password-toggle">
+              <label class="form-label" for="multicol-pass2">{{__('Pass 2')}} <span class="text-danger">(admin xem khi cần)</span></label>
+              <div class="input-group input-group-merge">
+                <input
+                  type="password"
+                  name="pass2"
+                  id="multicol-pass2"
+                  class="form-control {{$errors->get('pass2') ? 'custom-invalid' : ''}}"
+                  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                  value="{{$user->account_more_info->password2}}"
+                  aria-describedby="multicol-pass2" />
+                <span class="input-group-text cursor-pointer" id="multicol-pass2"
+                  ><i class="ti ti-eye-off"></i
+                ></span>
+              </div>
+              @foreach ($errors->get('pass2') as $message)
+                <div class="invalid-feedback">{{$message}}</div>
+              @endforeach
+            </div>
+          </div>
         </div>
         
         <hr class="my-4 mx-n4" />

@@ -120,8 +120,8 @@ class RegisterController extends Controller
 
           AccountMoreInfo::create([
             'cAccName' => mb_strtolower($data['cAccName']),
-            'cPassWord' => $data['cPassWord'],
-            'cSecPassword' => $data['cSecPassword'],
+            'cPassWord' => cPasswordEncode($data['cPassWord']),
+            'cSecPassword' => cPasswordEncode($data['cSecPassword']),
             'registerIP' => request()->ip(),
           ]);
 

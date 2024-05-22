@@ -15,4 +15,14 @@ class AccountMoreInfo extends Model
         'cSecPassword',
         'registerIP',
     ];
+
+    public function getPasswordAttribute(){
+        $password = cPasswordDecode($this->cPassWord);
+        return $password;
+    }
+
+    public function getPassword2Attribute(){
+        $password = cPasswordDecode($this->cSecPassword);
+        return $password;
+    }
 }

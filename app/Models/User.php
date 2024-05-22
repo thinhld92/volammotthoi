@@ -100,6 +100,10 @@ class User extends Authenticatable
         return $this->hasOne(AccountHabitus::class, 'cAccName', 'cAccName');
     }
 
+    public function account_more_info(){
+        return $this->hasOne(AccountMoreInfo::class, 'cAccName', 'cAccName');
+    }
+
     public function payment(){
         return $this->hasMany(Payment::class, 'cAccName', 'cAccName');
     }
