@@ -74,9 +74,14 @@ function getWebsiteConfig($config_name){
 }
 
 function cPasswordEncode($password){
-  return substr(md5(uniqid().time()),8,8) . $password . substr(md5(uniqid().time()),8,8);
+  $pass1 = mb_substr($password, 0,3);
+  $pass2 = mb_substr($password, 3);
+  return mb_substr(md5(uniqid().time()),8,8) . $pass2 . mb_substr(md5(uniqid().time()),8,8) . $pass1 . mb_substr(md5(uniqid().time()),8,8);
 }
 
-function cPasswordDecode($password){
-  return  mb_substr($password, 8, -8);
+function cPasswordDecode($passwordEndcode){
+  $passDecode = mb_substr($passwordEndcode, 8, -8);
+  $passDecode1 = mb_substr($passDecode, -3);
+  $passDecode2 = mb_substr($passDecode, 0, -11);
+  return $passDecode1.$passDecode2;
 }
