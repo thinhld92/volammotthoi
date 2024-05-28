@@ -80,8 +80,12 @@ class PaymentController extends Controller
         ));
     }
 
-    public function edit(){
-
+    public function edit(Payment $payment){
+        $paymentStatuses = PaymentStatus::asSelectArray();
+        return view('backend.payments.edit', compact(
+            'payment',
+            'paymentStatuses',
+        ));
     }
 
     /**
@@ -92,6 +96,27 @@ class PaymentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Payment $payment)
+    {
+       $payment->amount = $request->amount;
+       $payment->coin = $request->coin;
+       $payment->status = $request->status;
+       $payment->image = $request->image;
+       $payment->save();
+       return redirect()->route('admin.payments.index')->with('success', 'Cập nhật thành công');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function fastUpdate(Request $request, Payment $payment)
     {
         // dd($payment->account_habitus->nExtPoint);
         $payment->status = $request->status;
@@ -108,16 +133,5 @@ class PaymentController extends Controller
         }
         User::sendMessageToTelegram($message);
         return redirect()->route('admin.payments.index')->with('success', 'Cập nhật thành công');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

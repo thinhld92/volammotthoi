@@ -18,4 +18,5 @@ final class PaymentStatus extends Enum
     const REJECTED      = 5;
     const EXPIRED       = 6;
     const BONUS         = 7;
+    const DEBT          = 8;
 }

@@ -69,6 +69,30 @@ class DatabaseSeeder extends Seeder
                 'config_name' => 'site_logo',
                 'config_value' => 'Võ Lâm Một Thời',
             ],
+            [
+                'config_name' => 'vietcombank_address',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'vietcombank_name',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'vietcombank_image',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'momo_address',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'momo_name',
+                'config_value' => '',
+            ],
+            [
+                'config_name' => 'momo_image',
+                'config_value' => '',
+            ],
         ];
 
         WebsiteConfig::insert($dataWebsiteConfig);

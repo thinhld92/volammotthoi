@@ -72,18 +72,22 @@
   "Please enter some info below": "Vui lòng nhập vào các thông tin ở dưới",
   "Amount" : "Số tiền nạp",
   "Coin receive" : "Số xu nhận được",
+  "Coin quantity" : "Số xu",
   "Payment info" : "Thông tin nạp xu",
+  "Payment status" : "Trạng thái thanh toán",
   "Payment receive info" : "Thông tin chuyển khoản",
   "Confirm payment info" : "Xác nhận chuyển khoản",
   "INIT" : "Chờ thanh toán",
   "PENDING" : "Chờ xác nhận",
   "CANCEL" : "Huỷ thanh toán",
+  "Cancel" : "Huỷ bỏ",
+  "Go back" : "Quay lại",
   "COMPLETED" : "Hoàn thành",
   "REJECTED" : "Từ chối",
   "EXPIRED" : "Hết hạn",
   "BONUS" : "Xu thưởng",
+  "DEBT" : "Nạp thiếu",
   "Config comment" : "Ghi chú",
   "HOMEPAGE" : "Trang chủ"
-
 
 }

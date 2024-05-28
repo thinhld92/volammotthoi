@@ -55,9 +55,10 @@ Route::group([
     Route::resource('admins', AdminController::class);
     Route::resource('banners', BannerController::class);
     Route::resource('configs', WebsiteConfigController::class);
+    Route::resource('payments', PaymentController::class);
     Route::get('test', [TestController::class, 'index'])->name('test');
-    Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
+    // Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
     Route::get('payments/{$payment}/approve', [PaymentController::class, 'approve'])->name('payments.approve');
-    Route::match(['put', 'patch'], 'payments/{payment}', [PaymentController::class, 'update'])->name('payments.update');
+    Route::match(['put', 'patch'], 'payments/fast-update/{payment}', [PaymentController::class, 'fastUpdate'])->name('payments.fast-update');
 });
 

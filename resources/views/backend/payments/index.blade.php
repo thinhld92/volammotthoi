@@ -117,8 +117,13 @@
             </td>
             <td><span class="badge bg-label-primary">{{ $payment->status_name }}</span></td>
             <td>
-              @if (in_array($payment->status, $array_accept))
-                <div class="d-flex align-items-sm-center justify-content-sm-center">
+              <div class="d-flex align-items-sm-center justify-content-sm-center">
+                <a href="{{route('admin.payments.edit', $payment->id)}}" 
+                  class="btn btn-icon waves-effect waves-light"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </a>
+                @if (in_array($payment->status, $array_accept))
                   <a href="" 
                     class="btn btn-icon btn-success"
                     onclick="submitFormUpdate(event, {{$payment->id}}, {{\App\Enums\PaymentStatus::COMPLETED}})"
@@ -131,13 +136,13 @@
                   >
                     <i class="fa-sharp fa-solid fa-xmark"></i>
                   </a>
-                  <form id="form-update-{{$payment->id}}" action="{{route('admin.payments.update', $payment)}}" method="post">
+                  <form id="form-update-{{$payment->id}}" action="{{route('admin.payments.fast-update', $payment)}}" method="post">
                     @csrf
                     @method('put')
                     <input type="hidden" name="status" id="payment-status-{{$payment->id}}" value="">
                   </form>
-                </div>
-              @endif
+                @endif
+              </div>
             </td>
           </tr>
         @endforeach
