@@ -31,7 +31,7 @@ class PaymentController extends Controller
         $data['cAccName'] = auth()->user()->cAccName;
         $payment = Payment::create($data);
 
-        $message = 'User '.auth()->user()->cAccName." tạo y/c nạp tiền ". $request->amount ." VND, chờ thanh toán, xác nhận";
+        $message = 'User '.auth()->user()->cAccName." tạo y/c nạp tiền ". number_format($request->amount) ." VND, chờ thanh toán, xác nhận";
         User::sendMessageToTelegram($message);
         return redirect()->route('hotro.payments.transfer', [$payment]);
     }
@@ -63,7 +63,7 @@ class PaymentController extends Controller
             $payment->status = PaymentStatus::PENDING;
             $payment->update();
 
-            $message = 'User '.auth()->user()->cAccName." xác nhận nạp tiền ".$payment->amount." VND, hãy kiểm tra cọng xu";
+            $message = 'User '.auth()->user()->cAccName." xác nhận nạp tiền ".number_format($payment->amount)." VND, hãy kiểm tra cọng xu";
             $urlPhoto = $_SERVER['SERVER_NAME']."/".$urlFile;
             User::sendPhotoToTelegram($message, $urlPhoto);
 
