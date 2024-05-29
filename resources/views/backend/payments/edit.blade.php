@@ -5,7 +5,7 @@
 
 <div class="new-banners">
   <div class="card mb-4">
-    <h5 class="card-header text-uppercase">{{ __('Create Banner') }}</h5>
+    <h5 class="card-header text-uppercase">{{ __('Thông tin nạp xu') }}</h5>
   </div>
   <form
     class="row needs-validation {{$errors->any() ? 'was-validated custom-validate' : ''}}" 
@@ -21,7 +21,7 @@
         </div>
         <div class="card-body">
           <div class="mb-3">
-            <label class="form-label" for="multicol-title">{{__('Banner title')}} <span class="text-danger">(*)</span></label>
+            <label class="form-label" for="multicol-title">{{__('Username')}} <span class="text-danger">(*)</span></label>
             <input 
               type="text"
               name="title" 
@@ -86,7 +86,7 @@
       {{-- image/thumbnail --}}
       <div class="card mb-4">
         <div class="card-header">
-          <h6 class="card-tile mb-3">{{ __('Banner Image') }}</h6>
+          <h6 class="card-tile mb-3">{{ __('Payment image') }}</h6>
           <hr class="mx-n4 mb-0" />
         </div>
         <div class="card-body">
