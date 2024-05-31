@@ -31,10 +31,13 @@ class HomeController extends Controller
                 $opening_time['hour'] = date('H', $opening_date);
             }
             
-            if (getWebsiteConfig('layout_website') == 1) {
-                
+            if ((int) getWebsiteConfig('layout_website') == 1) {
+                return view('frontend.welcome.welcome1', compact(
+                    'welcomeBanners',
+                    'opening_time',
+                ));
             }
-            return view('frontend.welcome', compact(
+            return view('frontend.welcome.welcome', compact(
                 'welcomeBanners',
                 'opening_time',
             ));
