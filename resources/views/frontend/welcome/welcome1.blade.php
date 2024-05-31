@@ -884,7 +884,10 @@
             <div class="col-lg-6 text-center text-lg-start">
               <h6 class="h2 text-primary fw-bold mb-1">Bạn đã sẵn sàng chinh phục cảnh giới kiếm hiệp đỉnh cao?</h6>
               <p class="fw-medium mb-4">Bắt đầu ngay và nhận hỗ trợ tân thủ cực kỳ hấp dẫn</p>
-              <a href="{{getWebsiteConfig('download_link') ?? '#'}}" class="btn btn-lg btn-danger">Tải ngay</a>
+              <a href="{{getWebsiteConfig('download_link') ?? '#'}}" class="btn btn-lg btn-danger" target="_blank">
+                <span><i class="ti ti-download"></i></span>
+                <span class="d-none d-md-block">Tải ngay</span>
+              </a>
             </div>
             <div class="col-lg-6 pt-lg-5 text-center text-lg-end">
               <img
