@@ -63,11 +63,15 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'config_name' => 'layout_website',
-                'config_value' => '',
+                'config_value' => '0',
             ],
             [
                 'config_name' => 'site_logo',
                 'config_value' => 'Võ Lâm Một Thời',
+            ],
+            [
+                'config_name' => 'site_image',
+                'config_value' => '',
             ],
             [
                 'config_name' => 'vietcombank_address',
@@ -92,10 +96,6 @@ class DatabaseSeeder extends Seeder
             [
                 'config_name' => 'momo_image',
                 'config_value' => '',
-            ],
-            [
-                'config_name' => 'layout_website',
-                'config_value' => '0',
             ],
         ];
 

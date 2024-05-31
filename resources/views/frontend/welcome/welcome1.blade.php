@@ -16,6 +16,7 @@
     <title>{{ config('app.name', 'Võ Lâm Tiên Kiếm') }} | Công thành chiến 2005</title>
 
     <meta name="description" content="VLTK - {{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
+    <meta property="og:image"         content="{{asset(getWebsiteConfig('site_image') ?? '')}}" />
 	  <link rel="icon" type="image/png" href="{{getWebsiteConfig('site_icon') ?? asset('clients/asset/images/icon.ico')}}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
