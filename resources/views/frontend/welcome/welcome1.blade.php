@@ -53,6 +53,8 @@
     <style>
       .navbar.landing-navbar {
         margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
       .light-style .landing-hero{
         background-image: url("{{asset('backend/assets/img/front-pages/landing-page/frame3.jpg')}}")
@@ -64,8 +66,8 @@
         background: transparent;
       }
       .app-brand-logo.demo {
-        width: 70px;
-        /* height: 35px; */
+        min-width: 100px;
+        min-height: 50px;
       }
     </style>
   </head>
@@ -79,7 +81,7 @@
       <div class="container">
         <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-4">
           <!-- Menu logo wrapper: Start -->
-          <div class="navbar-brand app-brand demo d-flex py-0 py-lg-2 me-4">
+          <div class="navbar-brand app-brand demo d-flex py-0 py-lg-1 me-4">
             <!-- Mobile menu toggle: Start-->
             <button
               class="navbar-toggler border-0 px-0 me-2"
@@ -603,10 +605,10 @@
       <section id="landingTeam" class="section-py landing-team">
         <div class="container">
           <div class="text-center mb-3 pb-1">
-            <span class="badge bg-label-primary">Our Great Team</span>
+            <span class="badge bg-label-primary">Open server</span>
           </div>
           <h3 class="text-center mb-1"><span class="section-title">Chuỗi sự kiện Open Server</span></h3>
-          <p class="text-center mb-md-5 pb-3">Tham gia chuỗi sự kiện open server xưng bá anh hùng</p>
+          <p class="text-center mb-md-5 pb-3">Tham gia chuỗi sự kiện Open server để xưng bá anh hùng</p>
           <div class="row gy-5 mt-2">
             <div class="col-lg-3 col-sm-6">
               <div class="card mt-3 mt-lg-0 shadow-none">
