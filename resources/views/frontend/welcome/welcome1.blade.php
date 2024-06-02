@@ -194,6 +194,12 @@
           <div class="container">
             <div class="hero-text-box text-center">
               <h1 class="text-primary hero-title display-6 fw-bold">PHIÊN BẢN CÔNG THÀNH CHIẾN 2005 - THÂN PHÁP</h1>
+              @if ($opening_time and $opening_time['show'] == 1)
+                <h2 class="hero-sub-title h6 mb-4 pb-1">
+                  Opening Time<br class="d-none d-lg-block" />
+                  <span class="">{{$opening_time['hour']}}h, ngày {{$opening_time['day']}}-{{$opening_time['month']}}-{{$opening_time['year']}}</span>
+                </h2>
+              @endif
               <div class="landing-hero-btn d-inline-block position-relative">
                 <span class="hero-btn-item position-absolute d-none d-md-flex text-heading"
                   >Thêm thông tin
