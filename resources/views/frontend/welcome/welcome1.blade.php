@@ -69,6 +69,27 @@
         min-width: 100px;
         min-height: 50px;
       }
+
+      .landing-reviews {
+        border-radius: 0;
+      }
+      /* .light-style .bg-section-img1{
+        background-image: url("{{asset('frontend/assets/images/volam/part5.jpg')}}") !important;
+        background-size: cover !important;
+      }
+      .light-style .bg-section-img2{
+        background-image: url("{{asset('frontend/assets/images/volam/5.jpg')}}") !important;
+        background-size: cover !important;
+      }
+      .light-style .bg-section-img3{
+        background-image: url("{{asset('frontend/assets/images/volam/21212.jpg')}}") !important;
+        background-size: cover !important;
+      }
+      .light-style .bg-section-img4{
+        background-image: url("{{asset('frontend/assets/images/volam/bg111111.jpg')}}") !important;
+        background-size: cover !important;
+      } */
+      
     </style>
   </head>
 
@@ -260,7 +281,7 @@
       </section>
 
       <!-- Useful features: Start -->
-      <section id="landingFeatures" class="section-py bg-body landing-features">
+      <section id="landingFeatures" class="section-py bg-body landing-features bg-section-img1">
         <div class="container">
           <div class="col-lg-10 mx-auto">
             
@@ -285,6 +306,10 @@
                   <div class="card-body">
                     <p class="features-icon-description">
                       <ul class="list-unstyled">
+                        <li class="mb-3">
+                          <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                          Không chứa mã độc, malware
+                        </li>
                         <li class="mb-3">
                           <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
                           Không cần tắt AntiVirus
@@ -341,7 +366,7 @@
                     <div class="text-center mb-3">
                       <img src="{{asset('backend/assets/img/front-pages/icons/paper.png')}}" alt="edit" />
                     </div>
-                    <h5 class="mb-3 text-center">Chống cày tiền</h5>
+                    <h5 class="mb-3 text-center">Hạn chế cày tiền</h5>
                   </div>
                   <div class="card-body">
                     <p class="features-icon-description">
@@ -352,11 +377,15 @@
                         </li>
                         <li class="mb-3">
                           <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-                          2AccTN/PC/IP
+                          1AccTN/PC/IP
                         </li>
                         <li class="mb-3">
                           <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
                           Chống máy ảo
+                        </li>
+                        <li class="mb-3">
+                          <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                          Tống Kim 1Acc/IP
                         </li>
                       </ul>
                     </p>
@@ -454,7 +483,7 @@
       <!-- Useful features: End -->
 
       <!-- Dinh Huong Server: Start -->
-      <section id="landingDinhHuong" class="section-py landing-reviews pb-0">
+      <section id="landingDinhHuong" class="section-py landing-reviews pb-0 bg-section-img2">
         <div class="container">
           <div class="row align-items-center gx-0 gy-4 g-lg-5">
             <div class="col-md-6 col-lg-4">
@@ -551,7 +580,7 @@
       <!-- Dinh Huong Server: End -->
 
       <!-- Fun facts: Start -->
-      <section id="landingCamket" class="section-py bg-body landing-fun-facts">
+      <section id="landingCamket" class="section-py bg-body landing-fun-facts bg-section-img3">
         <div class="container">
           <div class="row gy-3">
             <div class="col-sm-6 col-lg-3">
@@ -608,7 +637,7 @@
       <!-- Fun facts: End -->
 
       <!-- Our great team: Start -->
-      <section id="landingTeam" class="section-py landing-team">
+      <section id="landingTeam" class="section-py landing-team bg-section-img4">
         <div class="container">
           <div class="text-center mb-3 pb-1">
             <span class="badge bg-label-primary">Open server</span>
@@ -640,7 +669,7 @@
                     width="100%" />
                 </div>
                 <div class="card-body border border-top-0 border-label-info text-center">
-                  <h5 class="card-title mb-0 text-uppercase">TOP 1 ngày</h5>
+                  <h5 class="card-title mb-0 text-uppercase">TOP 2 ngày</h5>
                 </div>
               </div>
             </div>
