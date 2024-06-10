@@ -111,7 +111,7 @@ class PaymentController extends Controller
             // }elseif ($amount >= 100000) {
             //     $coin = $coin * 1.1;
             // }
-            if ($amount >= 2000000) {
+            if ($amount >= 200000) {
                 $coin = $coin * 1.5;
             }
         }
