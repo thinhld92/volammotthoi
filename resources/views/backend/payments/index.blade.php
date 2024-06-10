@@ -34,6 +34,7 @@
               value="{{ $search ?? '' }}"
             />
           </div>
+          <input type="submit" hidden>
         </div>
         <div class="col-3">
           <select 
