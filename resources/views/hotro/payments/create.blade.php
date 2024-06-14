@@ -19,8 +19,11 @@
           <ul class="text-danger">
             <li><span class="text-danger">100k VND 🚀🚀 1k xu</span></li>
             {{-- <li><span class="text-danger">Trên 100k thêm 10%, 500k thêm 20%, 1 triệu được thêm 30%, trên 2 triệu được thêm 50%</span></li> --}}
-            <li><span class="text-danger">Trên 200k thêm 50%</span></li>
-            <li><span class="text-danger"><strong>🎉Siêu hot: Nạp lần đầu được x2 số xu🎉</strong></span></li>
+            <li><span class="text-danger">Trên 100k thêm 10%</span></li>
+            <li><span class="text-danger">Trên 200k thêm 20%</span></li>
+            <li><span class="text-danger">Trên 500k thêm 30%</span></li>
+            <li><span class="text-danger">Trên 1tr thêm 50%</span></li>
+            {{-- <li><span class="text-danger"><strong>🎉Siêu hot: Nạp lần đầu được x2 số xu🎉</strong></span></li> --}}
           </ul>
         </div>
         <div class="mb-3 col-md-6 form-password-toggle">
