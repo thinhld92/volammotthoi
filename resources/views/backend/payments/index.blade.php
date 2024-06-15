@@ -36,7 +36,7 @@
           </div>
           <input type="submit" hidden>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <select 
             name="status" 
             id="" 
