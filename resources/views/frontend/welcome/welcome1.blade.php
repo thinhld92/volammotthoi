@@ -525,7 +525,7 @@
                           <span class="avatar-initial rounded-circle bg-label-primary">3</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Các tính năng và event nguyên bản CTC 2005</h6>
+                          <h6 class="mb-1">Đua top train skills, hết đua top nhận max skill 9x</h6>
                         </div>
                       </div>
                     </a>
@@ -535,7 +535,7 @@
                           <span class="avatar-initial rounded-circle bg-label-info">4</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Trang bị Hoàng Kim rơi từ Boss, Dã Tẩu 2k, sự kiện</h6>
+                          <h6 class="mb-1">Các tính năng và event nguyên bản CTC 2005</h6>
                         </div>
                       </div>
                     </a>
@@ -545,7 +545,7 @@
                           <span class="avatar-initial rounded-circle bg-label-danger">5</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Liên tục tổ chức các giải đấu nội bộ server dùng 1 acc chính</h6>
+                          <h6 class="mb-1">Trang bị Hoàng Kim rơi từ Boss, Dã Tẩu 2k, sự kiện</h6>
                         </div>
                       </div>
                     </a>
@@ -555,7 +555,7 @@
                           <span class="avatar-initial rounded-circle bg-label-success">6</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Luôn luôn lắng nghe các góp ý và sẽ chọn lọc mỗi khi áp dụng</h6>
+                          <h6 class="mb-1">Liên tục tổ chức các giải đấu nội bộ server dùng 1 acc chính</h6>
                         </div>
                       </div>
                     </a>
@@ -563,6 +563,16 @@
                       <div class="li-wrapper d-flex justify-content-start align-items-center">
                         <div class="avatar avatar-sm me-3">
                           <span class="avatar-initial rounded-circle bg-label-primary">7</span>
+                        </div>
+                        <div class="list-content">
+                          <h6 class="mb-1">Luôn luôn lắng nghe các góp ý và sẽ chọn lọc mỗi khi áp dụng</h6>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex justify-content-between">
+                      <div class="li-wrapper d-flex justify-content-start align-items-center">
+                        <div class="avatar avatar-sm me-3">
+                          <span class="avatar-initial rounded-circle bg-label-info">8</span>
                         </div>
                         <div class="list-content">
                           <h6 class="mb-1">Giữ vững nguyên tắc: Không can thiệp vào game, không can thiệp vào chuyện nội bộ các bang hội, không đưa bất kỳ acc hay vật phẩm nào vào game</h6>
