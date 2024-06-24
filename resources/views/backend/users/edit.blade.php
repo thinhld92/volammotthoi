@@ -138,7 +138,7 @@
                   id="multicol-pass1"
                   class="form-control {{$errors->get('pass1') ? 'custom-invalid' : ''}}"
                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                  value="{{$user->account_more_info->password}}"
+                  value="{{$user->account_more_info != null ? $user->account_more_info->password : ''}}"
                   aria-describedby="multicol-pass1" />
                 <span class="input-group-text cursor-pointer" id="multicol-pass1"
                   ><i class="ti ti-eye-off"></i
@@ -159,7 +159,7 @@
                   id="multicol-pass2"
                   class="form-control {{$errors->get('pass2') ? 'custom-invalid' : ''}}"
                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                  value="{{$user->account_more_info->password2}}"
+                  value="{{$user->account_more_info != null ? $user->account_more_info->password2 : ''}}"
                   aria-describedby="multicol-pass2" />
                 <span class="input-group-text cursor-pointer" id="multicol-pass2"
                   ><i class="ti ti-eye-off"></i
