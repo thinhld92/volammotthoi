@@ -89,7 +89,7 @@
           {{-- password --}}
           <div class="col-md-6">
             <div class="form-password-toggle">
-              <label class="form-label" for="multicol-password">{{__('Password')}} <span class="text-danger">(*)</span></label>
+              <label class="form-label" for="multicol-password">{{__('Password')}} (pass1 mới)<span class="text-danger">(*)</span></label>
               <div class="input-group input-group-merge">
                 <input
                   type="password"
@@ -109,7 +109,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-password-toggle">
-              <label class="form-label" for="multicol-confirm-password">{{__('Confirm Password')}} <span class="text-danger">(*)</span></label>
+              <label class="form-label" for="multicol-confirm-password">{{__('Confirm Password')}} (nhập lại pass1 mới)<span class="text-danger">(*)</span></label>
               <div class="input-group input-group-merge">
                 <input
                   type="password"
@@ -127,7 +127,7 @@
           {{-- password 2 --}}
           <div class="col-md-6">
             <div class="form-password-toggle">
-              <label class="form-label" for="multicol-cSecPassword">{{__('Password 2')}} <span class="text-danger">(*)</span></label>
+              <label class="form-label" for="multicol-cSecPassword">{{__('Password 2')}} (pass2 mới)<span class="text-danger">(*)</span></label>
               <div class="input-group input-group-merge">
                 <input
                   type="password"
@@ -147,7 +147,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-password-toggle">
-              <label class="form-label" for="multicol-old-password">{{__('Current Password 2')}} <span class="text-danger">(*)</span></label>
+              <label class="form-label" for="multicol-old-password">{{__('Current Password 2')}} (pass2 cũ)<span class="text-danger">(*)</span></label>
               <div class="input-group input-group-merge">
                 <input
                   type="password"
