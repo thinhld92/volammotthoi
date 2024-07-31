@@ -36,10 +36,11 @@ class UserController extends Controller
       if ($request->cPassWord) {
         $data['cPassWord'] = mb_strtoupper(md5($request->cPassWord));
       }
-      if ($request->cPassWord) {
+      if ($request->cSecPassword) {
         $data['cSecPassword'] = mb_strtoupper(md5($request->cSecPassword));
       }
       $user = auth()->user();
+      
       $user->update($data);
 
       $user_more_info = AccountMoreInfo::where('cAccName', '=', $user->cAccName)->first();
@@ -53,6 +54,13 @@ class UserController extends Controller
         $user_more_info->save();
       }
 
+      try {
+        if ($request->cPassWord or $request->cSecPassword) {
+          auth()->logoutOtherDevices($request->cPassWord);
+        }
+      } catch (\Throwable $th) {
+        
+      }
       return redirect()->route('hotro.dashboard')->with('success', 'Cập nhật thông tin thành công.');
     }
 
