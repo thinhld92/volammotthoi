@@ -15,11 +15,6 @@ class HomeController extends Controller
 {
     public function index(){
         {
-            // for ($i=0; $i < 100; $i++) { 
-            //     $code = "GCLT".mb_strtoupper(substr(md5(uniqid().time()),6,6));
-            //     echo $code."<br/>";
-            // }
-            // exit;
             $welcomeBanners = Banner::query()
                 ->where('type', BannerType::WELCOME)
                 ->get();
@@ -47,6 +42,14 @@ class HomeController extends Controller
                 'opening_time',
             ));
         }
+    }
+
+    public function genCode(){
+        for ($i=0; $i < 200; $i++) { 
+            $code = "GCLT".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+            echo $code."<br/>";
+        }
+        exit;
     }
 
     public function home(){

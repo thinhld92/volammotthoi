@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/gencode', [HomeController::class, 'genCode'])->name('gencode');
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Auth::routes();
