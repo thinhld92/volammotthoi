@@ -565,7 +565,7 @@
                           <span class="avatar-initial rounded-circle bg-label-primary">7</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Luôn luôn lắng nghe các góp ý và sẽ chọn lọc mỗi khi áp dụng</h6>
+                          <h6 class="mb-1">Luôn luôn lắng nghe các góp ý và sẽ chọn lọc mỗi khi áp dụng, Có lỗi fix ngay</h6>
                         </div>
                       </div>
                     </a>
@@ -575,7 +575,17 @@
                           <span class="avatar-initial rounded-circle bg-label-info">8</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Giữ vững nguyên tắc: Không can thiệp vào game, không can thiệp vào chuyện nội bộ các bang hội, không đưa bất kỳ acc hay vật phẩm nào vào game</h6>
+                          <h6 class="mb-1">Giữ vững nguyên tắc: Không can thiệp vào game, không can thiệp vào chuyện nội bộ các bang hội</h6>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex justify-content-between">
+                      <div class="li-wrapper d-flex justify-content-start align-items-center">
+                        <div class="avatar avatar-sm me-3">
+                          <span class="avatar-initial rounded-circle bg-label-danger">9</span>
+                        </div>
+                        <div class="list-content">
+                          <h6 class="mb-1">Người chơi lợi dụng những lỗi chưa hợp lý, BQT fix không lợi dụng được nữa mà chửi BQT sẽ bị ban</h6>
                         </div>
                       </div>
                     </a>
@@ -693,7 +703,7 @@
                     width="100%" />
                 </div>
                 <div class="card-body border border-top-0 border-label-danger text-center">
-                  <h5 class="card-title mb-0 text-uppercase">TOP 120</h5>
+                  <h5 class="card-title mb-0 text-uppercase">TOP 130</h5>
                 </div>
               </div>
             </div>
