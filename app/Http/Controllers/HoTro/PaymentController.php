@@ -29,6 +29,7 @@ class PaymentController extends Controller
         $data = $request->all();
         $data['status'] = PaymentStatus::INIT;
         $data['cAccName'] = auth()->user()->cAccName;
+        $data['coin'] = $this->calulateCoin($data['amount']);
         $payment = Payment::create($data);
 
         $message = 'User '.auth()->user()->cAccName." tạo y/c nạp tiền ". number_format($request->amount) ." VND, chờ thanh toán, xác nhận";
