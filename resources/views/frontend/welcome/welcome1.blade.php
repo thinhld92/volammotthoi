@@ -589,6 +589,16 @@
                         </div>
                       </div>
                     </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex justify-content-between">
+                      <div class="li-wrapper d-flex justify-content-start align-items-center">
+                        <div class="avatar avatar-sm me-3">
+                          <span class="avatar-initial rounded-circle bg-label-success">10</span>
+                        </div>
+                        <div class="list-content">
+                          <h6 class="mb-1">Người chơi chửi BQT, cố tình cung cấp thông tin sai trên game sẽ bị ban</h6>
+                        </div>
+                      </div>
+                    </a>
 
                   </div>
                 </div>
