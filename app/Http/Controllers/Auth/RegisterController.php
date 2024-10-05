@@ -57,8 +57,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-          'cRealName' => ['required', 'string', 'max:255'],
-          'cAccName' => ['required', 'string', 'max:60', 'unique:Account_Info', 'alpha_dash'],
+          'cRealName' => ['required', 'string', 'max:255', 'min:6'],
+          'cAccName' => ['required', 'string', 'max:60', 'unique:Account_Info', 'alpha_dash', 'min:6'],
           'cPassWord' => ['required', 'string', 'min:6', 'confirmed'],
           'cSecPassword' => ['required', 'string', 'min:6'],
           'cEMail' => ['required', 'string', 'email', 'max:255', 'unique:Account_Info'],

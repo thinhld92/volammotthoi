@@ -14,3 +14,7 @@
 
 <!-- Hỗ trợ người chơi cũ -->
 Máy Chủ Kim Sơn | Open 13/9/2025
+
+hạ máu cbr xuống bằng tăng âm máu
+vdq check lại tăng điểm chuyển hoá, 5 điểm 75% hơi sai
+
