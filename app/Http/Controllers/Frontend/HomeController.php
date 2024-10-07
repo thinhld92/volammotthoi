@@ -45,8 +45,8 @@ class HomeController extends Controller
     }
 
     public function genCode(){
-        for ($i=0; $i < 200; $i++) { 
-            $code = "GCOM".mb_strtoupper(substr(md5(uniqid().time()),6,8));
+        for ($i=0; $i < 100; $i++) { 
+            $code = "GC18X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
         exit;

@@ -58,7 +58,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
           'cRealName' => ['required', 'string', 'max:255', 'min:6'],
-          'cAccName' => ['required', 'string', 'max:60', 'unique:Account_Info', 'alpha_dash', 'min:6'],
+          'cAccName' => ['required', 'string', 'max:60', 'unique:Account_Info', 'alpha_dash', 'min:6', 'regex:/^[^\d].*/'],
           'cPassWord' => ['required', 'string', 'min:6', 'confirmed'],
           'cSecPassword' => ['required', 'string', 'min:6'],
           'cEMail' => ['required', 'string', 'email', 'max:255', 'unique:Account_Info'],
@@ -71,7 +71,8 @@ class RegisterController extends Controller
           'max'  =>  ':attribute phải điền không quá :max ký tự',
           'email'  =>  ':attribute phải là email thật',
           'unique'  =>  ':attribute đã được sử dụng, chọn :attribute khác',
-          'confirmed' => ':attribute nhập lại không khớp'
+          'confirmed' => ':attribute nhập lại không khớp',
+          'regex' => ':attribute không được bắt đầu bằng số',
         ],
         [
           'cAccName' => 'Tài khoản đăng nhập',
