@@ -575,7 +575,7 @@
                           <span class="avatar-initial rounded-circle bg-label-info">8</span>
                         </div>
                         <div class="list-content">
-                          <h6 class="mb-1">Giữ vững nguyên tắc: Không can thiệp vào game, không can thiệp vào chuyện nội bộ các bang hội</h6>
+                          <h6 class="mb-1">Giữ vững nguyên tắc: không can thiệp vào chuyện nội bộ các bang hội</h6>
                         </div>
                       </div>
                     </a>
