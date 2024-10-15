@@ -62,7 +62,7 @@
           <div class="mb-3">
             <label class="form-label" for="select2-type">{{__('Payment status')}}<span class="text-danger">(*)</span></label>
             <select id="select2-type" 
-              class="select2 form-select form-select-lg {{$errors->get('description') ? 'custom-invalid' : ''}}" 
+              class="select2 form-select form-select-lg" 
               data-allow-clear="true"
               name="status"
             >
@@ -76,6 +76,17 @@
             @foreach ($errors->get('type') as $message)
               <div class="invalid-feedback">{{$message}}</div>
             @endforeach
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="multicol-coin">{{ __('Description') }} <span class="text-danger"></span></label>
+            <input 
+              type="text" 
+              name="description"
+              id="multicol-description" 
+              class="form-control" 
+              placeholder="" 
+              value="{{ old('description') ?? $payment->description}}"
+            />
           </div>
 
         </div>

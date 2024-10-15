@@ -14,6 +14,7 @@ class Payment extends Model
         'coin',
         'status',
         'image',
+        'description',
     ];
     use HasFactory;
 

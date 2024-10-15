@@ -96,6 +96,7 @@
           <th>Số xu</th>
           <th>Thời Gian</th>
           <th>Image</th>
+          <th class="status">Description</th>
           <th class="status">Status</th>
           <th class="actions">Actions</th>
         </tr>
@@ -116,6 +117,7 @@
                 onclick="showPaymentImage(event)"
               >
             </td>
+            <td>{{ $payment->description }}</td>
             <td><span class="badge bg-label-primary">{{ $payment->status_name }}</span></td>
             <td>
               <div class="d-flex align-items-sm-center justify-content-sm-center">

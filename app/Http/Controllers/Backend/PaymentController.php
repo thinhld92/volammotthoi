@@ -101,6 +101,7 @@ class PaymentController extends Controller
        $payment->coin = $request->coin;
        $payment->status = $request->status;
        $payment->image = $request->image;
+       $payment->description = $request->description;
        $payment->save();
        return redirect()->route('admin.payments.index')->with('success', 'Cập nhật thành công');
     }
