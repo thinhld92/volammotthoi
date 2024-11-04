@@ -13,16 +13,20 @@
       @csrf
       <div class="row" id="payment-detail">
         <div class="col-12">
-          <span class="text-danger">{{ __('Please enter some info below') }}</span>
+          <span class="text-primary">{{ __('Please enter some info below') }}.  Khoản bonus tính riêng cho từng lần nạp</span>
+        </div>
+        <div class="col-12">
+          <span class="text-danger">❤</span><span class="text-primary"> Mỗi 1 xu nhận được sẽ có 1 điểm VIP kèm theo </span><span class="text-danger">❤</span>
         </div>
         <div class="col-12 mb-4">
           <ul class="text-danger">
-            <li><span class="text-danger">100k VND 🚀🚀 1k xu</span></li>
+            <li class="text-success fw-bolder"><span>100k VND 🚀🚀 1k xu</span></li>
             {{-- <li><span class="text-danger">Trên 100k thêm 10%, 500k thêm 20%, 1 triệu được thêm 30%, trên 2 triệu được thêm 50%</span></li> --}}
-            <li><span class="text-danger">Trên 100k thêm 10%</span></li>
-            <li><span class="text-danger">Trên 200k thêm 20%</span></li>
-            <li><span class="text-danger">Trên 500k thêm 30%</span></li>
-            <li><span class="text-danger">Trên 1tr thêm 50%</span></li>
+            <li><span class="text-danger">200k thêm 10%</span></li>
+            <li><span class="text-danger">500k thêm 20%</span></li>
+            <li><span class="text-danger">1tr thêm 30%</span></li>
+            <li><span class="text-danger">2tr thêm 50%</span></li>
+            <li><span class="text-danger">5tr thêm 100%</span></li>
             {{-- <li><span class="text-danger"><strong>🎉Siêu hot: Nạp lần đầu được x2 số xu🎉</strong></span></li> --}}
           </ul>
         </div>

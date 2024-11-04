@@ -122,13 +122,15 @@ class PaymentController extends Controller
 
     private function calulateCoin($amount){
         $coin = $amount*10/1000;
-        if ($amount >= 1000000) {
+        if ($amount >= 5000000) {
+            $coin = $coin * 2;
+        }elseif ($amount >= 2000000) {
             $coin = $coin * 1.5;
-        }elseif ($amount >= 500000) {
+        }elseif ($amount >= 1000000) {
             $coin = $coin * 1.3;
-        }elseif ($amount >= 200000) {
+        }elseif ($amount >= 500000) {
             $coin = $coin * 1.2;
-        }elseif ($amount >= 100000) {
+        }elseif ($amount >= 200000) {
             $coin = $coin * 1.1;
         }
 
