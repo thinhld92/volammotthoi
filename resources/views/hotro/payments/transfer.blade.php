@@ -19,13 +19,13 @@
               <div class="card-body">
                 <div class="d-flex align-items-center mb-2 pb-1">
                   <div class="avatar me-2">
-                    <img src="{{asset('clients/asset/images/logo_vcb.png')}}" alt="">
+                    <img src="{{getWebsiteConfig('bank_logo')}}" alt="">
                   </div>
-                  <h4 class="ms-1 mb-0">Vietcombank</h4>
+                  <h4 class="ms-1 mb-0">{{getWebsiteConfig('bank_name')}}</h4>
                 </div>
-                <p class="mb-1">STK: {{getWebsiteConfig('vietcombank_address')}}</p>
-                <p class="mb-1">Tên TK: {{getWebsiteConfig('vietcombank_name')}}</p>
-                <img class="card-img-top mt-2" src="{{getWebsiteConfig('vietcombank_image')}}" alt="">
+                <p class="mb-1">STK: {{getWebsiteConfig('bank_address')}}</p>
+                <p class="mb-1">Tên TK: {{getWebsiteConfig('bank_account')}}</p>
+                <img class="card-img-top mt-2" src="{{getWebsiteConfig('bank_qrcode')}}" alt="">
               </div>
             </div>
           </div>

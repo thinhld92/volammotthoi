@@ -33,7 +33,7 @@ class PaymentController extends Controller
         $payment = Payment::create($data);
 
         $message = 'User '.auth()->user()->cAccName." tạo y/c nạp tiền ". number_format($request->amount) ." VND, chờ thanh toán, xác nhận";
-        User::sendMessageToTelegram($message);
+        // User::sendMessageToTelegram($message);
         return redirect()->route('hotro.payments.transfer', [$payment]);
     }
 
