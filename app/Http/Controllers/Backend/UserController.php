@@ -172,9 +172,9 @@ class UserController extends Controller
         $habitus = AccountHabitus::where('cAccName', '=', $cAccName)->first();
         if ($habitus) {
             if ($active) {
-                $dEndDate = date('Y-m-d', strtotime('+6 month'));
+                $dEndDate = date('Y-m-d', strtotime('+1 year'));
             }else {
-                $dEndDate = date('Y-m-d', strtotime('-1 month'));
+                $dEndDate = date('Y-m-d', strtotime('-1 year'));
             }
             $habitus->dEndDate = $dEndDate;
             $habitus->save();
