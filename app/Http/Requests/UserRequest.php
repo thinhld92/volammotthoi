@@ -29,7 +29,8 @@ class UserRequest extends FormRequest
       if (request()->isMethod('put')) {
         $validator = [
           'cRealName' => ['required', 'min:6'],
-          'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($user)],
+          'cEMail' => ['required', 'email', 'max:60'],
+          // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($user)],
           'cPassWord' => ['sometimes', 'min:6', 'confirmed'],
           'cSecPassword' => ['sometimes', 'min:6'],
           'old_cSecPassword' => ['sometimes', 'min:6', new CurrentPassword],
@@ -40,7 +41,8 @@ class UserRequest extends FormRequest
         $validator = [
           'cRealName' => ['required', 'min:6'],
           'cAccName' => ['required', 'string', 'min:5', Rule::unique('Account_Info', 'cAccName')],
-          'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')],
+          'cEMail' => ['required', 'email', 'max:60'],
+          // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')],
           'cPassWord' => ['required', 'min:6', 'confirmed'],
           'cSecPassword' => ['required', 'min:6'],
           'old_cSecPassword' => ['sometimes', 'min:6', new CurrentPassword],

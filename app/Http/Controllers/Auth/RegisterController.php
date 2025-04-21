@@ -61,7 +61,8 @@ class RegisterController extends Controller
           'cAccName' => ['required', 'string', 'max:60', 'unique:Account_Info', 'alpha_dash', 'min:6', 'regex:/^[^\d].*/'],
           'cPassWord' => ['required', 'string', 'min:6', 'confirmed'],
           'cSecPassword' => ['required', 'string', 'min:6'],
-          'cEMail' => ['required', 'string', 'email', 'max:255', 'unique:Account_Info'],
+          'cEMail' => ['required', 'string', 'email', 'max:255'],
+          // 'cEMail' => ['required', 'string', 'email', 'max:255', 'unique:Account_Info'],
         ],
         [
           'required' => ':attribute không được để trống',
