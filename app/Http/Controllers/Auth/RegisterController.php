@@ -154,7 +154,7 @@ class RegisterController extends Controller
           $site_name = $site_title;
         }
         $message = $site_name.': User '.$user->cAccName." vừa tạo tài khoản, khả năng lừa đảo cao!!!!!";
-        // User::sendMessageToTelegram($message);
+        User::sendMessageToTelegram($message);
         echo $message;
         die();
       }
