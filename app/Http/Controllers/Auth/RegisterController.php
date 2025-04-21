@@ -100,6 +100,10 @@ class RegisterController extends Controller
         ]);
 
         if ($user) {
+          $dEndDate = date('Y-m-d', strtotime('+1 year'));
+          if (getWebsiteConfig('deny_register') > 0) {
+            $dEndDate = date('Y-m-d', strtotime('-1 year'));
+          }
           $data_habitus = [
             'cAccName' => mb_strtolower($data['cAccName']),
             'iFlag' => 0,
@@ -108,7 +112,7 @@ class RegisterController extends Controller
             'nExtPoint2' => 0,
             'dBeginDate' => now(),
             'iLeftMonth' => 0,
-            'dEndDate' => date('Y-m-d', strtotime('+6 month')),
+            'dEndDate' => $dEndDate,
             // 'dEndDate' => "2021-01-01",
           ];
           $account_habitus = AccountHabitus::create($data_habitus);
@@ -131,9 +135,28 @@ class RegisterController extends Controller
             'cAccName' => mb_strtolower($data['cAccName']),
             'ip' => request()->ip(),
           ]);
+
+          $this->checkCheatUser($user);
         }
 
         return $user;
+    }
+
+    protected function checkCheatUser(User $user) {
+      $pattern = '/^(.{2})\1\1/';
+      if (preg_match($pattern, $user->cAccName) === 1){
+        $site_title = getWebsiteConfig('site_title');
+        $vi_tri = strpos($site_title, " - ");
+        if ($vi_tri !== false) {
+            $site_name = substr($site_title, 0, $vi_tri);
+        } else {
+          $site_name = $site_title;
+        }
+        $message = $site_name.': User '.$user->cAccName." vừa tạo tài khoản, khả năng lừa đảo cao!!!!!";
+        // User::sendMessageToTelegram($message);
+        echo $message;
+        die();
+      }
     }
 
     protected function redirectTo()

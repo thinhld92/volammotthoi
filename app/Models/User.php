@@ -128,6 +128,15 @@ class User extends Authenticatable
     }
 
     public static function sendMessageToTelegram($message){
+        $site_title = getWebsiteConfig('site_title');
+        $vi_tri = strpos($site_title, " - ");
+        if ($vi_tri !== false) {
+            $site_name = substr($site_title, 0, $vi_tri);
+        } else {
+          $site_name = $site_title;
+        }
+        $message = $site_name . ": " . $message;
+
         $token = "6351735984:AAGQtpXHx9ZGqQHYTOOnHfMpMBE2oQaeRv4";
         $url = "https://api.telegram.org/bot".$token."/sendMessage";
         $options = ['verify'=>false];
@@ -138,6 +147,15 @@ class User extends Authenticatable
     }
 
     public static function sendPhotoToTelegram($message, $photo){
+        $site_title = getWebsiteConfig('site_title');
+        $vi_tri = strpos($site_title, " - ");
+        if ($vi_tri !== false) {
+            $site_name = substr($site_title, 0, $vi_tri);
+        } else {
+          $site_name = $site_title;
+        }
+        $message = $site_name . ": " . $message;
+        
         $token = "6351735984:AAGQtpXHx9ZGqQHYTOOnHfMpMBE2oQaeRv4";
         $url = "https://api.telegram.org/bot".$token."/sendPhoto";
         $options = ['verify'=>false];
@@ -147,5 +165,6 @@ class User extends Authenticatable
             'caption' => $message,
         ]);
     }
+
 
 }

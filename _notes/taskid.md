@@ -1,0 +1,4 @@
+TASK_DANHVONG = 0
+TASK_PHUCDUYEN = 1
+TASK_DIEMTICHLUYTK = 7  (điểm tích luỹ tống kim)
+TASK_DIEMVINHDU = 8 (liên đấu)

@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\TopServer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -44,16 +45,30 @@ class HomeController extends Controller
         }
     }
 
+    protected function checkCheatUser($string) {
+        echo 33333;
+        $string = "zazaza333";
+        $pattern = '/^(.{2})\1\1/';
+        if (preg_match($pattern, $string) === 1){
+          $message = 'User '.$string." vừa tạo tài khoản, khả năng lừa đảo cao!!!!!";
+          echo $message;
+        //   User::sendMessageToTelegram($message);
+        }
+      }
+
     public function genCode(){
-        for ($i=0; $i < 100; $i++) { 
-            $code = "GCLT".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+        // echo bcrypt('Admin@321');
+        for ($i=0; $i < 50; $i++) { 
+            $code = "GC12X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
+        // $this->checkCheatUser("3333");
         exit;
     }
 
     public function home(){
         $hotPosts = Post::query()
+            ->where('status', 1)
             ->orderBy('published_at', 'desc')
             ->orderBy('title', 'asc')
             ->paginate(10)

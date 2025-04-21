@@ -27,6 +27,7 @@
           <th>Title</th>
           <th>Description</th>
           <th class="thumbnail">Thumbnail</th>
+          <th class="status">Status</th>
           <th class="actions">Actions</th>
         </tr>
       </thead>
@@ -43,6 +44,25 @@
                 <div class="avatar avatar-xl">
                   <img src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
                 </div>
+              </td>
+              <td>
+                @php
+                  if ($post->status == 1) {
+                    $checked = "checked";
+                  }else{
+                    $checked = "";
+                  }
+                @endphp
+                <label class="switch switch-success">
+                  <input type="checkbox" 
+                    class="switch-input status-checkbox" 
+                    id="status-checkbox-{{$post->id}}"
+                    {{$checked}}
+                    data-id="{{$post->id}}" 
+                    data-status="{{$post->status}}"
+                  />
+                  <span class="switch-toggle-slider"></span>
+                </label>
               </td>
               <td>
                 <div class="d-flex align-items-sm-center justify-content-sm-center">
@@ -83,5 +103,72 @@
       event.preventDefault();
       document.getElementById('form-delete-' + id).submit();
     }
+
+    // Đăng ký sự kiện khi trang đã tải xong
+document.addEventListener('DOMContentLoaded', function() {
+  // Thêm event listener cho tất cả các checkbox status
+  const statusCheckboxes = document.querySelectorAll('.status-checkbox');
+  statusCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function(e) {
+      const id = this.getAttribute('data-id');
+      const currentStatus = this.checked ? 1 : 0;
+      
+      
+      // Lưu trạng thái trước đó để có thể khôi phục nếu API thất bại
+      const previousCheckedState = !this.checked;
+      
+      updatePostStatus(id, currentStatus, this);
+    });
+  });
+});
+
+function updatePostStatus(id, status, checkboxElement) {
+  // Lấy token CSRF
+  const token = $("input[name='_token']").val();
+  
+  const formData = new FormData();
+  formData.append('id', id);
+  formData.append('status', status);
+  formData.append('_token', token);
+  
+  // Hiển thị loading indicator (tùy chọn)
+  checkboxElement.disabled = true;
+  
+  fetch("{{route('admin.posts.update-status')}}", {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Xử lý phản hồi thành công
+    console.log("Success:", data);
+    
+    // Cập nhật thuộc tính data-status
+    checkboxElement.setAttribute('data-status', data.newStatus);
+    
+    // Hiển thị thông báo (tùy chọn)
+    if (data.status === "success") {
+      // Sử dụng thông báo nổi hoặc toast notification (nếu có)
+      // toast.success(data.message || 'Status updated successfully');
+    }
+  })
+  .catch(error => {
+    // Xử lý lỗi - đảo ngược trạng thái checkbox
+    console.error("Error:", error);
+    checkboxElement.checked = !checkboxElement.checked;
+    
+    // Hiển thị thông báo lỗi (tùy chọn)
+    // toast.error('Failed to update status');
+  })
+  .finally(() => {
+    // Bỏ trạng thái loading
+    checkboxElement.disabled = false;
+  });
+}
   </script>
 @endsection

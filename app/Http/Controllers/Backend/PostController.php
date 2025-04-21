@@ -124,4 +124,50 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('admin.posts.index')->with('success', 'Xoá bài viết thành công');
     }
+
+    public function updateStatus(Request $request){
+        $status = $request->status;
+        $id = $request->id;
+        
+        // Validate input
+        if (!$id) {
+            return response()->json([
+                'statusCode' => "400",
+                'status' => "error",
+                'message' => "Missing post ID"
+            ], 400);
+        }
+        
+        // Tìm bản ghi
+        $post = Post::find($id);
+        
+        if (!$post) {
+            return response()->json([
+                'statusCode' => "404",
+                'status' => "error",
+                'message' => "Post not found"
+            ], 404);
+        }
+        
+        // Validate status (tùy vào các trạng thái hợp lệ trong hệ thống của bạn)
+        $validStatuses = [0, 1]; // Ví dụ: 0 = inactive, 1 = active
+        if (!in_array($status, $validStatuses)) {
+            return response()->json([
+                'statusCode' => "400",
+                'status' => "error",
+                'message' => "Invalid status value"
+            ], 400);
+        }
+        
+        // Cập nhật status
+        $post->status = $status;
+        $post->save();
+        
+        return response()->json([
+            'statusCode' => "200",
+            'status' => "success",
+            'newStatus' => $status,
+            'message' => "Post status updated successfully"
+        ]);
+    }
 }

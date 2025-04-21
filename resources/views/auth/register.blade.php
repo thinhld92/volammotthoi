@@ -63,7 +63,7 @@
             z-index: 1;
         }
         .authentication-wrapper.authentication-bg {
-            background-image: url({{asset('backend/assets/img/illustrations/login_background.jpg')}});
+          background-image: url({{asset(getWebsiteConfig('login_background') ?? 'backend/assets/img/illustrations/login_background.jpg')}});
             background-size: cover;
             background-repeat: no-repeat;
         }

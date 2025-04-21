@@ -52,6 +52,7 @@ Route::group([
     Route::post('users/update-enddate', [UserController::class, 'updateEnddate'])->name('users.update-enddate');
     Route::resource('categories', CategoryController::class);
     Route::resource('posts', PostController::class);
+    Route::post('posts/update-status', [PostController::class, 'updateStatus'])->name('posts.update-status');
     Route::resource('admins', AdminController::class);
     Route::resource('banners', BannerController::class);
     Route::resource('configs', WebsiteConfigController::class);
