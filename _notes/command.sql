@@ -6,3 +6,9 @@ BACKUP DATABASE DaoHiepKhach TO  DISK = N'C:\DaoHiepKhach.bak' WITH  INIT , NOUN
 BACKUP DATABASE GiangHoKiem TO  DISK = N'C:\GiangHoKiem.bak' WITH  INIT , NOUNLOAD ,  NAME = N'GiangHoKiem backup',  STATS = 10,  FORMAT
 $config['licenseName'] = 'tuyetphamx3.com';
 $config['licenseKey']  = 'AQCQ1P7272RJV84NX7LHWCECLEXDR';
+
+$config['licenseName'] = 'daohiepkhach.net';
+$config['licenseKey']  = '62P2BF132FCWV3HTP37SFLNUTRQCC';
+
+$config['licenseName'] = 'mongkiemhiep.com';
+$config['licenseKey']  = 'AT2TRR3TGM721HHCTTSMAPYKPH3FU';

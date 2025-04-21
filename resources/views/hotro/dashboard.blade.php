@@ -87,46 +87,48 @@
             </thead>
             <tbody>
               @foreach ($payments as $payment)
-                <tr>
-                  <td>
-                    {{-- <i class="fa-solid fa-dollar-sign"></i> --}}
-                    <i class="fa fa-dollar-sign fa-xl text-danger me-3"></i>
-                    <span class="fw-medium">{{number_format($payment->amount)}}</span>
-                  </td>
-                  <td>{{number_format($payment->coin)}}</td>
-                 
-                  <td>
-                    @if (in_array($payment->status, $array_accept))
-
-                      <a href="{{route('hotro.payments.transfer', $payment)}}" rel="Đi đến thanh toán">
-                        <span class="badge bg-label-success me-1">{{$payment->status_name}}</span>
-                      </a>
-                    @else
-                      <span class="badge bg-label-primary me-1">{{$payment->status_name}}</span>
-                    @endif
-
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-sm-center justify-content-sm-center">
-                      {{-- <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-icon"><i class="fa fa-pencil"></i></a> --}}
+                @if ($payment->status != \App\Enums\PaymentStatus::COMPLETED && $payment->status != \App\Enums\PaymentStatus::BONUS)
+                  <tr>
+                    <td>
+                      {{-- <i class="fa-solid fa-dollar-sign"></i> --}}
+                      <i class="fa fa-dollar-sign fa-xl text-danger me-3"></i>
+                      <span class="fw-medium">{{number_format($payment->amount)}}</span>
+                    </td>
+                    <td>{{number_format($payment->coin)}}</td>
+                  
+                    <td>
                       @if (in_array($payment->status, $array_accept))
-                      
-                      <a href="{{route('hotro.payments.transfer', $payment)}}" class="btn btn-icon btn-success"><i class="fa-sharp fa-solid fa-forward"></i></a>
-                      <a href="" class="btn btn-icon btn-danger delete-record me-2" onclick="submitFormDelete(event, {{$payment->id}})">
-                        <form 
-                          id="form-delete-{{$payment->id}}" 
-                          action="{{route('hotro.payments.cancel', $payment)}}" 
-                          method="post"
-                        >
-                          @csrf
-                          @method('PUT')
-                        </form>
-                        <i class="fa fa-trash"></i> 
-                      </a>
+
+                        <a href="{{route('hotro.payments.transfer', $payment)}}" rel="Đi đến thanh toán">
+                          <span class="badge bg-label-success me-1">{{$payment->status_name}}</span>
+                        </a>
+                      @else
+                        <span class="badge bg-label-primary me-1">{{$payment->status_name}}</span>
                       @endif
-                    </div>
-                  </td>
-                </tr>
+
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-sm-center justify-content-sm-center">
+                        {{-- <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-icon"><i class="fa fa-pencil"></i></a> --}}
+                        @if (in_array($payment->status, $array_accept))
+                        
+                        <a href="{{route('hotro.payments.transfer', $payment)}}" class="btn btn-icon btn-success"><i class="fa-sharp fa-solid fa-forward"></i></a>
+                        <a href="" class="btn btn-icon btn-danger delete-record me-2" onclick="submitFormDelete(event, {{$payment->id}})">
+                          <form 
+                            id="form-delete-{{$payment->id}}" 
+                            action="{{route('hotro.payments.cancel', $payment)}}" 
+                            method="post"
+                          >
+                            @csrf
+                            @method('PUT')
+                          </form>
+                          <i class="fa fa-trash"></i> 
+                        </a>
+                        @endif
+                      </div>
+                    </td>
+                  </tr>
+                @endif
               @endforeach
       
             </tbody>
