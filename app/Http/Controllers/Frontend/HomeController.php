@@ -59,8 +59,8 @@ class HomeController extends Controller
 
     public function genCode(){
         // echo bcrypt('Admin@321');
-        for ($i=0; $i < 50; $i++) { 
-            $code = "GC12X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+        for ($i=0; $i < 100; $i++) { 
+            $code = "GC15X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
         // $this->checkCheatUser("3333");

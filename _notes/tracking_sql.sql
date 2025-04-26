@@ -48,7 +48,7 @@ WITH RankedAccounts AS (
     INNER JOIN log_users u ON s.cAccName = u.cAccName AND u.type = 1
     WHERE  s.id IN (SELECT MAX(id) FROM top_servers GROUP BY cAccName)
 )
-SELECT id, cAccName, gamename, level, percentexp, ip, faction, logtime
+SELECT id, cAccName, gamename, level, percentexp, faction, logtime, ip
 FROM RankedAccounts
 WHERE rank = 1
 ORDER BY level DESC, percentexp DESC;

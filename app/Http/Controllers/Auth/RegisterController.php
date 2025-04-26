@@ -146,14 +146,7 @@ class RegisterController extends Controller
     protected function checkCheatUser(User $user) {
       $pattern = '/^(.{2})\1\1/';
       if (preg_match($pattern, $user->cAccName) === 1){
-        $site_title = getWebsiteConfig('site_title');
-        $vi_tri = strpos($site_title, " - ");
-        if ($vi_tri !== false) {
-            $site_name = substr($site_title, 0, $vi_tri);
-        } else {
-          $site_name = $site_title;
-        }
-        $message = $site_name.': User '.$user->cAccName." vừa tạo tài khoản, khả năng lừa đảo cao!!!!!";
+        $message = 'User '.$user->cAccName." vừa tạo tài khoản, khả năng lừa đảo cao!!!!!";
         User::sendMessageToTelegram($message);
         echo $message;
         die();

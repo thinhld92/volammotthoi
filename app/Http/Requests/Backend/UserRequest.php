@@ -27,7 +27,8 @@ class UserRequest extends FormRequest
       if (request()->isMethod('put') || request()->isMethod('patch')) {
         $validator = [
           'cRealName' => ['required', 'min:6'],
-          'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($this->user)],
+          'cEMail' => ['required', 'email', 'max:60'],
+          // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($this->user)],
           'cPassWord' => ['sometimes', 'min:6', 'confirmed'],
           'cSecPassword' => ['sometimes', 'min:6', 'confirmed'],
           'cPhone' => ['sometimes', 'digits:10', 'nullable'],
@@ -38,6 +39,7 @@ class UserRequest extends FormRequest
         $validator = [
           // 'cRealName' => ['required', 'min:6'],
           // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($this->user)],
+          'cEMail' => ['required', 'email', 'max:60'],
           'cAccName' => ['required', 'string', 'min:5', Rule::unique('Account_Info', 'cAccName')->ignore($this->user)],
           'cPassWord' => ['required', 'min:6'],
           'cSecPassword' => ['required', 'min:6'],
