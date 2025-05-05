@@ -19,19 +19,39 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-        $query = User::query()->with('account_habitus');
+        $query = User::query()->with('account_habitus'); // Load relationship
+
         if ($search) {
-            $query->where('cAccName', 'like', "%{$search}%")
-                ->orWhere('cEmail', 'like', "%{$search}%")
-                ->orWhere('cRealName', 'like', "%{$search}%");
+            // 1. Áp dụng điều kiện tìm kiếm (nhóm OR WHERE lại cho rõ ràng)
+            $query->where(function ($q) use ($search) {
+                $q->where('cAccName', 'like', "%{$search}%")
+                  ->orWhere('cEmail', 'like', "%{$search}%")
+                  ->orWhere('cRealName', 'like', "%{$search}%");
+            });
+
+            // 2. Thêm sắp xếp ưu tiên: đưa cAccName khớp chính xác lên đầu
+            //    Phải đặt orderByRaw NÀY TRƯỚC orderBy mặc định của bạn
+            $query->orderByRaw('CASE WHEN cAccName = ? THEN 0 ELSE 1 END ASC', [$search]);
+
+            // 3. Giữ lại sắp xếp theo dRegDate như là tiêu chí phụ (sau khi ưu tiên)
+            $query->orderBy('dRegDate', 'desc');
+
+        } else {
+            // Nếu không có tìm kiếm, chỉ cần sắp xếp theo dRegDate
+            $query->orderBy('dRegDate', 'desc');
         }
-        $users = $query
-            ->orderBy('dRegDate', 'desc')
-            ->paginate(10);
-        $users->appends(['search'=> $search]);
+
+        // 4. Phân trang kết quả SAU KHI đã áp dụng tất cả điều kiện và sắp xếp
+        $users = $query->paginate(10);
+
+        // 5. Thêm tham số tìm kiếm vào link phân trang để giữ trạng thái tìm kiếm
+        //    Phương thức appends sẽ tự động xử lý nếu $search là null hoặc rỗng
+        $users->appends(['search' => $search]);
+
+        // 6. Trả về view với dữ liệu
         return view('backend.users.index', compact(
             'users',
-            'search',
+            'search' // Vẫn truyền $search để hiển thị lại trên ô tìm kiếm nếu cần
         ));
     }
 
