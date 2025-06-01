@@ -57,10 +57,22 @@ class HomeController extends Controller
         }
       }
 
+
+    /**
+     * Generate random codes for testing purposes.
+     * GCLT
+     * GC8X
+     * GC9X
+     * GC10X
+     * GC11X
+     * GC12X
+     * GCFC
+     * This function generates 100 unique codes in the format "GC10X" followed by 6 uppercase letters.
+     */ 
     public function genCode(){
         // echo bcrypt('Admin@321');
         for ($i=0; $i < 100; $i++) { 
-            $code = "GC15X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+            $code = "GCFC".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
         // $this->checkCheatUser("3333");

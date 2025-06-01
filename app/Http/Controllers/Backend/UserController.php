@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-        $query = User::query()->with('account_habitus'); // Load relationship
+        $query = User::query()->with(['account_habitus', 'log_user']); // Load relationship
 
         if ($search) {
             // 1. Áp dụng điều kiện tìm kiếm (nhóm OR WHERE lại cho rõ ràng)

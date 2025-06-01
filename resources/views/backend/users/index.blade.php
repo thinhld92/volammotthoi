@@ -121,6 +121,7 @@
           <th>Email</th>
           <th>Register Date</th>
           <th>End Date</th>
+          <th>IP</th>
           <th class="status">Status</th>
           <th class="actions">Actions</th>
         </tr>
@@ -140,6 +141,9 @@
             </td>
             <td id="endDate{{$user->iid}}">
               {{ $user->account_habitus->endDate }}
+            </td>
+            <td>
+              {{ $user->log_user->ip }}
             </td>
             <td>
               @php

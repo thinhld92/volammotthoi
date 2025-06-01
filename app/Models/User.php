@@ -119,6 +119,11 @@ class User extends Authenticatable
         return $register_date;
     }
 
+    public function log_user()
+    {
+        return $this->hasOne(LogUser::class, 'cAccName', 'cAccName')->where('type', 1);
+    }
+
     public function getPhotoAttribute()
     {
         $avatar = $this->avatar->image ?? 'https://ui-avatars.com/api/?name='
