@@ -28,7 +28,7 @@ class UserController extends Controller
                   ->orWhere('cEmail', 'like', "%{$search}%")
                   ->orWhere('cRealName', 'like', "%{$search}%")
                   ->orWhereHas('log_user_search', function ($q2) use ($search) {
-                        $q2->where('ip', 'like', "%{$search}%");
+                        $q2->where('ip', $search);
                     });
             });
 
