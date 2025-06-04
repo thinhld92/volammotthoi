@@ -26,12 +26,17 @@ class UserController extends Controller
             $query->where(function ($q) use ($search) {
                 $q->where('cAccName', 'like', "%{$search}%")
                   ->orWhere('cEmail', 'like', "%{$search}%")
-                  ->orWhere('cRealName', 'like', "%{$search}%");
+                  ->orWhere('cRealName', 'like', "%{$search}%")
+                  ->orWhereHas('log_user_search', function ($q2) use ($search) {
+                        $q2->where('ip', 'like', "%{$search}%");
+                    });
             });
 
             // 2. Thêm sắp xếp ưu tiên: đưa cAccName khớp chính xác lên đầu
             //    Phải đặt orderByRaw NÀY TRƯỚC orderBy mặc định của bạn
-            $query->orderByRaw('CASE WHEN cAccName = ? THEN 0 ELSE 1 END ASC', [$search]);
+            if (!filter_var($search, FILTER_VALIDATE_IP)) {
+                $query->orderByRaw('CASE WHEN cAccName = ? THEN 0 ELSE 1 END ASC', [$search]);
+            }
 
             // 3. Giữ lại sắp xếp theo dRegDate như là tiêu chí phụ (sau khi ưu tiên)
             $query->orderBy('dRegDate', 'desc');

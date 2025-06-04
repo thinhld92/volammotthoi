@@ -124,6 +124,12 @@ class User extends Authenticatable
         return $this->hasOne(LogUser::class, 'cAccName', 'cAccName')->where('type', 1);
     }
 
+    public function log_user_search()
+    {
+        return $this->hasOne(LogUser::class, 'cAccName', 'cAccName');
+    }
+
+
     public function getPhotoAttribute()
     {
         $avatar = $this->avatar->image ?? 'https://ui-avatars.com/api/?name='

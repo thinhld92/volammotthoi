@@ -143,7 +143,7 @@
               {{ $user->account_habitus->endDate }}
             </td>
             <td>
-              {{ $user->log_user->ip }}
+              {{ optional($user->log_user)->ip }}
             </td>
             <td>
               @php
