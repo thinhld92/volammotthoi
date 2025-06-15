@@ -143,7 +143,14 @@
               {{ $user->account_habitus->endDate }}
             </td>
             <td>
-              {{ optional($user->log_user)->ip }}
+              @if(optional($user->log_user)->ip)
+                <a href="https://ipinfo.io/{{ optional($user->log_user)->ip }}" target="_blank">
+                  {{ optional($user->log_user)->ip }}
+                </a>
+              @else
+                {{-- Nếu không có IP thì để trống hoặc hiển thị dấu gạch ngang --}}
+                -
+              @endif
             </td>
             <td>
               @php
