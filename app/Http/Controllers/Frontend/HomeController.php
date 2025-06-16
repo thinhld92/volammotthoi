@@ -16,7 +16,9 @@ class HomeController extends Controller
 {
     public function index(){
         {
-            return redirect()->route('home');
+            if (getWebsiteConfig('go_home')) {
+                return redirect()->route('home');
+            }
             $welcomeBanners = Banner::query()
                 ->where('type', BannerType::WELCOME)
                 ->get();
