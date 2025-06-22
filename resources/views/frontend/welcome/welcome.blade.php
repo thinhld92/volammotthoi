@@ -194,7 +194,7 @@
 									<a class="menu-link" href="{{ route('login') }}"><div>Đăng nhập</div></a>
 								</li>
 								<li class="menu-item">
-									<a class="menu-link" href="{{getWebsiteConfig('download_link') ?? '#'}}"><div>Tải Game</div></a>
+									<a class="menu-link" href="{{getWebsiteConfig('download_link') ?? '#'}}"><div>Tải Về</div></a>
 								</li>
 							</ul>
 							
