@@ -19,3 +19,5 @@ $config['licenseKey']  = 'AT2TRR3TGM721HHCTTSMAPYKPH3FU';
 
 CREATE INDEX idx_log_users_cAccName ON log_users (cAccName);
 CREATE INDEX idx_log_users_ip ON log_users (ip);
+
+ALTER TABLE top_servers ADD coin bigint NULL;

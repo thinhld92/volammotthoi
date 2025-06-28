@@ -17,6 +17,7 @@ class TopServer extends Model
         "expnext",
         "ip",
         "faction",
+        "coin",
         "logtime",
     ];
 }
