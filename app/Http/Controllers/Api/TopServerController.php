@@ -49,7 +49,7 @@ class TopServerController extends Controller
             $expnext = (int) trim($player[4]);
             $ip = trim($player[5]);
             $faction = trim($player[6]);
-            $coin = trim($player[7]);
+            $coin = (int) trim($player[7]);
 
             $dataCreateLevelPlayer = [
                 "cAccName" => $cAccName,
