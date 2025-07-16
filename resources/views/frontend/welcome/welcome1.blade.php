@@ -154,7 +154,7 @@
                 <a class="nav-link fw-bold text-uppercase" href="#landingReviews">Nhận xét</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fw-bold text-uppercase" target="_blank" href="{{getWebsiteConfig('download_link') ?? '#downloadGame'}}">Tải Game</a>
+                <a class="nav-link fw-bold text-uppercase" target="_blank" href="{{getWebsiteConfig('download_link') ?? '#downloadGame'}}">Tải Về</a>
               </li>
             </ul>
           </div>

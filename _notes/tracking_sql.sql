@@ -129,4 +129,43 @@ where cAccName in ('anhtuanbcc',
 'hiepkhach011');
 
 
+-- CTE 1: Đánh số thứ tự tất cả các bản ghi trong bảng
+WITH NumberedLogs AS (
+    SELECT
+        cAccName,
+        coin,
+        logtime,
+        gamename,
+        ROW_NUMBER() OVER(PARTITION BY cAccName ORDER BY logtime DESC) as rn
+    FROM
+        top_servers
+),
+-- CTE 2: Lọc ra 5 bản ghi mới nhất VÀ tính toán MaxCoin CHỈ trong nhóm đó
+RecentLogsWithMax AS (
+    SELECT
+        cAccName,
+        coin,
+        logtime,
+        gamename,
+        -- Tính MaxCoin CHỈ trên tập dữ liệu đã được lọc (rn <= 5)
+        MAX(coin) OVER (PARTITION BY cAccName) as MaxCoinInTop5
+    FROM
+        NumberedLogs
+    WHERE
+        rn <= 5
+)
+-- Bước cuối: Chọn dữ liệu và sắp xếp
+SELECT
+    cAccName,
+    gamename,
+    coin,
+    logtime
+FROM
+    RecentLogsWithMax
+ORDER BY
+    MaxCoinInTop5 DESC, -- Ưu tiên 1: Sắp xếp theo coin cao nhất trong top 5
+    cAccName,           -- Ưu tiên 2: Nếu bằng nhau, xếp theo tên A-Z
+    logtime DESC;          -- Ưu tiên 3: Trong mỗi nhóm, xếp theo time
+
+
 

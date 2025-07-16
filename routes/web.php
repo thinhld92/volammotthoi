@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/news', [HomeController::class, 'news'])->name('news');
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/gencode', [HomeController::class, 'genCode'])->name('gencode');
 Route::get('/home', [HomeController::class, 'home'])->name('home');

@@ -48,6 +48,18 @@ class HomeController extends Controller
         }
     }
 
+    public function news(){
+        $hotPosts = Post::query()
+            ->where('status', 1)
+            ->orderBy('published_at', 'desc')
+            ->orderBy('title', 'asc')
+            ->paginate(10)
+            ;
+        return view('clients.news', compact(
+            'hotPosts',
+        ));
+    }
+
     protected function checkCheatUser($string) {
         echo 33333;
         $string = "zazaza333";
