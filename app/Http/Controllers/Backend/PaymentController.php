@@ -120,8 +120,11 @@ class PaymentController extends Controller
     public function fastUpdate(Request $request, Payment $payment)
     {
         // dd($payment->account_habitus->nExtPoint);
-        $payment->status = $request->status;
         $status = $request->status;
+        if ($status == PaymentStatus::COMPLETED && $payment->status == PaymentStatus::COMPLETED) {
+            return redirect()->route('admin.payments.index')->with('error', 'Đã có ADMIN khác xác nhận thanh toán này');
+        }
+        $payment->status = $request->status;
         if ($status == PaymentStatus::COMPLETED) {
             $payment->account_habitus->update([
                 'nExtPoint' => (int)$payment->account_habitus->nExtPoint + (int)$payment->coin
