@@ -152,7 +152,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="wuxia-feature-card h-100">
             <div class="wuxia-icon-box">
-              <i class="fa-solid fa-swords"></i>
+              <i class="fa-solid fa-trophy"></i>
             </div>
             <div>
               <h5 class="text-white mb-1">Công Thành Chiến</h5>
@@ -165,7 +165,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="wuxia-feature-card h-100">
             <div class="wuxia-icon-box">
-              <i class="fa-solid fa-map-location-dot"></i>
+              <i class="fa-solid fa-earth-americas"></i>
             </div>
             <div>
               <h5 class="text-white mb-1">Thế Giới Rộng Lớn</h5>
@@ -178,7 +178,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="wuxia-feature-card h-100">
             <div class="wuxia-icon-box">
-              <i class="fa-solid fa-users-viewfinder"></i>
+              <i class="fa-solid fa-users"></i>
             </div>
             <div>
               <h5 class="text-white mb-1">Thập Đại Môn Phái</h5>
@@ -191,7 +191,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="wuxia-feature-card h-100">
             <div class="wuxia-icon-box">
-              <i class="fa-solid fa-dragon"></i>
+              <i class="fa-solid fa-crown"></i>
             </div>
             <div>
               <h5 class="text-white mb-1">Boss Hoàng Kim</h5>
@@ -217,7 +217,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="wuxia-feature-card h-100">
             <div class="wuxia-icon-box">
-              <i class="fa-solid fa-shield-cat"></i>
+              <i class="fa-solid fa-headset"></i>
             </div>
             <div>
               <h5 class="text-white mb-1">Cộng Đồng Đông Đảo</h5>
