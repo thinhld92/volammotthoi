@@ -96,12 +96,12 @@
             <i class="fa-solid fa-house me-1"></i> Trang chủ
           </a>
           <span>/</span>
-          <span class="text-white fw-medium">{{ $title ?? 'Tin tức tổng hợp' }}</span>
+          <span class="fw-medium">{{ $title ?? 'Tin tức tổng hợp' }}</span>
         </div>
 
         <form action="{{ route('search') }}" method="GET" class="d-flex gap-2">
           <div class="input-group input-group-sm">
-            <input type="text" name="search" class="form-control bg-dark text-white border-secondary" placeholder="Tìm kiếm bài viết..." value="{{ request('search') }}">
+            <input type="text" name="search" class="form-control bg-transparent border-secondary" placeholder="Tìm kiếm bài viết..." value="{{ request('search') }}">
             <button class="btn btn-outline-warning" type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
