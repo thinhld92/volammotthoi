@@ -344,6 +344,25 @@ body.light-theme .btn-modern-secondary {
   background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
+/* Hero Banner Carousel Box (Unclipped, Full Visibility) */
+.modern-hero-carousel-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 25px var(--accent-gold-glow);
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain; /* Full image visible, zero top/bottom cropping! */
+  background: var(--bg-obsidian);
+  display: block;
+  margin: 0 auto;
+}
+
 /* Countdown Box (Matching Mockup 1) */
 .countdown-wuxia-box {
   background: var(--bg-surface);

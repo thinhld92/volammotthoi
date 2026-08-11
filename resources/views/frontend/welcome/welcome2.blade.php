@@ -81,7 +81,7 @@
     </div>
   </nav>
 
-  <!-- Hero Section (Matching Mockup 1 Layout & Wuxia Aesthetic) -->
+  <!-- Hero Section with Hero Banner Carousel -->
   <section class="min-vh-100 d-flex align-items-center position-relative pt-5 pb-4">
     <div class="container position-relative z-2 pt-5 mt-3">
       
@@ -100,7 +100,7 @@
               Khám phá thế giới kiếm hiệp đỉnh cao, hoài niệm ký ức Công Thành Chiến 2005. Chuẩn đồ xanh, cân bằng cày cuốc & giao dịch tự do.
             </p>
 
-            <!-- Countdown Timer & Action Box (Matching Mockup 1) -->
+            <!-- Countdown Timer & Action Box -->
             <div class="d-flex flex-wrap align-items-center gap-3">
               @if(isset($opening_time) && isset($opening_time['show']) && $opening_time['show'] == 1)
                 <div class="countdown-wuxia-box">
@@ -125,9 +125,32 @@
             </div>
           </div>
 
+          <!-- Hero Right Column: Dynamic Banner Carousel Slider -->
           <div class="col-lg-5 text-center position-relative">
-            <div class="position-relative d-inline-block">
-              <img src="{{ asset('backend/assets/img/front-pages/landing-page/TopTK.jpg') }}" alt="Wuxia Warrior" class="img-fluid rounded-4 shadow-lg border border-warning opacity-90" style="max-height: 420px; object-fit: cover;">
+            <div class="modern-hero-carousel-box rounded-4 overflow-hidden shadow-lg">
+              @if(isset($welcomeBanners) && $welcomeBanners->count())
+                <div id="heroBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    @foreach($welcomeBanners as $banner)
+                      <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <a href="{{ $banner->link ?? '#' }}" target="_blank">
+                          <img src="{{ $banner->image }}" class="d-block w-100 hero-banner-img" alt="{{ $banner->title }}">
+                        </a>
+                      </div>
+                    @endforeach
+                  </div>
+                  @if($welcomeBanners->count() > 1)
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                  @endif
+                </div>
+              @else
+                <img src="{{ asset('backend/assets/img/front-pages/landing-page/TopTK.jpg') }}" alt="Banner" class="img-fluid w-100 hero-banner-img">
+              @endif
             </div>
           </div>
         </div>
@@ -229,29 +252,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Banner Showcase Slider -->
-  @if(isset($welcomeBanners) && $welcomeBanners->count())
-    <section class="py-5">
-      <div class="container">
-        <div id="modernBannerCarousel" class="carousel slide modern-glass-card overflow-hidden" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            @foreach($welcomeBanners as $banner)
-              <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <img src="{{ $banner->image }}" class="d-block w-100 object-fit-cover" alt="{{ $banner->title }}" style="max-height: 480px;">
-              </div>
-            @endforeach
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#modernBannerCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#modernBannerCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </div>
-    </section>
-  @endif
 
   <!-- Footer -->
   <footer class="modern-footer text-center">
