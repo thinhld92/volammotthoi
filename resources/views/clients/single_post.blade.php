@@ -1,4 +1,4 @@
-@extends('clients.layouts.master')
+@extends((getWebsiteConfig('layout_website') == 2) ? 'clients.layouts.master2' : 'clients.layouts.master')
 
 @section('content')
 <div id="boxTab">

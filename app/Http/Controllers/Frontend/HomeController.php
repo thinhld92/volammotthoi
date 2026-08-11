@@ -36,6 +36,12 @@ class HomeController extends Controller
                 $opening_time['hour'] = date('H', $opening_date);
             }
 
+            if ((int) getWebsiteConfig('layout_website') == 2) {
+                return view('frontend.welcome.welcome2', compact(
+                    'welcomeBanners',
+                    'opening_time',
+                ));
+            }
             if ((int) getWebsiteConfig('layout_website') == 1) {
                 return view('frontend.welcome.welcome1', compact(
                     'welcomeBanners',
@@ -104,8 +110,9 @@ class HomeController extends Controller
         $hotBanners = Banner::query()
             ->where('type', BannerType::HOMEPAGE)
             ->get();
-        ;
-        return view('clients.home', compact(
+        
+        $view = ((int) getWebsiteConfig('layout_website') == 2) ? 'clients.home2' : 'clients.home';
+        return view($view, compact(
             'hotPosts',
             'hotBanners',
         ));

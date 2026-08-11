@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-obsidian: #0D0F14;
+  --bg-surface: #131722;
+  --bg-card: rgba(26, 31, 44, 0.75);
+  --bg-card-hover: rgba(35, 42, 59, 0.9);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(255, 200, 87, 0.3);
+  --accent-gold: #FFC857;
+  --accent-red: #E63946;
+  --accent-blue: #3A86FF;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-glow: 0 0 25px rgba(255, 200, 87, 0.15);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body.modern-theme {
+  background-color: var(--bg-obsidian);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphic Card */
+.modern-glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Modern Header / Floating Navbar */
+.modern-navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  z-index: 1000;
+  background: rgba(13, 15, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 10px 24px;
+}
+
+.modern-navbar .nav-link {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.modern-navbar .nav-link:hover,
+.modern-navbar .nav-link.active {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Buttons */
+.btn-modern-primary {
+  background: linear-gradient(135deg, #FFC857 0%, #E09F3E 100%);
+  color: #0D0F14;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 200, 87, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modern-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 200, 87, 0.45);
+  color: #000;
+}
+
+.btn-modern-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modern-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+}
+
+.btn-modern-danger {
+  background: linear-gradient(135deg, #E63946 0%, #D62828 100%);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modern-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.45);
+  color: #FFF;
+}
+
+/* Badges */
+.badge-modern {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-modern-gold {
+  background: rgba(255, 200, 87, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid rgba(255, 200, 87, 0.3);
+}
+
+.badge-modern-red {
+  background: rgba(230, 57, 70, 0.15);
+  color: var(--accent-red);
+  border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.badge-modern-blue {
+  background: rgba(58, 134, 255, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(58, 134, 255, 0.3);
+}
+
+/* Countdown Box */
+.countdown-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-val {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Modern Footer */
+.modern-footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-glass);
+  padding: 40px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
