@@ -28,6 +28,13 @@
         <img src="{{ getWebsiteConfig('site_logo') ?? asset('clients/asset/images/zingvn/skin/logo1.png') }}" alt="Logo" height="40">
       </a>
 
+      <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
+        <!-- Theme Toggle Button Mobile -->
+        <button id="themeToggleBtnMobile" class="btn-theme-toggle" type="button" title="Đổi giao diện sáng/tối">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+
       <!-- Mobile Hamburger Toggle Button -->
       <button class="navbar-toggler text-warning border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#modernWelcomeMenu" aria-controls="modernWelcomeMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars fs-3 text-gold"></i>
@@ -55,6 +62,11 @@
 
         <!-- Action Buttons -->
         <div class="d-flex align-items-center gap-2 mobile-action-btns">
+          <!-- Theme Toggle Button Desktop -->
+          <button id="themeToggleBtnDesktop" class="btn-theme-toggle d-none d-lg-inline-flex" type="button" title="Đổi giao diện sáng/tối">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
           <a href="{{ getWebsiteConfig('download_link') ?? '#download' }}" class="btn-modern-primary py-2 px-3 fs-6" target="_blank">
             <i class="fa-solid fa-download"></i> Tải Về
           </a>
@@ -250,5 +262,41 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Light/Dark Mode Persistence Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('modern_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+      }
+
+      function updateIcons(isLight) {
+        const icons = document.querySelectorAll('#themeToggleBtnDesktop i, #themeToggleBtnMobile i');
+        icons.forEach(icon => {
+          if (isLight) {
+            icon.className = 'fa-solid fa-sun';
+          } else {
+            icon.className = 'fa-solid fa-moon';
+          }
+        });
+      }
+
+      updateIcons(savedTheme === 'light');
+
+      function toggleTheme() {
+        const isLight = document.body.classList.toggle('light-theme');
+        const newTheme = isLight ? 'light' : 'dark';
+        localStorage.setItem('modern_theme', newTheme);
+        updateIcons(isLight);
+      }
+
+      const btnDesktop = document.getElementById('themeToggleBtnDesktop');
+      const btnMobile = document.getElementById('themeToggleBtnMobile');
+
+      if (btnDesktop) btnDesktop.addEventListener('click', toggleTheme);
+      if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
+    })();
+  </script>
 </body>
 </html>

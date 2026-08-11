@@ -5,21 +5,37 @@
   --bg-surface: #121620;
   --bg-card: rgba(22, 28, 40, 0.85);
   --bg-card-hover: rgba(30, 38, 54, 0.95);
-  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-glass: rgba(255, 255, 255, 0.12);
   --border-gold: rgba(255, 200, 87, 0.4);
   --accent-gold: #FFC857;
   --accent-gold-glow: rgba(255, 200, 87, 0.3);
   --accent-red: #E63946;
   --accent-blue: #3A86FF;
   --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
-  --text-dim: #64748B;
+  --text-muted: #CBD5E1; /* High-contrast bright light silver for readability */
+  --text-dim: #94A3B8;
   --radius-lg: 18px;
   --radius-md: 12px;
   --radius-sm: 8px;
   --shadow-glow: 0 0 30px rgba(255, 200, 87, 0.2);
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+}
+
+/* Light Theme Variables */
+body.light-theme {
+  --bg-obsidian: #F1F5F9;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --border-glass: rgba(0, 0, 0, 0.1);
+  --border-gold: rgba(217, 119, 6, 0.4);
+  --accent-gold: #D97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.2);
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-dim: #64748B;
+  --shadow-glow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 body.modern-theme {
@@ -30,6 +46,19 @@ body.modern-theme {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fix global text colors for readability */
+body.modern-theme p,
+body.modern-theme span,
+body.modern-theme div {
+  color: inherit;
+}
+
+body.modern-theme .text-muted {
+  color: var(--text-muted) !important;
+  font-weight: 400;
 }
 
 /* Fix global links on dark theme */
@@ -68,7 +97,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .modern-glass-card:hover {
@@ -80,8 +109,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Feature Icon Card (Matching Mockup 1) */
 .wuxia-feature-card {
-  background: rgba(18, 22, 32, 0.85);
-  border: 1px solid rgba(255, 200, 87, 0.25);
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-md);
   padding: 24px;
   display: flex;
@@ -92,9 +121,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .wuxia-feature-card:hover {
   border-color: var(--accent-gold);
-  box-shadow: 0 0 20px rgba(255, 200, 87, 0.25);
+  box-shadow: var(--shadow-glow);
   transform: translateY(-3px);
-  background: rgba(26, 32, 46, 0.95);
+  background: var(--bg-card-hover);
 }
 
 .wuxia-icon-box {
@@ -102,8 +131,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 56px;
   min-width: 56px;
   border-radius: 12px;
-  background: rgba(255, 200, 87, 0.12);
-  border: 1px solid rgba(255, 200, 87, 0.3);
+  background: rgba(255, 200, 87, 0.15);
+  border: 1px solid var(--border-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,13 +149,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: calc(100% - 32px);
   max-width: 1200px;
   z-index: 1050;
-  background: rgba(10, 12, 16, 0.92);
+  background: var(--bg-card);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 200, 87, 0.25);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-md);
   padding: 10px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .modern-navbar .nav-link {
@@ -147,27 +176,53 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 /* Mobile Dropdown Styling */
 @media (max-width: 991.98px) {
   .modern-navbar .navbar-collapse {
-    background: rgba(14, 18, 26, 0.98);
+    background: var(--bg-surface);
     border: 1px solid var(--border-gold);
     border-radius: var(--radius-md);
     padding: 16px;
     margin-top: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   }
 
   .modern-navbar .nav-link {
     padding: 10px 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-glass);
   }
 
   .modern-navbar .mobile-action-btns {
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px solid rgba(255, 200, 87, 0.2);
+    border-top: 1px solid var(--border-gold);
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
+}
+
+/* Theme Switcher Button */
+.btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-gold);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+body.light-theme .btn-theme-toggle {
+  background: #E2E8F0;
+  color: #D97706;
+}
+
+.btn-theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  border-color: var(--accent-gold);
 }
 
 /* Buttons (Matching Mockup 1 Glowing Gold Style) */
@@ -198,7 +253,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .btn-modern-secondary {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text-main) !important;
   font-family: var(--font-heading);
   font-weight: 600;
@@ -213,6 +268,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   justify-content: center;
   gap: 8px;
   white-space: nowrap;
+}
+
+body.light-theme .btn-modern-secondary {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+  color: #0F172A !important;
 }
 
 .btn-modern-secondary:hover {
@@ -234,7 +295,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .badge-modern-gold {
   background: rgba(255, 200, 87, 0.15);
   color: var(--accent-gold);
-  border: 1px solid rgba(255, 200, 87, 0.4);
+  border: 1px solid var(--border-gold);
 }
 
 .badge-modern-blue {
@@ -245,11 +306,11 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Hero Section Wuxia Hero Card (Matching Mockup 1) */
 .hero-wuxia-box {
-  background: radial-gradient(circle at top center, rgba(30, 36, 50, 0.9) 0%, rgba(10, 12, 16, 0.95) 100%);
-  border: 1px solid rgba(255, 200, 87, 0.3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
   padding: 48px 36px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -272,14 +333,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Countdown Box (Matching Mockup 1) */
 .countdown-wuxia-box {
-  background: rgba(14, 18, 26, 0.9);
-  border: 1px solid rgba(255, 200, 87, 0.35);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-md);
   padding: 14px 24px;
   display: inline-flex;
   gap: 20px;
   align-items: center;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .countdown-val {
@@ -288,7 +349,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-weight: 800;
   color: var(--accent-gold);
   line-height: 1;
-  text-shadow: 0 0 10px rgba(255, 200, 87, 0.5);
+  text-shadow: 0 0 10px var(--accent-gold-glow);
 }
 
 .countdown-label {
@@ -333,10 +394,15 @@ body.modern-theme .NewsList li a:hover {
   color: var(--accent-gold) !important;
 }
 
-/* Single Post Content Styling */
+/* Single Post Content Styling - Force readability */
 body.modern-theme #single-post-content,
-body.modern-theme #single-post-content * {
-  color: #E2E8F0;
+body.modern-theme #single-post-content p,
+body.modern-theme #single-post-content span,
+body.modern-theme #single-post-content div,
+body.modern-theme #single-post-content li {
+  color: var(--text-main) !important;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 body.modern-theme #single-post-content h1,
@@ -358,7 +424,7 @@ body.modern-theme #single-post-content img {
 
 /* Modern Footer */
 .modern-footer {
-  background: #07080B;
+  background: var(--bg-surface);
   border-top: 1px solid var(--border-glass);
   padding: 36px 0;
   color: var(--text-muted);
