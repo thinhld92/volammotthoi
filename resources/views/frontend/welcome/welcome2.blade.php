@@ -56,7 +56,7 @@
             <a href="#showcase" class="nav-link">Hình Ảnh</a>
           </li>
           <li class="nav-item">
-            <a href="#community" class="nav-link">Cộng Đồng</a>
+            <a href="{{ getWebsiteConfig('fanpage_url') ?? '#' }}" class="nav-link" target="_blank">Cộng Đồng</a>
           </li>
         </ul>
 
@@ -297,6 +297,14 @@
       <p class="small footer-disclaimer-highlight mb-0">• Lưu ý : Chúng tôi không phải nhà phát hành chính thức - cân nhắc trước khi tham gia Game.</p>
     </div>
   </footer>
+
+  <!-- Floating Fixed Facebook Widget (Right Edge) -->
+  @if(getWebsiteConfig('fanpage_url'))
+    <a href="{{ getWebsiteConfig('fanpage_url') }}" target="_blank" class="fixed-facebook-widget" title="Fanpage Facebook Cộng Đồng">
+      <i class="fa-brands fa-facebook-f"></i>
+      <span class="fixed-facebook-tooltip">Fanpage Hỗ Trợ</span>
+    </a>
+  @endif
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
