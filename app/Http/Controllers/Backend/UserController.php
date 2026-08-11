@@ -10,6 +10,9 @@ use App\Models\AccountMoreInfo;
 use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 
 class UserController extends Controller
 {
@@ -169,6 +172,35 @@ class UserController extends Controller
             }
             $user_more_info->save();
         }
+
+        // Xoá toàn bộ phiên đăng nhập Web (Sessions & Tokens) nếu Admin đổi mật khẩu
+        if ($request->cPassWord || $request->cSecPassword) {
+            try {
+                if (Schema::hasTable('sessions')) {
+                    DB::table('sessions')->where('user_id', $user->iid)->delete();
+                }
+            } catch (\Throwable $th) {}
+
+            try {
+                $sessionPath = storage_path('framework/sessions');
+                if (File::isDirectory($sessionPath)) {
+                    $files = File::files($sessionPath);
+                    foreach ($files as $file) {
+                        $content = @file_get_contents($file->getRealPath());
+                        if ($content && str_contains($content, 'login_web_') && str_contains($content, (string)$user->iid)) {
+                            @File::delete($file->getRealPath());
+                        }
+                    }
+                }
+            } catch (\Throwable $th) {}
+
+            try {
+                if (method_exists($user, 'tokens')) {
+                    $user->tokens()->delete();
+                }
+            } catch (\Throwable $th) {}
+        }
+
         return redirect()->route('admin.users.index')->with('success', 'Cập nhật tài khoản người dùng thành công');
     }
 

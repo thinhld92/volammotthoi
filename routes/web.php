@@ -18,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('errors.dino');
+    // return view('welcome');
+    // return abort(404);
 });
 
 Route::get('/news', [HomeController::class, 'news'])->name('news');
-
 
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
@@ -63,6 +64,15 @@ Route::group([
 });
 
 // website
+Route::group([
+    'middleware' => ['auth'],
+],function(){
+    // Route::get('/master', [HomeController::class, 'master'])->name('master');
+    // Route::get('/categories/{category:slug}', [HomeController::class, 'category'])->name('cat_posts');
+    // Route::get('/search', [HomeController::class, 'search'])->name('search');
+    // Route::get('/posts/{post:slug}', [HomeController::class, 'singlePost'])->name('single_post');
+});
+
 Route::get('/master', [HomeController::class, 'master'])->name('master');
 Route::get('/categories/{category:slug}', [HomeController::class, 'category'])->name('cat_posts');
 Route::get('/search', [HomeController::class, 'search'])->name('search');

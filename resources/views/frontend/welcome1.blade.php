@@ -180,7 +180,7 @@
                 <div class="nk-feature-1">
                     <div class="nk-feature-cont">
                         <h3 class="nk-feature-title"><a href="{{getWebsiteConfig('download_link') ?? '#'}}"><i class="fa-solid fa-cloud-arrow-down"></i></a></h3>
-                        <h3 class="nk-feature-title text-main-3"><a href="{{getWebsiteConfig('download_link') ?? '#'}}">Tải game</a></h3>
+                        <h3 class="nk-feature-title text-main-3"><a href="{{getWebsiteConfig('download_link') ?? '#'}}">Tải về</a></h3>
                     </div>
                 </div>
             </div>

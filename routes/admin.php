@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\IpBlacklistController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\TestController;
@@ -57,6 +58,7 @@ Route::group([
     Route::resource('banners', BannerController::class);
     Route::resource('configs', WebsiteConfigController::class);
     Route::resource('payments', PaymentController::class);
+    Route::resource('ip-blacklists', IpBlacklistController::class);
     Route::get('test', [TestController::class, 'index'])->name('test');
     // Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
     Route::get('payments/{$payment}/approve', [PaymentController::class, 'approve'])->name('payments.approve');

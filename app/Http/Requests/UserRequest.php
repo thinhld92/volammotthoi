@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
           // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($user)],
           'cPassWord' => ['sometimes', 'min:6', 'confirmed'],
           'cSecPassword' => ['sometimes', 'min:6'],
-          'old_cSecPassword' => ['sometimes', 'min:6', new CurrentPassword],
+          'old_cSecPassword' => ['required', 'min:6', new CurrentPassword],
           'cPhone' => ['sometimes', 'digits:10', 'nullable'],
           'cIDNum' => ['sometimes', 'digits:12', 'nullable'],
         ];
@@ -60,7 +60,6 @@ class UserRequest extends FormRequest
       }
       if ($this->cSecPassword == null) {
         $this->request->remove('cSecPassword');
-        $this->request->remove('old_cSecPassword');
       }
     }
 

@@ -147,6 +147,9 @@
                 <a href="https://ipinfo.io/{{ optional($user->log_user)->ip }}" target="_blank">
                   {{ optional($user->log_user)->ip }}
                 </a>
+                <a href="{{ route('admin.ip-blacklists.create', ['ip' => optional($user->log_user)->ip]) }}" class="text-danger ms-1" title="Thêm IP {{ optional($user->log_user)->ip }} vào danh sách đen">
+                  <i class="fa fa-ban"></i>
+                </a>
               @else
                 {{-- Nếu không có IP thì để trống hoặc hiển thị dấu gạch ngang --}}
                 -

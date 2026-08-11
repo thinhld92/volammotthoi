@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AccountHabitus;
 use App\Models\AccountMoreInfo;
 use App\Models\Avatar;
+use App\Models\IpBlacklist;
 use App\Models\LogUser;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
 {
@@ -166,6 +168,12 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+        if (IpBlacklist::where('ip', $request->ip())->exists()) {
+            throw ValidationException::withMessages([
+                'cAccName' => ['Bạn hiện không thể đăng ký tài khoản mới'],
+            ]);
+        }
+
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));

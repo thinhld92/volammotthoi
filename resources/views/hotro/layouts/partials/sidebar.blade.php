@@ -60,12 +60,12 @@
         <div >{{ __('Kick Account') }}</div>
       </a>
     </li>
-    <li class="menu-item {{ (request()-> is('hotro/naptien')) ? 'active' : '' }}">
+    <!-- <li class="menu-item {{ (request()-> is('hotro/naptien')) ? 'active' : '' }}">
       <a href="{{ route('hotro.payments.create') }}" class="menu-link">
         <i class="menu-icon fa fa-money-check-dollar"></i>
         <div >{{ __('Nạp tiền') }}</div>
       </a>
-    </li>
+    </li> -->
     {{-- <li class="menu-item {{ (request()-> is('hotro/giftcode')) ? 'active' : '' }}">
       <a href="#" class="menu-link">
         <i class="menu-icon fa-solid fa-gift"></i>

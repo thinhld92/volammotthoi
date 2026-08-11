@@ -63,6 +63,27 @@
         </li>
       </ul>
     </li>
+    <li class="menu-item {{ (request()-> is('admin/ip-blacklists*')) ? 'active open' : '' }}">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon fa-solid fa-user-slash text-danger"></i>
+        <div>{{ __('Quản lý IP Đen') }}</div>
+        <div class="badge bg-danger rounded-pill ms-auto"></div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item {{ (request()-> is('admin/ip-blacklists')) ? 'active' : '' }}">
+          <a href="{{route('admin.ip-blacklists.index')}}" class="menu-link">
+            <i class="menu-icon sub-menu-icon-custom fa-solid fa-list"></i>
+            <div>{{ __('Danh sách IP Đen') }}</div>
+          </a>
+        </li>
+        <li class="menu-item {{ (request()-> is('admin/ip-blacklists/create')) ? 'active' : '' }}">
+          <a href="{{route('admin.ip-blacklists.create')}}" class="menu-link">
+            <i class="menu-icon sub-menu-icon-custom fa-solid fa-ban"></i>
+            <div>{{ __('Thêm IP Đen') }}</div>
+          </a>
+        </li>
+      </ul>
+    </li>
     <li class="menu-item {{ (request()-> is('admin/categories*')) ? 'active open' : '' }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon fa-solid fa-icons"></i>

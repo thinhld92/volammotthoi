@@ -26,7 +26,7 @@ class CurrentPassword implements Rule
     public function passes($attribute, $value)
     {
         $user = auth()->user();
-        return md5($value) !== $user->cSecPassword;
+        return mb_strtoupper(md5($value)) === $user->cSecPassword;
     }
 
     /**

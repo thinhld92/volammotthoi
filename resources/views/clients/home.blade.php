@@ -80,7 +80,7 @@
             </div>
             <ul class="BlockButton">
               <li><a class="Btn-1" href="{{route('register')}}" title="Đăng Ký" target="_blank">Đăng Ký</a></li>
-              <li><a class="Btn-2" href="{{route('hotro.payments.create')}}" title="Nạp thẻ">Nạp thẻ</a></li>
+              {{-- <li><a class="Btn-2" href="{{route('hotro.payments.create')}}" title="Nạp thẻ">Nạp thẻ</a></li> --}}
               <li><a class="Btn-3" href="{{route('login')}}" title="Quản lý tài khoản" target="_blank">Quản lý tài khoản</a></li>
               <li><a class="Btn-4" href="{{$website_configs['fanpage_url'] ?? ''}}" target="_blank" title="Fanpage">Fanpage</a></li>
               <!-- <li><a class="BtNhanQua" href="http:#" target="_blank">Kích hoạt code Tân Thủ</a></li> -->
@@ -105,7 +105,7 @@
               <li>
                 <p><strong>HotLine</strong></p>
                 <p class="HotLine">{{$website_configs['phone_donate'] ?? '' }}</p>
-                <p>(Donate momo) </p>
+                {{-- <p>(Donate momo) </p> --}}
               </li>
               <li class="NoBorder"></li>
               <li class="NoBorder"></li>

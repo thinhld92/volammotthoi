@@ -71,11 +71,68 @@
     <!--/ About User -->
 
   </div>
+
   <div class="col-xl-8 col-lg-7 col-md-7">
+    <div class="card">
+      <h5 class="card-header">Tải về</h5>
+      <div class="card-body">
+        <p class="text-success">Đã có data thì tải pacth, chưa có gì thì tải Full, chỉ cần tải 1 trong các link dưới</p>
+        <div class="table-responsive text-nowrap">
+     
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Stt</th>
+                <th>Patch</th>
+                <th>Full</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a href="https://drive.google.com/file/d/11eWOfNMNvo_PCFIXVak8Qz7rYI5nvtIr/view" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-download fa-xl text-danger me-3"></i>
+                    <span class="fw-medium text-primary">Link Patch 1</span>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://drive.google.com/file/d/1HrOGwQkUwZtqcVAfrxT6ojbljMns7IPz/view" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-download fa-xl text-danger me-3"></i>
+                    <span class="fw-medium text-primary">Link Full 1</span>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <a href="https://drive.google.com/file/d/1mlyYsEgAZDyzoheVlqGRK6WXZCiP0eVM/view" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-download fa-xl text-danger me-3"></i>
+                    <span class="fw-medium text-primary">Link Patch 2</span>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://drive.google.com/file/d/1_SgBG0ctqqO72oO2isdsmsdAaIEr8tv0/view" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-download fa-xl text-danger me-3"></i>
+                    <span class="fw-medium text-primary">Link Full 2</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if(false)
+  <div class="col-xl-8 col-lg-7 col-md-7">
+
     <div class="card">
       <h5 class="card-header">{{ __('Payment history') }}</h5>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
+     
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -136,10 +193,12 @@
         </div>
       </div>
     </div>
+    
   </div>
+  @endif
 </div>
 <!--/ User Profile Content -->
-    
+
 @endsection
 
 @section('script')

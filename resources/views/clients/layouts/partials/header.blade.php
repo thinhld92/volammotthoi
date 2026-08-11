@@ -3,7 +3,7 @@
 <div id="download">
 <a class="SetUp" href="{{$website_configs['download_link']}}" title="Cài đặt ngay" >Cài đặt ngay</a>
 <a href="{{route('register')}}" target="_blank" class="Register Dangky" title="Đăng ký nhanh">Đăng ký nhanh</a>
-<a class="NapThe" href="{{route('hotro.payments.create')}}" title="Nạp thẻ" >Nạp thẻ</a>
+{{-- <a class="NapThe" href="{{route('hotro.payments.create')}}" title="Nạp thẻ" >Nạp thẻ</a> --}}
 </div>
 <!-- End block Sub_DownloadGame_DownloadGame -->
   <!-- Begin block Main_Navigation_MainNavigation - MTU1fE1haW5fTmF2aWdhdGlvbnw1NTl8dGluLXR1Y3xNYWluTmF2aWdhdGlvbnxIVE1M -->

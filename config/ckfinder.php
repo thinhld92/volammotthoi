@@ -29,8 +29,8 @@ $config['authentication'] = '\CKSource\CKFinderBridge\CKFinderMiddleware';
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = 'volammotthoi.test';
-$config['licenseKey']  = '6TYTFXEKMB5U4NJCTCEMAYRWF2HGW';
+$config['licenseName'] = 'mongkiemhiep.fun';
+$config['licenseKey']  = 'CEPEL3EG6HB1X7LBAC2CLRXFHJJCJ';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir

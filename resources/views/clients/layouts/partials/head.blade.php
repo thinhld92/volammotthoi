@@ -1,6 +1,7 @@
 <head>
   <meta http-equiv="Content-Type" type="image/x-icon" content="text/html; charset=utf-8" />
-  <meta name="robots" content="index,follow" />
+  <!-- <meta name="robots" content="index,follow" /> -->
+  <meta name="robots" content="noindex, nofollow">
   <meta name="revisit-after" content="1days" />
   <title>{{$title ?? getWebsiteConfig('site_title') ?? env('APP_NAME')}}</title>
   <meta name="description" content="Cập nhật ngay những thông tin nóng hổi từ chiến trường các giải đấu danh giá của VLTK!"/>

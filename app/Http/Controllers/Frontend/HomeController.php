@@ -16,6 +16,7 @@ class HomeController extends Controller
 {
     public function index(){
         {
+            // return redirect()->route('hotro.dashboard');
             if (getWebsiteConfig('go_home') > 0) {
                 return redirect()->route('home');
             }
@@ -84,7 +85,6 @@ class HomeController extends Controller
      * This function generates 100 unique codes in the format "GC10X" followed by 6 uppercase letters.
      */ 
     public function genCode(){
-        // echo bcrypt('Admin@321');
         for ($i=0; $i < 100; $i++) { 
             $code = "GCW05".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
@@ -94,6 +94,7 @@ class HomeController extends Controller
     }
 
     public function home(){
+        // return redirect()->route('hotro.dashboard');
         $hotPosts = Post::query()
             ->where('status', 1)
             ->orderBy('published_at', 'desc')

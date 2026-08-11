@@ -72,7 +72,7 @@ class TopServerController extends Controller
                 })
                 ->orderBy('level', 'desc')
                 ->orderBy('exp', 'desc')
-                ->limit(10)
+                ->limit(20)
                 ->get();
         return [
             'status' => 200,

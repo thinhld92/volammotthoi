@@ -94,9 +94,10 @@
           <div class="w-px-400 mx-auto card">
             <!-- Logo -->
             <div class="app-brand mb-4">
-              <a href="{{route('home')}}" class="app-brand-link gap-2">
+              <a href="#" class="app-brand-link gap-2">
+              {{-- <a href="{{route('home')}}" class="app-brand-link gap-2"> --}}
                 <span class="app-brand-logo demo">
-                    <img src="{{asset('backend/assets/img/illustrations/logo_volam.png')}}" alt="">
+                    <img src="{{getWebsiteConfig('site_logo') ?? asset('backend/assets/img/illustrations/logo_volam.png')}}" alt="">
                 </span>
               </a>
             </div>

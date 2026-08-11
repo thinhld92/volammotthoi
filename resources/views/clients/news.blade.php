@@ -67,6 +67,4 @@
     {{$hotPosts->links()}}
 </div>
 
-
-
 <!-- <script src="{{asset('backend/assets/vendor/js/bootstrap.js')}}"></script> -->

@@ -405,7 +405,7 @@
                       <ul class="list-unstyled">
                         <li class="mb-3">
                           <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-                          Cân bằng người cày và donate
+                          Cân bằng người cày
                         </li>
                         <li class="mb-3">
                           <span class="badge badge-center rounded-pill bg-label-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
