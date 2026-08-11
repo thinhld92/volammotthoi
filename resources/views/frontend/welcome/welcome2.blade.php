@@ -91,7 +91,7 @@
           <!-- Text & CTA Column (5 parts of 12 grid - Perfectly Balanced) -->
           <div class="col-lg-5">
             <span class="badge-modern badge-modern-gold mb-3 d-inline-block">
-              <i class="fa-solid fa-crown me-1"></i> PHIÊN BẢN CÔNG THÀNH CHIẾN 2005
+              <i class="fa-solid fa-crown me-1"></i> PHIÊN BẢN CÔNG THÀNH - AUTOINGAME
             </span>
 
             <h1 class="display-4 fw-bold mb-3 text-white">
@@ -99,7 +99,7 @@
             </h1>
 
             <p class="text-muted fs-6 mb-4">
-              Khám phá thế giới kiếm hiệp đỉnh cao, hoài niệm ký ức Công Thành Chiến 2005. Chuẩn đồ xanh, cân bằng cày cuốc & giao dịch tự do.
+              Khám phá thế giới kiếm hiệp đỉnh cao, hoài niệm ký ức Công Thành Chiến 2005. Chuẩn đồ, chuẩn kỹ năng, cân bằng cày cuốc & PK tự do.
             </p>
 
             <!-- Countdown Timer & Action Box (Equal 54px Height Alignment) -->
@@ -293,8 +293,8 @@
   <footer class="modern-footer text-center">
     <div class="container">
       <p class="mb-1 text-white opacity-75">&copy; {{ date('Y') }} {{ getWebsiteConfig('site_title') ?? 'Võ Lâm Tiên Kiếm' }}. All rights reserved.</p>
-      <p class="small text-muted mb-1">Bản quyền thuộc về KingSoft. Độc quyền phát hành tại Việt Nam bởi VNG</p>
-      <p class="small footer-disclaimer mb-0">Lưu ý : Chúng tôi không phải nhà phát hành chính thức - cân nhắc trước khi tham gia Game.</p>
+      <p class="small text-muted mb-1">• Bản quyền thuộc về KingSoft. Độc quyền phát hành tại Việt Nam bởi VNG.</p>
+      <p class="small footer-disclaimer-highlight mb-0">• Lưu ý : Chúng tôi không phải nhà phát hành chính thức - cân nhắc trước khi tham gia Game.</p>
     </div>
   </footer>
 
