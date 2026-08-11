@@ -521,6 +521,17 @@ body.modern-theme .search__button:hover {
   box-shadow: 0 0 15px var(--accent-gold-glow) !important;
 }
 
+/* Footer Disclaimer Text with High Contrast on both Dark & Light Themes */
+.footer-disclaimer {
+  color: #F59E0B;
+  font-weight: 500;
+}
+
+body.light-theme .footer-disclaimer {
+  color: #B45309 !important; /* Deep warm amber brown, 100% readable on light theme */
+  font-weight: 600;
+}
+
 /* Overrides for Old Views in Dark Theme */
 body.modern-theme #searchResult,
 body.modern-theme .StaticMain,
