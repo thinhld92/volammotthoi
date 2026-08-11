@@ -53,7 +53,7 @@
             <a href="#features" class="nav-link">Tính Năng</a>
           </li>
           <li class="nav-item">
-            <a href="#classes" class="nav-link">Môn Phái</a>
+            <a href="#showcase" class="nav-link">Hình Ảnh</a>
           </li>
           <li class="nav-item">
             <a href="#community" class="nav-link">Cộng Đồng</a>
@@ -81,26 +81,28 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Hero Banner Carousel -->
-  <section class="min-vh-100 d-flex align-items-center position-relative pt-5 pb-4">
-    <div class="container position-relative z-2 pt-5 mt-3">
+  <!-- Hero Section with Banner Carousel (Reverted to 5:7 Balanced Proportion) -->
+  <section class="min-vh-50 d-flex align-items-center position-relative pt-5 pb-3">
+    <div class="container position-relative z-2 pt-5 mt-2">
       
-      <div class="hero-wuxia-box mb-5">
+      <div class="hero-wuxia-box mb-4">
         <div class="row align-items-center gy-4">
-          <div class="col-lg-7">
+          
+          <!-- Text & CTA Column (5 parts of 12 grid - Perfectly Balanced) -->
+          <div class="col-lg-5">
             <span class="badge-modern badge-modern-gold mb-3 d-inline-block">
               <i class="fa-solid fa-crown me-1"></i> PHIÊN BẢN CÔNG THÀNH CHIẾN 2005
             </span>
 
-            <h1 class="display-3 fw-bold mb-4 text-white">
+            <h1 class="display-4 fw-bold mb-3 text-white">
               Hành Trình Bá Nghiệp Võ Lâm
             </h1>
 
-            <p class="text-muted fs-5 mb-4 pe-lg-4">
+            <p class="text-muted fs-6 mb-4">
               Khám phá thế giới kiếm hiệp đỉnh cao, hoài niệm ký ức Công Thành Chiến 2005. Chuẩn đồ xanh, cân bằng cày cuốc & giao dịch tự do.
             </p>
 
-            <!-- Countdown Timer & Action Box -->
+            <!-- Countdown Timer & Action Box (Equal 54px Height Alignment) -->
             <div class="d-flex flex-wrap align-items-center gap-3">
               @if(isset($opening_time) && isset($opening_time['show']) && $opening_time['show'] == 1)
                 <div class="countdown-wuxia-box">
@@ -119,14 +121,14 @@
                 </div>
               @endif
 
-              <a href="{{ getWebsiteConfig('download_link') ?? '#download' }}" class="btn-modern-primary py-3 px-4 fs-5" target="_blank">
-                <i class="fa-solid fa-download"></i> Tải Về Ngay
+              <a href="{{ getWebsiteConfig('download_link') ?? '#download' }}" class="btn-modern-primary btn-hero-cta" target="_blank">
+                <i class="fa-solid fa-download me-1"></i> Tải Về Ngay
               </a>
             </div>
           </div>
 
-          <!-- Hero Right Column: Dynamic Banner Carousel Slider -->
-          <div class="col-lg-5 text-center position-relative">
+          <!-- Hero Right Column: Banner Carousel Slider (7 parts of 12 grid) -->
+          <div class="col-lg-7 text-center position-relative">
             <div class="modern-hero-carousel-box rounded-4 overflow-hidden shadow-lg">
               @if(isset($welcomeBanners) && $welcomeBanners->count())
                 <div id="heroBannerCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -153,6 +155,7 @@
               @endif
             </div>
           </div>
+
         </div>
       </div>
 
@@ -160,11 +163,11 @@
   </section>
 
   <!-- Features Grid Section (Matching Mockup 1 Cards Layout) -->
-  <section id="features" class="py-5">
-    <div class="container py-3">
-      <div class="text-center mb-5">
-        <span class="badge-modern badge-modern-gold mb-2">Trải Nghiệm Huyền Thoại</span>
-        <h2 class="display-5 fw-bold text-white mb-2">Tính Năng Nổi Bật</h2>
+  <section id="features" class="py-4">
+    <div class="container py-2">
+      <div class="text-center mb-4">
+        <span class="badge-modern badge-modern-gold mb-3 d-inline-block">Trải Nghiệm Huyền Thoại</span>
+        <h2 class="display-5 fw-bold text-white mt-1 mb-2">Tính Năng Nổi Bật</h2>
         <p class="text-muted">Hệ thống tối ưu trải nghiệm, cân bằng và công bằng tuyệt đối</p>
       </div>
 
@@ -249,6 +252,39 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Cool Wuxia Image Showcase Gallery (Visual First, No Heavy Text) -->
+  <section id="showcase" class="py-5">
+    <div class="container py-2">
+      <div class="text-center mb-4">
+        <span class="badge-modern badge-modern-gold mb-3 d-inline-block">Thế Giới Kiếm Hiệp</span>
+        <h2 class="display-5 fw-bold text-white mt-1 mb-2">Hình Ảnh Nổi Bật</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Image 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="modern-glass-card overflow-hidden h-100 p-2 position-relative">
+            <img src="{{ asset('frontend/assets/images/wuxia_showcase.png') }}" class="w-100 rounded-3 object-fit-cover shadow-sm" style="height: 260px;" alt="Bá Vương Xuất Thế">
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="modern-glass-card overflow-hidden h-100 p-2 position-relative">
+            <img src="{{ asset('frontend/assets/images/wuxia_battle.png') }}" class="w-100 rounded-3 object-fit-cover shadow-sm" style="height: 260px;" alt="Công Thành Rực Lửa">
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="modern-glass-card overflow-hidden h-100 p-2 position-relative">
+            <img src="{{ asset('backend/assets/img/front-pages/landing-page/TopTK.jpg') }}" class="w-100 rounded-3 object-fit-cover shadow-sm" style="height: 260px;" alt="Hào Khí Võ Lâm">
+          </div>
+        </div>
       </div>
     </div>
   </section>
