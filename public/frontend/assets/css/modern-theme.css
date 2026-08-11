@@ -532,6 +532,108 @@ body.light-theme .footer-disclaimer-highlight {
   font-weight: 800 !important;
 }
 
+/* CKEditor 5 Table Smart Styling & Custom Color Preservation */
+
+/* General Table Box Container */
+body.modern-theme figure.table,
+body.modern-theme .ck-content figure.table,
+body.modern-theme #single-post-content figure.table,
+body.modern-theme #single-post-content table,
+body.modern-theme .NewsList table,
+body.modern-theme table {
+  width: 100% !important;
+  margin: 1.5rem 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--border-gold) !important;
+}
+
+/* Dark Mode Table Base Styling */
+body.modern-theme:not(.light-theme) figure.table,
+body.modern-theme:not(.light-theme) figure.table table,
+body.modern-theme:not(.light-theme) #single-post-content table,
+body.modern-theme:not(.light-theme) .NewsList table,
+body.modern-theme:not(.light-theme) table {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-gold) !important;
+  color: var(--text-main) !important;
+}
+
+/* Dark Mode Default Cells (Unstyled or default white backgrounds): convert to dark surface */
+body.modern-theme:not(.light-theme) figure.table td:not([style*="background"]),
+body.modern-theme:not(.light-theme) #single-post-content td:not([style*="background"]),
+body.modern-theme:not(.light-theme) table td:not([style*="background"]),
+body.modern-theme:not(.light-theme) table td[style*="255, 255, 255"],
+body.modern-theme:not(.light-theme) table td[style*="255,255,255"],
+body.modern-theme:not(.light-theme) table td[style*="#ffffff"],
+body.modern-theme:not(.light-theme) table td[style*="#FFF"],
+body.modern-theme:not(.light-theme) table td[style*="white"] {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-glass) !important;
+  color: var(--text-main) !important;
+  padding: 12px 18px !important;
+  vertical-align: middle !important;
+}
+
+/* Preserve Custom Cell Colors set by Admin in CKEditor (e.g. Red, Green, Gold, Blue, Purple) */
+body.modern-theme:not(.light-theme) table td[style*="background"]:not([style*="255, 255, 255"]):not([style*="255,255,255"]):not([style*="#ffffff"]):not([style*="#FFF"]):not([style*="white"]),
+body.modern-theme:not(.light-theme) table th[style*="background"]:not([style*="255, 255, 255"]):not([style*="255,255,255"]):not([style*="#ffffff"]):not([style*="#FFF"]):not([style*="white"]) {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15) !important;
+  padding: 12px 18px !important;
+}
+
+/* Dark Mode Default Table Header Row Styling (if no custom color set) */
+body.modern-theme:not(.light-theme) figure.table table th:not([style*="background"]),
+body.modern-theme:not(.light-theme) #single-post-content table th:not([style*="background"]),
+body.modern-theme:not(.light-theme) table th:not([style*="background"]),
+body.modern-theme:not(.light-theme) table thead tr:not([style*="background"]) {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: var(--accent-gold) !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  border-bottom: 2px solid var(--border-gold) !important;
+}
+
+/* Smart Text Contrast inside Table Cells */
+body.modern-theme:not(.light-theme) table td:not([style*="background"]) *,
+body.modern-theme:not(.light-theme) table td[style*="255, 255, 255"] *,
+body.modern-theme:not(.light-theme) table td[style*="#ffffff"] * {
+  color: var(--text-main) !important;
+}
+
+body.modern-theme:not(.light-theme) table th:not([style*="background"]) * {
+  color: var(--accent-gold) !important;
+}
+
+/* Light Theme Overrides for CKEditor Tables */
+body.light-theme figure.table,
+body.light-theme #single-post-content table,
+body.light-theme table {
+  background-color: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+}
+
+body.light-theme figure.table table th,
+body.light-theme #single-post-content table th,
+body.light-theme table th {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+  border-bottom-color: #CBD5E1 !important;
+}
+
+body.light-theme figure.table table td,
+body.light-theme #single-post-content table td,
+body.light-theme table td {
+  color: #334155 !important;
+  border-color: #E2E8F0 !important;
+}
+
 /* Overrides for Old Views in Dark Theme */
 body.modern-theme #searchResult,
 body.modern-theme .StaticMain,
