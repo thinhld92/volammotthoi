@@ -444,6 +444,83 @@ body.modern-theme .pagination .page-item.disabled .page-link {
   opacity: 0.5;
 }
 
+/* Form Controls & Search Input Styling in Dark Mode */
+body.modern-theme input[type="text"],
+body.modern-theme input[type="search"],
+body.modern-theme input[type="email"],
+body.modern-theme input[type="password"],
+body.modern-theme select,
+body.modern-theme textarea,
+body.modern-theme .form-control,
+body.modern-theme .search__field,
+body.modern-theme .BgTextbox,
+body.modern-theme #Keyword1 {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 14px;
+}
+
+body.modern-theme input[type="text"]:focus,
+body.modern-theme input[type="search"]:focus,
+body.modern-theme .form-control:focus,
+body.modern-theme .search__field:focus,
+body.modern-theme #Keyword1:focus {
+  background-color: var(--bg-card-hover) !important;
+  color: var(--text-heading) !important;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px var(--accent-gold-glow) !important;
+  outline: none !important;
+}
+
+/* Placeholders in Dark Mode */
+body.modern-theme ::placeholder,
+body.modern-theme input::placeholder,
+body.modern-theme .form-control::placeholder,
+body.modern-theme .search__field::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.8 !important;
+}
+
+/* Search Suggest Dropdown */
+body.modern-theme #search-suggest,
+body.modern-theme .search-suggest,
+body.modern-theme .autocomplete-suggestions {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-gold) !important;
+  color: var(--text-main) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.modern-theme #search-suggest a,
+body.modern-theme .search-suggest a {
+  color: var(--text-main) !important;
+}
+
+body.modern-theme #search-suggest a:hover,
+body.modern-theme .search-suggest a:hover {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: var(--accent-gold) !important;
+}
+
+/* Search Button */
+body.modern-theme .search__button,
+body.modern-theme #frmSearch button {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+  color: #0F131C !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 18px !important;
+  transition: all 0.2s ease !important;
+}
+
+body.modern-theme .search__button:hover {
+  box-shadow: 0 0 15px var(--accent-gold-glow) !important;
+}
+
 /* Overrides for Old Views in Dark Theme */
 body.modern-theme #searchResult,
 body.modern-theme .StaticMain,
