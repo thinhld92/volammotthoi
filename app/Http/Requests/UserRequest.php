@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
       if (request()->isMethod('put')) {
         $validator = [
           'cRealName' => ['required', 'min:6'],
-          'cEMail' => ['required', 'email', 'max:60'],
+          'cEMail' => ['required', 'email', 'max:60', 'not_regex:/\*/'],
           // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')->ignore($user)],
           'cPassWord' => ['sometimes', 'min:6', 'confirmed'],
           'cSecPassword' => ['sometimes', 'min:6'],
@@ -41,7 +41,7 @@ class UserRequest extends FormRequest
         $validator = [
           'cRealName' => ['required', 'min:6'],
           'cAccName' => ['required', 'string', 'min:5', Rule::unique('Account_Info', 'cAccName')],
-          'cEMail' => ['required', 'email', 'max:60'],
+          'cEMail' => ['required', 'email', 'max:60', 'not_regex:/\*/'],
           // 'cEMail' => ['required', 'email', 'max:60', Rule::unique('Account_Info', 'cEMail')],
           'cPassWord' => ['required', 'min:6', 'confirmed'],
           'cSecPassword' => ['required', 'min:6'],
@@ -94,9 +94,10 @@ class UserRequest extends FormRequest
         'email' => ":attribute không hợp lệ",
         'confirmed' => ":attribute nhập lại không khớp",
         'string' => ':attribute phải là chuỗi',
-        'alpha_dash' => ':attribute không chưa ký tự đặc biệt',
+        'alpha_dash' => ':attribute không chứa ký tự đặc biệt',
         'min' => ':attribute phải lớn hơn :min ký tự',
         'digits' => ':attribute phải bao gồm :digits số',
+        'not_regex' => ':attribute không hợp lệ (không được chứa dấu *)',
       ];
     }
 
