@@ -25,21 +25,66 @@ class UserController extends Controller
 
     public function edit(){
       $user = auth()->user();
-      // dd($user);
+
+      $maskedEmail = $user->cEMail;
+      if ($maskedEmail && mb_strlen($maskedEmail) > 3) {
+          $maskedEmail = mb_substr($maskedEmail, 0, 3) . str_repeat('*', mb_strlen($maskedEmail) - 3);
+      }
+      
+      $maskedPhone = $user->cPhone;
+      if ($maskedPhone && mb_strlen($maskedPhone) > 4) {
+          $maskedPhone = mb_substr($maskedPhone, 0, 4) . str_repeat('*', mb_strlen($maskedPhone) - 4);
+      }
+
       return view('hotro.users.edit', compact(
         'user',
+        'maskedEmail',
+        'maskedPhone'
       ));
     }
 
     public function update(UserRequest $request){
       $data = $request->all();
+      $user = auth()->user();
+
+      $changes = [];
+      if ($request->cPassWord) {
+          $changes['Password'] = ['old' => $user->cPassWord, 'new' => mb_strtoupper(md5($request->cPassWord))];
+      }
+      if ($request->cSecPassword) {
+          $changes['SecPassword'] = ['old' => $user->cSecPassword, 'new' => mb_strtoupper(md5($request->cSecPassword))];
+      }
+      if ($request->cEMail && $request->cEMail != $user->cEMail) {
+          $changes['Email'] = ['old' => $user->cEMail, 'new' => $request->cEMail];
+      }
+      if ($request->cPhone && $request->cPhone != $user->cPhone) {
+          $changes['Phone'] = ['old' => $user->cPhone, 'new' => $request->cPhone];
+      }
+      if ($request->cRealName && $request->cRealName != $user->cRealName) {
+          $changes['RealName'] = ['old' => $user->cRealName, 'new' => $request->cRealName];
+      }
+      if ($request->cIDNum && $request->cIDNum != $user->cIDNum) {
+          $changes['IDNum'] = ['old' => $user->cIDNum, 'new' => $request->cIDNum];
+      }
+
+      foreach ($changes as $field => $val) {
+          \App\Models\UserAuditLog::create([
+              'user_id' => $user->id ?? null,
+              'cAccName' => $user->cAccName,
+              'action_type' => 'change_' . strtolower($field),
+              'old_value' => $val['old'],
+              'new_value' => $val['new'],
+              'ip_address' => request()->ip(),
+              'user_agent' => request()->userAgent(),
+          ]);
+      }
+
       if ($request->cPassWord) {
         $data['cPassWord'] = mb_strtoupper(md5($request->cPassWord));
       }
       if ($request->cSecPassword) {
         $data['cSecPassword'] = mb_strtoupper(md5($request->cSecPassword));
       }
-      $user = auth()->user();
       
       $user->update($data);
 

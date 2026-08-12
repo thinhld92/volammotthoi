@@ -78,8 +78,7 @@
                 class="form-control {{$errors->get('cEMail') ? 'custom-invalid' : ''}}"
                 placeholder="john.doe"
                 aria-label="john.doe"
-                aria-describedby="multicol-email2" 
-                value="{{ old('cEMail') ?? $user->cEMail ?? '' }}"
+                value="{{ old('cEMail') ?? $maskedEmail ?? '' }}"
               />
               @foreach ($errors->get('cEMail') as $message)
                 <div class="invalid-feedback">{{$message}}</div>
@@ -216,10 +215,10 @@
               type="text"
               name="cPhone"
               id="multicol-phone"
-              class="form-control phone-mask"
+              class="form-control {{ ($maskedPhone && strpos($maskedPhone, '*') !== false) ? '' : 'phone-mask' }}"
               placeholder="Ex: 0xxx xxx xxx"
               aria-label="0369 799 894" 
-              value="{{ old('cPhone') ?? $user->cPhone ?? '' }}"
+              value="{{ old('cPhone') ?? $maskedPhone ?? '' }}"
             />
             @foreach ($errors->get('cPhone') as $message)
               <div class="invalid-feedback">{{$message}}</div>

@@ -42,7 +42,7 @@
         </li>
       </ul>
     </li>
-    <li class="menu-item {{ (request()-> is('admin/users*')) ? 'active open' : '' }}">
+    <li class="menu-item {{ (request()-> is('admin/users*') || request()-> is('admin/user-audit-logs*')) ? 'active open' : '' }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon fa fa-users"></i>
         <div>{{ __('Manage Users') }}</div>
@@ -59,6 +59,12 @@
           <a href="{{route('admin.users.create')}}" class="menu-link">
             <i class="menu-icon sub-menu-icon-custom fa fa-user-plus"></i>
             <div>{{ __('Create User') }}</div>
+          </a>
+        </li>
+        <li class="menu-item {{ (request()-> is('admin/user-audit-logs*')) ? 'active' : '' }}">
+          <a href="{{route('admin.user-audit-logs.index')}}" class="menu-link">
+            <i class="menu-icon sub-menu-icon-custom fa-solid fa-clock-rotate-left"></i>
+            <div>{{ __('Lịch sử thao tác') }}</div>
           </a>
         </li>
       </ul>

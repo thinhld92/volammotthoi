@@ -91,8 +91,8 @@ class HomeController extends Controller
      * This function generates 100 unique codes in the format "GC10X" followed by 6 uppercase letters.
      */ 
     public function genCode(){
-        for ($i=0; $i < 100; $i++) { 
-            $code = "GCW05".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+        for ($i=0; $i < 200; $i++) { 
+            $code = "GCNM".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
         // $this->checkCheatUser("3333");

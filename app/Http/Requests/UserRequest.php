@@ -61,6 +61,14 @@ class UserRequest extends FormRequest
       if ($this->cSecPassword == null) {
         $this->request->remove('cSecPassword');
       }
+
+      $user = auth()->user();
+      if ($this->cEMail && strpos($this->cEMail, '*') !== false && $user) {
+          $this->merge(['cEMail' => $user->cEMail]);
+      }
+      if ($this->cPhone && strpos($this->cPhone, '*') !== false && $user) {
+          $this->merge(['cPhone' => $user->cPhone]);
+      }
     }
 
     /**

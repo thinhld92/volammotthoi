@@ -63,5 +63,6 @@ Route::group([
     // Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
     Route::get('payments/{$payment}/approve', [PaymentController::class, 'approve'])->name('payments.approve');
     Route::match(['put', 'patch'], 'payments/fast-update/{payment}', [PaymentController::class, 'fastUpdate'])->name('payments.fast-update');
+    Route::get('user-audit-logs', [\App\Http\Controllers\Backend\UserAuditLogController::class, 'index'])->name('user-audit-logs.index');
 });
 
