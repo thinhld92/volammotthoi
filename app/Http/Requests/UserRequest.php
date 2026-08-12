@@ -63,11 +63,22 @@ class UserRequest extends FormRequest
       }
 
       $user = auth()->user();
-      if ($this->cEMail && strpos($this->cEMail, '*') !== false && $user) {
-          $this->merge(['cEMail' => $user->cEMail]);
-      }
-      if ($this->cPhone && strpos($this->cPhone, '*') !== false && $user) {
-          $this->merge(['cPhone' => $user->cPhone]);
+      if ($user) {
+          $maskedEmail = $user->cEMail;
+          if ($maskedEmail && mb_strlen($maskedEmail) > 3) {
+              $maskedEmail = mb_substr($maskedEmail, 0, 3) . str_repeat('*', mb_strlen($maskedEmail) - 3);
+          }
+          if ($this->cEMail === $maskedEmail) {
+              $this->merge(['cEMail' => $user->cEMail]);
+          }
+
+          $maskedPhone = $user->cPhone;
+          if ($maskedPhone && mb_strlen($maskedPhone) > 4) {
+              $maskedPhone = mb_substr($maskedPhone, 0, 4) . str_repeat('*', mb_strlen($maskedPhone) - 4);
+          }
+          if ($this->cPhone === $maskedPhone) {
+              $this->merge(['cPhone' => $user->cPhone]);
+          }
       }
     }
 
