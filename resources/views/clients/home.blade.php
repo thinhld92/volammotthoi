@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" type="image/x-icon" content="text/html; charset=utf-8" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="revisit-after" content="1days" />
   <!-- <meta property="fb:app_id" content="218407745021247" /> -->
   <title>{{getWebsiteConfig('site_title') ?? env('APP_NAME')}}</title>

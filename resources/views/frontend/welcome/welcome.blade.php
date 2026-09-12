@@ -4,6 +4,8 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+	<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 	<meta name="keywords" content="game, gaming, premium, VLTK">
 	<meta name="author" content="Promickey">
 	<meta name="description" content="VLTK - {{ config('app.name', 'Võ Lâm Tiên Kiếm') }}">
