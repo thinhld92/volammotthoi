@@ -1,0 +1,1225 @@
+/* ==========================================================================
+   Theme 3 (layout_website = 3) — "Thủy Mặc Thanh Ngọc" (Neo-Oriental Light Bento)
+   Unified Stylesheet for Frontend, Auth Portal (/login, /register), & HoTro Module
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap');
+
+:root {
+  --v3-bg: #F4F3ED;
+  --v3-bg-accent: #EAE8DF;
+  --v3-surface: #FFFFFF;
+  --v3-surface-glass: rgba(255, 255, 255, 0.88);
+  --v3-surface-soft: #F7FAF9;
+  --v3-border: rgba(15, 23, 42, 0.08);
+  --v3-border-jade: rgba(13, 148, 136, 0.25);
+  --v3-jade: #0D9488;
+  --v3-jade-dark: #0F766E;
+  --v3-jade-light: #14B8A6;
+  --v3-jade-soft: rgba(13, 148, 136, 0.11);
+  --v3-jade-glow: rgba(13, 148, 136, 0.22);
+  --v3-vermilion: #E11D48;
+  --v3-vermilion-dark: #BE123C;
+  --v3-vermilion-soft: rgba(225, 29, 72, 0.1);
+  --v3-ink: #0F172A;
+  --v3-text: #334155;
+  --v3-muted: #64748B;
+  --v3-dim: #94A3B8;
+  --v3-radius-xl: 26px;
+  --v3-radius-lg: 20px;
+  --v3-radius-md: 14px;
+  --v3-radius-sm: 10px;
+  --v3-shadow-sm: 0 6px 20px rgba(15, 23, 42, 0.04);
+  --v3-shadow-md: 0 14px 36px rgba(15, 23, 42, 0.06);
+  --v3-shadow-jade: 0 12px 30px rgba(13, 148, 136, 0.16);
+  --v3-font-heading: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --v3-font-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body.jade-bento-theme {
+  background-color: var(--v3-bg);
+  background-image:
+    radial-gradient(circle at 85% 8%, rgba(20, 184, 166, 0.09) 0%, transparent 42%),
+    radial-gradient(circle at 10% 30%, rgba(225, 29, 72, 0.04) 0%, transparent 38%);
+  color: var(--v3-text);
+  font-family: var(--v3-font-body);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body.jade-bento-theme h1,
+body.jade-bento-theme h2,
+body.jade-bento-theme h3,
+body.jade-bento-theme h4,
+body.jade-bento-theme h5,
+body.jade-bento-theme h6 {
+  font-family: var(--v3-font-heading);
+  color: var(--v3-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.28;
+}
+
+body.jade-bento-theme a {
+  color: var(--v3-ink);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+body.jade-bento-theme a:hover {
+  color: var(--v3-jade);
+}
+
+/* ==========================================================================
+   1. Floating Frosted Pearl Pill Navbar (Frontend)
+   ========================================================================== */
+.v3-navbar-wrap {
+  position: sticky;
+  top: 16px;
+  z-index: 1050;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.v3-navbar {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: var(--v3-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.07), 0 0 0 1px var(--v3-border);
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 991.98px) {
+  .v3-navbar {
+    border-radius: 22px;
+    padding: 10px 16px;
+  }
+}
+
+.v3-navbar .navbar-brand img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.v3-nav-link {
+  display: inline-block;
+  padding: 8px 16px !important;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: var(--v3-text) !important;
+  transition: all 0.2s ease;
+}
+
+.v3-nav-link:hover {
+  color: var(--v3-jade-dark) !important;
+  background: rgba(13, 148, 136, 0.08);
+}
+
+.v3-nav-link.active {
+  background: var(--v3-jade-soft);
+  color: var(--v3-jade-dark) !important;
+  font-weight: 700;
+}
+
+.btn-v3-jade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--v3-jade-light) 0%, var(--v3-jade) 60%, var(--v3-jade-dark) 100%);
+  color: #FFFFFF !important;
+  font-family: var(--v3-font-heading);
+  font-weight: 700;
+  font-size: 0.94rem;
+  border: none;
+  box-shadow: 0 6px 18px var(--v3-jade-glow);
+  cursor: pointer;
+  transition: all 0.24s ease;
+  white-space: nowrap;
+}
+
+.btn-v3-jade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(13, 148, 136, 0.34);
+  color: #FFFFFF !important;
+}
+
+.btn-v3-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--v3-surface);
+  color: var(--v3-ink) !important;
+  font-family: var(--v3-font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid var(--v3-border);
+  box-shadow: var(--v3-shadow-sm);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn-v3-soft:hover {
+  border-color: var(--v3-jade);
+  color: var(--v3-jade-dark) !important;
+  background: var(--v3-surface-soft);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   2. Bento Cards & 8:4 Command Dock Hero (Matching Mockup 1)
+   ========================================================================== */
+.v3-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.v3-bento-card {
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  border-radius: var(--v3-radius-xl);
+  box-shadow: var(--v3-shadow-md);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.v3-bento-card:hover {
+  border-color: var(--v3-border-jade);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+/* Left 8-Col Hero Showcase Card */
+.v3-hero-showcase {
+  position: relative;
+  min-height: 390px;
+  height: 100%;
+  border-radius: var(--v3-radius-xl);
+  overflow: hidden;
+  background: #EAE8DF;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--v3-shadow-md);
+  display: flex;
+  align-items: center;
+}
+
+.v3-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  transition: transform 0.6s ease;
+}
+
+.v3-hero-showcase:hover .v3-hero-bg {
+  transform: scale(1.02);
+}
+
+.v3-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 245, 240, 0.93) 0%,
+    rgba(246, 245, 240, 0.72) 38%,
+    rgba(246, 245, 240, 0.05) 76%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .v3-hero-showcase {
+    min-height: 340px;
+  }
+  .v3-hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(246, 245, 240, 0.92) 0%,
+      rgba(246, 245, 240, 0.82) 100%
+    );
+  }
+}
+
+.v3-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 42px;
+  max-width: 540px;
+}
+
+@media (max-width: 575.98px) {
+  .v3-hero-inner {
+    padding: 26px 22px;
+  }
+}
+
+.v3-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.28);
+  margin-bottom: 16px;
+}
+
+.v3-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--v3-jade-soft);
+  color: var(--v3-jade-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+/* Porcelain Countdown Tiles (Matching Mockup 1) */
+.v3-countdown-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.v3-cd-tile {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--v3-border);
+  border-radius: 16px;
+  min-width: 72px;
+  padding: 10px 14px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.v3-cd-num {
+  font-family: var(--v3-font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--v3-ink);
+  line-height: 1.1;
+}
+
+.v3-cd-lbl {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--v3-muted);
+  margin-top: 2px;
+}
+
+.v3-cd-sep {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--v3-jade);
+}
+
+/* Carousel Banner Bento Frame (Welcome3 & Home V3) */
+.v3-banner-carousel {
+  position: relative;
+  height: 100%;
+  min-height: 370px;
+  padding: 8px;
+  border-radius: var(--v3-radius-xl);
+  overflow: hidden;
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  box-shadow: var(--v3-shadow-md);
+}
+
+.v3-banner-carousel .carousel,
+.v3-banner-carousel .carousel-inner,
+.v3-banner-carousel .carousel-item {
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.v3-banner-carousel img {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+@media (max-width: 767.98px) {
+  .v3-banner-carousel {
+    min-height: 240px;
+  }
+  .v3-banner-carousel img {
+    height: 240px;
+  }
+}
+
+.v3-banner-caption {
+  position: absolute;
+  left: 22px;
+  bottom: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.v3-banner-carousel .carousel-control-prev,
+.v3-banner-carousel .carousel-control-next {
+  width: 56px;
+  opacity: 1;
+}
+
+.v3-carousel-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--v3-ink);
+  border: 1px solid var(--v3-border);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.v3-banner-carousel .carousel-control-prev:hover .v3-carousel-arrow,
+.v3-banner-carousel .carousel-control-next:hover .v3-carousel-arrow {
+  background: var(--v3-jade);
+  color: #FFFFFF;
+  border-color: var(--v3-jade);
+  transform: scale(1.06);
+}
+
+.v3-banner-carousel .carousel-indicators [data-bs-target] {
+  width: 24px;
+  height: 5px;
+  border-radius: 999px;
+  background-color: var(--v3-jade-dark);
+  border: none;
+}
+
+/* Right 4-Col Bento Command Dock (Matching Mockup 1) */
+.v3-command-dock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+/* Cinnabar Vermilion "Tải về" Button Card */
+.v3-download-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 26px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 55%, #BE123C 100%);
+  color: #FFFFFF !important;
+  box-shadow: 0 14px 30px rgba(225, 29, 72, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  transition: all 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v3-download-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(225, 29, 72, 0.38);
+  color: #FFFFFF !important;
+}
+
+.v3-download-title {
+  font-family: var(--v3-font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.v3-download-sub {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin-top: 4px;
+}
+
+.v3-download-circle {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--v3-vermilion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s ease;
+}
+
+.v3-download-tile:hover .v3-download-circle {
+  transform: scale(1.08);
+}
+
+/* 2x2 Quick Action Bento Grid (No Nạp Thẻ!) */
+.v3-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  flex: 1;
+}
+
+.v3-quick-tile {
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  border-radius: 20px;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  box-shadow: var(--v3-shadow-sm);
+  transition: all 0.24s ease;
+  text-decoration: none;
+}
+
+.v3-quick-tile i {
+  font-size: 1.45rem;
+  color: var(--v3-ink);
+  transition: all 0.24s ease;
+}
+
+.v3-quick-tile span {
+  font-family: var(--v3-font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--v3-ink);
+}
+
+.v3-quick-tile:hover {
+  border-color: var(--v3-jade);
+  background: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: var(--v3-shadow-jade);
+}
+
+.v3-quick-tile:hover i,
+.v3-quick-tile:hover span {
+  color: var(--v3-jade-dark);
+}
+
+/* ==========================================================================
+   3. News Cards, Filter Bar, & Article Content
+   ========================================================================== */
+.v3-filter-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: var(--v3-surface);
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--v3-border);
+  box-shadow: var(--v3-shadow-sm);
+}
+
+.v3-filter-pill {
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--v3-muted) !important;
+  transition: all 0.2s ease;
+}
+
+.v3-filter-pill:hover {
+  color: var(--v3-jade-dark) !important;
+}
+
+.v3-filter-pill.active {
+  background: var(--v3-jade);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px var(--v3-jade-glow);
+}
+
+.v3-post-card {
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  border-radius: 22px;
+  padding: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--v3-shadow-sm);
+  transition: all 0.28s ease;
+}
+
+.v3-post-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--v3-border-jade);
+  box-shadow: var(--v3-shadow-jade);
+}
+
+.v3-post-thumb {
+  height: 190px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--v3-bg-accent);
+}
+
+.v3-post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.v3-post-card:hover .v3-post-thumb img {
+  transform: scale(1.05);
+}
+
+.v3-post-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.42;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.v3-post-desc {
+  color: var(--v3-muted);
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+/* Feature Bento Cards (Welcome3) */
+.v3-feature-bento {
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+  box-shadow: var(--v3-shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.v3-feature-bento:hover {
+  border-color: var(--v3-jade);
+  transform: translateY(-4px);
+  box-shadow: var(--v3-shadow-jade);
+}
+
+.v3-feature-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 15px;
+  background: var(--v3-jade-soft);
+  color: var(--v3-jade-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+/* Pagination */
+body.jade-bento-theme .pagination {
+  gap: 6px;
+  justify-content: center;
+}
+
+body.jade-bento-theme .pagination .page-item .page-link {
+  background: var(--v3-surface);
+  color: var(--v3-ink);
+  border: 1px solid var(--v3-border);
+  border-radius: 12px;
+  padding: 8px 15px;
+  font-weight: 600;
+  box-shadow: var(--v3-shadow-sm);
+}
+
+body.jade-bento-theme .pagination .page-item:hover .page-link {
+  border-color: var(--v3-jade);
+  color: var(--v3-jade-dark);
+}
+
+body.jade-bento-theme .pagination .page-item.active .page-link {
+  background: var(--v3-jade);
+  border-color: var(--v3-jade);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 4px 14px var(--v3-jade-glow);
+}
+
+/* Single Post Content & Smart CKEditor 5 Table Preservation */
+body.jade-bento-theme #single-post-content {
+  color: var(--v3-text);
+  font-size: 1.04rem;
+  line-height: 1.82;
+}
+
+body.jade-bento-theme #single-post-content h1,
+body.jade-bento-theme #single-post-content h2,
+body.jade-bento-theme #single-post-content h3,
+body.jade-bento-theme #single-post-content h4 {
+  color: var(--v3-jade-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+body.jade-bento-theme #single-post-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 14px;
+  margin: 1rem 0;
+}
+
+body.jade-bento-theme #single-post-content table,
+body.jade-bento-theme figure.table table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--v3-border-jade) !important;
+  margin: 1.25rem 0 !important;
+  background: #FFFFFF;
+}
+
+body.jade-bento-theme #single-post-content table th:not([style*="background"]) {
+  background: var(--v3-jade-soft) !important;
+  color: var(--v3-jade-dark) !important;
+  font-weight: 700;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--v3-border-jade) !important;
+}
+
+body.jade-bento-theme #single-post-content table td {
+  padding: 11px 16px !important;
+  border-bottom: 1px solid var(--v3-border) !important;
+}
+
+/* Footer & Disclaimer */
+.v3-footer {
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid var(--v3-border);
+  padding: 34px 0;
+  color: var(--v3-muted);
+  font-size: 0.9rem;
+}
+
+.v3-disclaimer {
+  color: var(--v3-vermilion) !important;
+  font-weight: 700;
+}
+
+/* Floating Facebook Button */
+.v3-fb-float {
+  position: fixed;
+  right: 22px;
+  bottom: 32px;
+  z-index: 1060;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1877F2 0%, #0D6EFD 100%);
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.35);
+  transition: transform 0.25s ease;
+}
+
+.v3-fb-float:hover {
+  transform: scale(1.08);
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   4. HoTro V3 Module (Left Pearl-Jade Sidebar & Bento Cards)
+   ========================================================================== */
+.v3-hotro-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.v3-hotro-sidebar {
+  width: 268px;
+  background: var(--v3-surface);
+  border-right: 1px solid var(--v3-border);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1045;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 0 28px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v3-hotro-brand {
+  padding: 24px 20px 18px;
+  text-align: center;
+  border-bottom: 1px solid var(--v3-border);
+}
+
+.v3-hotro-brand img {
+  max-height: 72px;
+  max-width: 185px;
+  object-fit: contain;
+}
+
+.v3-hotro-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+}
+
+.v3-hotro-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v3-dim);
+  padding: 0 14px;
+  margin-bottom: 8px;
+}
+
+.v3-hotro-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.v3-hotro-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: var(--v3-text) !important;
+  font-family: var(--v3-font-heading);
+  font-weight: 600;
+  font-size: 0.94rem;
+  transition: all 0.2s ease;
+}
+
+.v3-hotro-link i {
+  width: 22px;
+  text-align: center;
+  color: var(--v3-muted);
+}
+
+.v3-hotro-link:hover {
+  background: var(--v3-jade-soft);
+  color: var(--v3-jade-dark) !important;
+}
+
+.v3-hotro-link:hover i {
+  color: var(--v3-jade-dark);
+}
+
+.v3-hotro-link.active {
+  background: linear-gradient(135deg, var(--v3-jade-light) 0%, var(--v3-jade) 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  box-shadow: 0 6px 18px var(--v3-jade-glow);
+}
+
+.v3-hotro-link.active i {
+  color: #FFFFFF !important;
+}
+
+.v3-hotro-main {
+  flex: 1;
+  margin-left: 268px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.v3-hotro-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.v3-hotro-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991.98px) {
+  .v3-hotro-sidebar {
+    transform: translateX(-100%);
+  }
+  .v3-hotro-sidebar.show {
+    transform: translateX(0);
+  }
+  .v3-hotro-main {
+    margin-left: 0;
+  }
+}
+
+.v3-hotro-topbar {
+  height: 68px;
+  background: var(--v3-surface-glass);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--v3-border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.v3-hotro-content {
+  flex: 1;
+  padding: 28px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .v3-hotro-topbar {
+    padding: 0 16px;
+  }
+  .v3-hotro-content {
+    padding: 16px;
+  }
+}
+
+.v3-safe-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--v3-jade-soft);
+  color: var(--v3-jade-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.v3-user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 999px;
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border-jade);
+  box-shadow: var(--v3-shadow-sm);
+}
+
+.v3-user-pill img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--v3-jade);
+}
+
+/* Dashboard Hero Profile Card (Jade Mist Banner) */
+.v3-profile-hero {
+  position: relative;
+  border-radius: var(--v3-radius-xl);
+  background: var(--v3-surface);
+  border: 1px solid var(--v3-border);
+  box-shadow: var(--v3-shadow-md);
+  overflow: hidden;
+}
+
+.v3-profile-banner {
+  position: relative;
+  min-height: 250px;
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.v3-profile-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 243, 237, 0.25) 0%,
+    rgba(244, 243, 237, 0.72) 60%,
+    rgba(255, 255, 255, 0.96) 100%
+  );
+}
+
+.v3-profile-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.v3-avatar-jade-ring {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #2DD4BF 0%, #0D9488 60%, #0F766E 100%);
+  box-shadow: 0 10px 26px rgba(13, 148, 136, 0.28);
+  margin-bottom: 12px;
+}
+
+.v3-avatar-jade-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #FFFFFF;
+  background: #FFFFFF;
+}
+
+/* Forms & Inputs (Auth V3 & HoTro V3) */
+.v3-label {
+  display: block;
+  font-family: var(--v3-font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--v3-ink);
+  margin-bottom: 6px;
+}
+
+.v3-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.v3-control {
+  width: 100%;
+  background: var(--v3-surface-soft) !important;
+  color: var(--v3-ink) !important;
+  border: 1px solid rgba(15, 23, 42, 0.13) !important;
+  border-radius: 12px !important;
+  padding: 11px 15px !important;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.v3-control.has-end-icon {
+  padding-right: 44px !important;
+}
+
+.v3-control:focus {
+  background: #FFFFFF !important;
+  border-color: var(--v3-jade) !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.14) !important;
+  outline: none !important;
+}
+
+.v3-control[readonly],
+.v3-control:disabled {
+  background: #ECEBE4 !important;
+  color: var(--v3-muted) !important;
+  cursor: not-allowed;
+}
+
+.v3-control.is-invalid {
+  border-color: var(--v3-vermilion) !important;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12) !important;
+}
+
+.v3-pw-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--v3-muted);
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.v3-pw-toggle:hover {
+  color: var(--v3-jade-dark);
+}
+
+.v3-error {
+  color: var(--v3-vermilion);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.v3-alert {
+  padding: 13px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.v3-alert-success {
+  background: var(--v3-jade-soft);
+  border: 1px solid var(--v3-border-jade);
+  color: var(--v3-jade-dark);
+}
+
+.v3-alert-danger {
+  background: var(--v3-vermilion-soft);
+  border: 1px solid rgba(225, 29, 72, 0.28);
+  color: var(--v3-vermilion-dark);
+}
+
+.btn-v3-vermilion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 60%, #BE123C 100%);
+  color: #FFFFFF !important;
+  font-family: var(--v3-font-heading);
+  font-weight: 700;
+  font-size: 0.96rem;
+  border: none;
+  box-shadow: 0 8px 22px rgba(225, 29, 72, 0.25);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.btn-v3-vermilion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(225, 29, 72, 0.36);
+  color: #FFFFFF !important;
+}
+
+/* Auth V3 Split Bento Shell */
+.v3-auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 36px;
+}
+
+.v3-auth-topbar {
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v3-auth-shell {
+  max-width: 1040px;
+  width: 100%;
+  margin: auto;
+  background: var(--v3-surface);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--v3-border);
+  overflow: hidden;
+}
+
+.v3-auth-art {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.v3-auth-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.05) 0%,
+    rgba(15, 23, 42, 0.65) 75%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+}
+
+.v3-auth-art > * {
+  position: relative;
+  z-index: 1;
+}
+
+.v3-auth-form {
+  padding: 42px 40px;
+}
+
+@media (max-width: 575.98px) {
+  .v3-auth-form {
+    padding: 28px 20px;
+  }
+}

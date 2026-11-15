@@ -36,6 +36,12 @@ class HomeController extends Controller
                 $opening_time['hour'] = date('H', $opening_date);
             }
 
+            if ((int) getWebsiteConfig('layout_website') == 3) {
+                return view('frontend.welcome.welcome3', compact(
+                    'welcomeBanners',
+                    'opening_time',
+                ));
+            }
             if ((int) getWebsiteConfig('layout_website') == 2) {
                 return view('frontend.welcome.welcome2', compact(
                     'welcomeBanners',
@@ -92,7 +98,7 @@ class HomeController extends Controller
      */ 
     public function genCode(){
         for ($i=0; $i < 200; $i++) { 
-            $code = "GCNM".mb_strtoupper(substr(md5(uniqid().time()),6,6));
+            $code = "GC12X".mb_strtoupper(substr(md5(uniqid().time()),6,6));
             echo $code."<br/>";
         }
         // $this->checkCheatUser("3333");
@@ -111,7 +117,7 @@ class HomeController extends Controller
             ->where('type', BannerType::HOMEPAGE)
             ->get();
         
-        $view = ((int) getWebsiteConfig('layout_website') == 2) ? 'clients.home2' : 'clients.home';
+        $view = layoutView('clients.home', 'clients.home2', 'clients.v3.home');
         return view($view, compact(
             'hotPosts',
             'hotBanners',
@@ -137,7 +143,8 @@ class HomeController extends Controller
         $image = $category->thumbnail;
 
 
-        return view('clients.category_posts', compact(
+        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.category_posts' : 'clients.category_posts';
+        return view($view, compact(
             'posts',
             'category',
             'title',
@@ -152,7 +159,8 @@ class HomeController extends Controller
         $image = $post->image;
 
         $category = $post->category;
-        return view('clients.single_post', compact(
+        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.single_post' : 'clients.single_post';
+        return view($view, compact(
             'post',
             'category',
             'title',
@@ -178,7 +186,8 @@ class HomeController extends Controller
             ->orderBy('title', 'asc')
             ->paginate(10);
         $posts->appends(['search'=> $search]);
-        return view('clients.search', compact(
+        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.search' : 'clients.search';
+        return view($view, compact(
             'posts',
             'search',
             'title',

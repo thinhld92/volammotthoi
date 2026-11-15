@@ -36,7 +36,8 @@ class UserController extends Controller
           $maskedPhone = mb_substr($maskedPhone, 0, 4) . str_repeat('*', mb_strlen($maskedPhone) - 4);
       }
 
-      return view('hotro.users.edit', compact(
+      $view = layoutView('hotro.users.edit', 'hotro.v2.users.edit', 'hotro.v3.users.edit');
+      return view($view, compact(
         'user',
         'maskedEmail',
         'maskedPhone'
@@ -161,7 +162,8 @@ class UserController extends Controller
     }
 
     public function showKickAccForm(){
-      return view('hotro.users.kickacc');
+      $view = layoutView('hotro.users.kickacc', 'hotro.v2.users.kickacc', 'hotro.v3.users.kickacc');
+      return view($view);
     }
 
     public function kickAcc(Request $request){

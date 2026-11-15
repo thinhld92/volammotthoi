@@ -29,7 +29,8 @@ class DashboardController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->get()
                 ;
-        return view('hotro.dashboard', compact(
+        $view = layoutView('hotro.dashboard', 'hotro.v2.dashboard', 'hotro.v3.dashboard');
+        return view($view, compact(
             'user',
             'payments',
             'array_cancel',

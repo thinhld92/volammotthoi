@@ -73,6 +73,23 @@ function getWebsiteConfig($config_name){
   
 }
 
+function isModernLayout(): bool
+{
+  return (int) getWebsiteConfig('layout_website') === 2;
+}
+
+function layoutView(string $v1, string $v2, string $v3): string
+{
+  $layout = (int) getWebsiteConfig('layout_website');
+  if ($layout === 3) {
+    return $v3;
+  }
+  if ($layout === 2) {
+    return $v2;
+  }
+  return $v1;
+}
+
 function cPasswordEncode($password){
   $passbase64 = base64_encode($password);
   $pass1 = mb_substr($passbase64, 0,3);
