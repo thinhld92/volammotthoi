@@ -1,4 +1,4 @@
-@extends('clients.layouts.master2')
+@extends('clients.v2.layouts.master')
 
 @section('content')
 <!-- Hero Banners Section -->
@@ -28,7 +28,7 @@
 <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-3">
   <div>
     <span class="badge-modern badge-modern-gold mb-1">Cập Nhật Mới Nhất</span>
-    <h2 class="text-white fw-bold mb-0">Tin Tức & Sự Kiện</h2>
+    <h2 class="text-white fw-bold mb-0">Tin Tức &amp; Sự Kiện</h2>
   </div>
 </div>
 

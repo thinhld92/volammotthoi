@@ -1,0 +1,1608 @@
+/* ==========================================================================
+   Theme 5 (layout_website = 5) — "Sơn Hà Xã Tắc Đồ" (AAA Ornate Game-UI Edition)
+   3D Sculpted Cast-Gold × Faceted Imperial Jade × Compass & Tường Vân Filigree
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+  --v5-bg: #071614;
+  --v5-bg-deep: #040D0B;
+  --v5-surface: #0B211D;
+  --v5-surface-elevated: #102D28;
+  --v5-surface-input: #081916;
+  --v5-gold: #D8B14A;
+  --v5-gold-light: #FCE394;
+  --v5-gold-bright: #FFF5CC;
+  --v5-gold-dark: #8C6214;
+  --v5-gold-border: rgba(216, 177, 74, 0.55);
+  --v5-gold-soft: rgba(216, 177, 74, 0.16);
+  --v5-jade: #14B8A6;
+  --v5-jade-bright: #5EEAD4;
+  --v5-jade-emerald: #10B981;
+  --v5-jade-dark: #064E3B;
+  --v5-crimson: #EF4444;
+  --v5-text-heading: #FFFBF0;
+  --v5-text-main: #DFECE9;
+  --v5-text-muted: #93B0AA;
+  --v5-text-dim: #62827B;
+  --v5-border-subtle: rgba(216, 177, 74, 0.22);
+  --v5-font: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --v5-hex-clip: polygon(14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0 50%);
+  --v5-plaque-clip: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+
+/* Hand-Painted Atmospheric Dark-Emerald Base + Tapestry Stage */
+body.sonha-xatac-theme {
+  position: relative;
+  background-color: var(--v5-bg);
+  background-image: url('../images/v5/bg_compass_clouds.jpg?v=5.8');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  color: var(--v5-text-main);
+  font-family: var(--v5-font);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* On pages with the World Map Hero, start the Compass & Cloud Tapestry cleanly right beneath the Map! */
+body.sonha-xatac-theme.has-v5-map {
+  background-image: none;
+}
+
+.v5-tapestry-stage {
+  position: relative;
+  z-index: 1;
+  margin-top: -88px;
+  padding-top: 88px;
+  padding-bottom: 48px;
+  background-color: var(--v5-bg);
+  background-image: url('../images/v5/bg_compass_clouds.jpg?v=5.8');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.v5-tapestry-stage > .v5-container {
+  position: relative;
+  z-index: 2;
+}
+
+body.sonha-xatac-theme h1,
+body.sonha-xatac-theme h2,
+body.sonha-xatac-theme h3,
+body.sonha-xatac-theme h4,
+body.sonha-xatac-theme h5,
+body.sonha-xatac-theme h6 {
+  font-family: var(--v5-font);
+  color: var(--v5-text-heading);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+body.sonha-xatac-theme strong,
+body.sonha-xatac-theme b {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+body.sonha-xatac-theme a {
+  color: var(--v5-text-main);
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+body.sonha-xatac-theme a:hover {
+  color: var(--v5-gold-light);
+}
+
+.v5-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ==========================================================================
+   1. 3D Cast-Gold & Malachite-Jade Capsule Navbar (Mẫu 1 Ornate Header)
+   ========================================================================== */
+.v5-navbar-wrap {
+  position: sticky;
+  top: 14px;
+  z-index: 1060;
+  padding: 0 18px;
+  margin-bottom: -78px;
+}
+
+.v5-navbar-wrap.v5-navbar-static {
+  margin-bottom: 28px;
+}
+
+.v5-navbar {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  background:
+    radial-gradient(ellipse 60% 100% at 50% 0%, rgba(20, 184, 166, 0.22) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(13, 38, 33, 0.96) 0%, rgba(6, 19, 16, 0.98) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--v5-gold);
+  border-radius: 999px;
+  padding: 9px 18px 9px 26px;
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.78),
+    0 0 28px rgba(20, 184, 166, 0.24),
+    inset 0 0 0 3px rgba(5, 15, 13, 0.85),
+    inset 0 0 0 4px rgba(216, 177, 74, 0.32),
+    inset 0 1px 12px rgba(252, 227, 148, 0.18);
+}
+
+/* Ornate Gold Diamond End-Studs on Capsule Navbar */
+.v5-navbar::before,
+.v5-navbar::after {
+  content: '❖';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--v5-gold-light);
+  font-size: 0.78rem;
+  text-shadow: 0 0 10px var(--v5-gold);
+  pointer-events: none;
+}
+
+.v5-navbar::before {
+  left: 10px;
+}
+
+.v5-navbar::after {
+  right: 10px;
+}
+
+@media (max-width: 991.98px) {
+  .v5-navbar {
+    border-radius: 18px;
+    padding: 10px 18px;
+  }
+  .v5-navbar::before,
+  .v5-navbar::after {
+    display: none;
+  }
+}
+
+.v5-navbar .navbar-brand img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 12px rgba(252, 227, 148, 0.45));
+}
+
+.v5-nav-link {
+  position: relative;
+  padding: 9px 17px !important;
+  color: #E8EFEA !important;
+  font-weight: 600;
+  font-size: 0.94rem;
+  letter-spacing: 0.01em;
+  transition: all 0.22s ease;
+}
+
+.v5-nav-link:hover {
+  color: var(--v5-gold-bright) !important;
+  text-shadow: 0 0 12px rgba(252, 227, 148, 0.65);
+}
+
+.v5-nav-link.active {
+  color: var(--v5-gold-bright) !important;
+  font-weight: 800;
+  text-shadow: 0 0 14px rgba(252, 227, 148, 0.75);
+}
+
+.v5-nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--v5-gold-bright), transparent);
+  box-shadow: 0 0 10px var(--v5-gold-light), 0 0 18px var(--v5-jade);
+}
+
+/* 3D Embossed Metallic Cast-Gold Button (Tài Khoản & Primary Actions) */
+.btn-v5-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 24px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #FFF3B8 0%, #ECC965 25%, #C9962B 72%, #9A6B12 100%);
+  color: #1B1002 !important;
+  font-weight: 800;
+  font-size: 0.92rem;
+  border: 1px solid #FFF8D6;
+  box-shadow:
+    0 4px 18px rgba(216, 177, 74, 0.48),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px rgba(92, 56, 4, 0.65);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.24s ease;
+  white-space: nowrap;
+}
+
+.btn-v5-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-24deg);
+  transition: left 0.55s ease;
+}
+
+.btn-v5-gold:hover::after {
+  left: 150%;
+}
+
+.btn-v5-gold:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 28px rgba(252, 227, 148, 0.68),
+    0 0 16px rgba(216, 177, 74, 0.45),
+    inset 0 1px 2px #FFFFFF;
+  color: #000000 !important;
+}
+
+/* 3D Beveled Jade-Bronze Plaque Button */
+.btn-v5-jade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 22px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(24, 72, 62, 0.95) 0%, rgba(9, 31, 27, 0.98) 100%);
+  color: var(--v5-gold-light) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid var(--v5-gold);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(94, 234, 212, 0.35),
+    inset 0 0 14px rgba(20, 184, 166, 0.18);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn-v5-jade:hover {
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.32) 0%, rgba(14, 48, 42, 0.98) 100%);
+  border-color: var(--v5-gold-bright);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   2. Interactive Sơn Hà Xã Tắc World Map Stage + 3D Crystal Diamond Pins
+   ========================================================================== */
+.v5-map-hero {
+  position: relative;
+  width: 100%;
+  min-height: 590px;
+  height: 74vh;
+  max-height: 760px;
+  background-color: var(--v5-bg-deep);
+  background-size: cover;
+  background-position: center 12%;
+  overflow: visible;
+}
+
+.v5-map-hero.v5-map-compact {
+  min-height: 520px;
+  height: 66vh;
+  max-height: 660px;
+}
+
+@media (max-width: 767.98px) {
+  .v5-map-hero,
+  .v5-map-hero.v5-map-compact {
+    min-height: 410px;
+    height: 450px;
+  }
+}
+
+.v5-map-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(4, 13, 11, 0.72) 0%, rgba(4, 13, 11, 0.12) 20%, rgba(4, 13, 11, 0.02) 72%, rgba(7, 22, 20, 0.98) 100%),
+    radial-gradient(circle at center, transparent 60%, rgba(4, 13, 11, 0.58) 100%);
+}
+
+/* Majestic Embossed Metallic Gold Map Title (No Dark Pill Box — Exact Match to Mockup!) */
+.v5-map-title-crest {
+  position: absolute;
+  top: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 28px;
+  background: radial-gradient(ellipse 65% 75% at 50% 52%, rgba(4, 13, 11, 0.62) 0%, rgba(4, 13, 11, 0.25) 55%, transparent 80%);
+  pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.98)) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(252, 227, 148, 0.45));
+}
+
+.v5-map-title-text {
+  font-family: 'Playfair Display', var(--v5-font);
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF6CC 38%, #F3C852 76%, #C28A1E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.v5-title-flourish {
+  width: 48px;
+  height: 16px;
+  opacity: 0.9;
+}
+
+@media (max-width: 575.98px) {
+  .v5-map-title-text {
+    font-size: 1.55rem;
+  }
+  .v5-title-flourish {
+    width: 28px;
+  }
+}
+
+/* 3D Faceted Crystal-Diamond Map Pins + Pointed Hexagonal Bronze Nameplates */
+.v5-map-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.26s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.v5-map-pin:hover,
+.v5-map-pin.active {
+  transform: translate(-50%, -56%) scale(1.1);
+  z-index: 20;
+}
+
+.v5-pin-crystal {
+  position: relative;
+  width: 46px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 14px rgba(94, 234, 212, 0.8));
+  animation: v5CrystalFloat 3s infinite ease-in-out;
+}
+
+.v5-map-pin.pin-gold .v5-pin-crystal {
+  filter: drop-shadow(0 0 16px rgba(252, 227, 148, 0.88));
+}
+
+.v5-map-pin.active .v5-pin-crystal {
+  filter: drop-shadow(0 0 24px rgba(255, 245, 204, 1)) drop-shadow(0 0 36px rgba(216, 177, 74, 0.9));
+}
+
+@keyframes v5CrystalFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Pointed Hexagonal Bronze-Gold Map Label Plaque */
+.v5-pin-plaque {
+  position: relative;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #FCE394 0%, #B8860B 50%, #FCE394 100%);
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.88));
+}
+
+.v5-pin-plaque-inner {
+  display: block;
+  padding: 4px 16px;
+  background: linear-gradient(180deg, rgba(16, 28, 25, 0.96) 0%, rgba(7, 14, 12, 0.98) 100%);
+  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+  color: var(--v5-gold-bright);
+  font-family: var(--v5-font);
+  font-weight: 800;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px #000000;
+}
+
+.v5-map-pin:hover .v5-pin-plaque-inner,
+.v5-map-pin.active .v5-pin-plaque-inner {
+  background: linear-gradient(180deg, #3B2808 0%, #1F1403 100%);
+  color: #FFFFFF;
+}
+
+@media (max-width: 575.98px) {
+  .v5-pin-crystal {
+    width: 34px;
+    height: 38px;
+  }
+  .v5-pin-plaque-inner {
+    font-size: 0.62rem;
+    padding: 3px 10px;
+  }
+}
+
+/* Ornate Popover Modal Card */
+.v5-map-popover {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  width: 336px;
+  max-width: calc(100vw - 32px);
+  z-index: 35;
+  background: linear-gradient(180deg, rgba(14, 39, 34, 0.98) 0%, rgba(6, 18, 16, 0.99) 100%);
+  border: 2px solid var(--v5-gold);
+  border-radius: 10px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.92),
+    0 0 34px rgba(216, 177, 74, 0.35),
+    inset 0 0 0 3px rgba(5, 14, 12, 0.9),
+    inset 0 0 0 4px rgba(216, 177, 74, 0.32);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+}
+
+.v5-map-popover.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.v5-popover-art {
+  position: relative;
+  height: 104px;
+  background-size: cover;
+  background-position: center 25%;
+  border-bottom: 1.5px solid var(--v5-gold-border);
+}
+
+.v5-popover-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(6,18,16,0.92) 100%);
+}
+
+.v5-popover-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(5, 14, 12, 0.8);
+  border: 1px solid var(--v5-gold);
+  color: var(--v5-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.v5-popover-close:hover {
+  background: var(--v5-crimson);
+  border-color: #FCA5A5;
+  color: #FFFFFF;
+}
+
+.v5-popover-body {
+  padding: 15px 18px 18px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. HAND-PAINTED SOFT CELADON-JADE & ANTIQUE-GOLD WINGED LAUNCHER DOCK
+      (1:1 Texture Sprite Match to Approved Mockup — Organic, Velvety & Uncropped!)
+   ========================================================================== */
+.v5-dock-wrap {
+  position: relative;
+  z-index: 26;
+  margin-top: -58px;
+  margin-bottom: 30px;
+  padding: 0 12px;
+}
+
+.v5-relic-dock-sprite {
+  position: relative;
+  z-index: 3;
+  max-width: 1020px;
+  margin: 0 auto;
+  aspect-ratio: 8.85 / 1;
+  background: url('../images/v5/dock_bar_ornate.png?v=5.6') center center / 100% 100% no-repeat;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.82));
+}
+
+.v5-dock-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 23.4%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  z-index: 3;
+}
+
+.v5-dock-side-left {
+  left: 8.6%;
+}
+
+.v5-dock-side-right {
+  right: 8.6%;
+}
+
+/* Soft Smoky-Jade Frosted Stone Plaques (Đăng Ký, Đăng Nhập, Hỗ Trợ TK, Cộng Đồng) */
+.v5-dock-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 43px;
+  padding: 0 8px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(64, 88, 80, 0.68) 0%, rgba(34, 54, 48, 0.82) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(218, 205, 168, 0.36);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 252, 240, 0.2),
+    0 2px 6px rgba(0, 0, 0, 0.32);
+  color: #EFEAD8 !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
+  transition: all 0.24s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.v5-dock-btn:hover {
+  background: linear-gradient(180deg, rgba(84, 124, 110, 0.78) 0%, rgba(44, 74, 65, 0.9) 100%);
+  border-color: rgba(246, 224, 158, 0.75);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.42),
+    0 4px 14px rgba(0, 0, 0, 0.42),
+    0 0 14px rgba(167, 243, 208, 0.25);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+/* Centerpiece: 100% Centered Honey-Gold Lotus-Cusp TẢI VỀ Medallion Hitbox & Sheen */
+.v5-dock-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25.4%;
+  height: 76%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.v5-medallion-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.v5-medallion-sheen {
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 252, 235, 0.48), transparent);
+  transform: skewX(-24deg);
+  animation: v5MedallionSheen 4.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes v5MedallionSheen {
+  0%, 65% {
+    left: -130%;
+  }
+  100% {
+    left: 160%;
+  }
+}
+
+.v5-medallion-text {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-family: var(--v5-font);
+  font-weight: 700;
+  font-size: 1.44rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  padding-left: 0.05em; /* Balance trailing letter-spacing for dead-on X centering! */
+  transform: translateY(-2px); /* Optical vertical balance for Vietnamese uppercase diacritics (Ả, Ề) */
+  text-transform: uppercase;
+  color: #FFF8E5;
+  text-shadow:
+    0 2px 4px rgba(74, 38, 4, 0.82),
+    0 0 14px rgba(255, 238, 175, 0.48);
+  transition: transform 0.24s ease, text-shadow 0.24s ease;
+}
+
+.v5-medallion-cta:hover {
+  background: radial-gradient(ellipse 70% 70% at 50% 55%, rgba(255, 245, 200, 0.24) 0%, transparent 75%);
+}
+
+.v5-medallion-cta:hover .v5-medallion-text {
+  transform: translateY(-3px) scale(1.03);
+  color: #FFFFFF;
+  text-shadow:
+    0 2px 6px rgba(74, 38, 4, 0.9),
+    0 0 22px rgba(255, 244, 195, 0.85);
+}
+
+/* Responsive Tablet & Mobile Layout (< 992px): Uses Standalone Hand-Painted Medallion Sprite! */
+@media (max-width: 991.98px) {
+  .v5-dock-wrap {
+    margin-top: -36px;
+  }
+  .v5-relic-dock-sprite {
+    aspect-ratio: auto;
+    max-width: 540px;
+    background: linear-gradient(180deg, #28574C 0%, #16362F 100%);
+    border: 2px solid #C8A968;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px rgba(8, 22, 19, 0.7), 0 16px 32px rgba(0, 0, 0, 0.75);
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .v5-dock-center {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    height: auto;
+    width: 100%;
+    order: -1;
+  }
+  .v5-medallion-cta {
+    min-height: 78px;
+    clip-path: none;
+    background: url('../images/v5/dock_medallion_mobile.png?v=5.6') center center / contain no-repeat !important;
+  }
+  .v5-dock-side {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+}
+
+/* Attached Status Plaque tucked right beneath the Dock bottom rail (Exact Match to Mockup!) */
+.v5-status-pill-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: -11px;
+}
+
+@media (max-width: 991.98px) {
+  .v5-status-pill-wrap {
+    margin-top: 10px;
+  }
+}
+
+.v5-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 22px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(10, 28, 24, 0.92) 0%, rgba(5, 16, 14, 0.96) 100%);
+  border: 1px solid rgba(196, 180, 132, 0.34);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+  color: #E2ECE8;
+  font-size: 0.79rem;
+  font-weight: 500;
+}
+
+.v5-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 10px #34D399, 0 0 18px #10B981;
+  animation: v5DotBlink 2s infinite;
+}
+
+@keyframes v5DotBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ==========================================================================
+   4. Search Pill, Glowing Tabs, Filigree Corner Cards & Hexagonal Detail CTA
+   ========================================================================== */
+.v5-search-bar {
+  max-width: 540px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.v5-search-bar input {
+  width: 100%;
+  padding: 12px 48px 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(8, 26, 23, 0.92) 0%, rgba(5, 16, 14, 0.96) 100%);
+  border: 1.5px solid var(--v5-gold-border);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 22px rgba(20, 184, 166, 0.14),
+    inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  color: var(--v5-text-heading);
+  font-size: 0.94rem;
+  transition: all 0.22s ease;
+}
+
+.v5-search-bar input::placeholder {
+  color: var(--v5-text-muted);
+}
+
+.v5-search-bar input:focus {
+  outline: none;
+  border-color: var(--v5-gold-bright);
+  box-shadow: 0 0 24px rgba(216, 177, 74, 0.32), inset 0 0 10px rgba(20, 184, 166, 0.15);
+}
+
+.v5-search-bar button {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--v5-gold-light);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.v5-cat-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(216, 177, 74, 0.26);
+  margin-bottom: 28px;
+}
+
+.v5-cat-tab {
+  position: relative;
+  padding: 11px 18px;
+  color: var(--v5-text-muted) !important;
+  font-weight: 600;
+  font-size: 0.96rem;
+  transition: all 0.2s ease;
+}
+
+.v5-cat-tab:hover {
+  color: var(--v5-gold-bright) !important;
+  text-shadow: 0 0 10px rgba(252, 227, 148, 0.45);
+}
+
+.v5-cat-tab.active {
+  color: var(--v5-gold-bright) !important;
+  font-weight: 800;
+  text-shadow: 0 0 12px rgba(252, 227, 148, 0.65);
+}
+
+.v5-cat-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--v5-gold-bright), transparent);
+  box-shadow: 0 -2px 12px var(--v5-gold-light), 0 0 16px var(--v5-gold);
+}
+
+/* Ornate Double-Framed Gold & Jade Cards with Oriental Corner Filigree! */
+.v5-card {
+  position: relative;
+  background:
+    /* 4 Golden Oriental Lattice Corner Brackets via SVG Data URI */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.5' stroke-opacity='0.88'%3E%3Cpath d='M1 24V4a3 3 0 0 1 3-3h20'/%3E%3Cpath d='M6 14V6h8M6 9h3V6'/%3E%3C/g%3E%3C/svg%3E") top 5px left 5px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.5' stroke-opacity='0.88'%3E%3Cpath d='M31 24V4a3 3 0 0 0-3-3H8'/%3E%3Cpath d='M26 14V6h-8M26 9h-3V6'/%3E%3C/g%3E%3C/svg%3E") top 5px right 5px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.5' stroke-opacity='0.88'%3E%3Cpath d='M1 8v20a3 3 0 0 0 3 3h20'/%3E%3Cpath d='M6 18v8h8M6 23h3v3'/%3E%3C/g%3E%3C/svg%3E") bottom 5px left 5px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.5' stroke-opacity='0.88'%3E%3Cpath d='M31 8v20a3 3 0 0 1-3 3H8'/%3E%3Cpath d='M26 18v8h-8M26 23h-3v3'/%3E%3C/g%3E%3C/svg%3E") bottom 5px right 5px no-repeat,
+    linear-gradient(180deg, rgba(16, 44, 38, 0.95) 0%, rgba(8, 22, 19, 0.98) 100%);
+  border: 1.5px solid var(--v5-gold-border);
+  border-radius: 10px;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 4px rgba(5, 14, 12, 0.78),
+    inset 0 0 0 5px rgba(216, 177, 74, 0.24);
+  overflow: hidden;
+  transition: all 0.28s ease;
+}
+
+.v5-card:hover {
+  border-color: var(--v5-gold-bright);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.75),
+    0 0 28px rgba(216, 177, 74, 0.28),
+    inset 0 0 0 4px rgba(5, 14, 12, 0.8),
+    inset 0 0 0 5px rgba(252, 227, 148, 0.42);
+}
+
+/* Wide Spotlight Hero Banner Card */
+.v5-spotlight-banner {
+  position: relative;
+  min-height: 315px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--v5-gold);
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.72),
+    0 0 32px rgba(216, 177, 74, 0.24),
+    inset 0 0 0 4px rgba(5, 14, 12, 0.72),
+    inset 0 0 0 5.5px rgba(252, 227, 148, 0.42);
+  transition: all 0.32s ease;
+}
+
+.v5-spotlight-banner::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.7' stroke-opacity='0.9'%3E%3Cpath d='M1 24V4a3 3 0 0 1 3-3h20'/%3E%3Cpath d='M6 14V6h8'/%3E%3C/g%3E%3C/svg%3E") top left no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.7' stroke-opacity='0.9'%3E%3Cpath d='M31 24V4a3 3 0 0 0-3-3H8'/%3E%3Cpath d='M26 14V6h-8'/%3E%3C/g%3E%3C/svg%3E") top right no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.7' stroke-opacity='0.9'%3E%3Cpath d='M1 8v20a3 3 0 0 0 3 3h20'/%3E%3Cpath d='M6 18v8h8'/%3E%3C/g%3E%3C/svg%3E") bottom left no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23FCE394' stroke-width='1.7' stroke-opacity='0.9'%3E%3Cpath d='M31 8v20a3 3 0 0 1-3 3H8'/%3E%3Cpath d='M26 18v8h-8'/%3E%3C/g%3E%3C/svg%3E") bottom right no-repeat;
+}
+
+.v5-spotlight-banner:hover {
+  border-color: var(--v5-gold-bright);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.78), 0 0 38px rgba(252, 227, 148, 0.32);
+  transform: translateY(-2px);
+}
+
+.v5-spotlight-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 13, 11, 0.06) 0%, rgba(4, 13, 11, 0.48) 52%, rgba(4, 13, 11, 0.94) 100%);
+}
+
+.v5-spotlight-inner {
+  position: relative;
+  z-index: 2;
+  padding: 30px 34px;
+  width: 100%;
+}
+
+/* 3-Column News Cards */
+.v5-post-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.v5-post-card:hover {
+  transform: translateY(-5px);
+}
+
+.v5-post-thumb {
+  height: 186px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid rgba(216, 177, 74, 0.38);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.v5-post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.v5-post-card:hover .v5-post-thumb img {
+  transform: scale(1.06);
+}
+
+.v5-post-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.42;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.v5-post-title a {
+  color: var(--v5-gold-light);
+}
+
+.v5-post-title a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(252, 227, 148, 0.45);
+}
+
+.v5-post-desc {
+  color: var(--v5-text-muted);
+  font-size: 0.88rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* Pointed Hexagonal Gold-Rimmed Plaque Button ("< Xem chi tiết >" Exact Match to Mockup!) */
+.v5-btn-detail {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #FCE394 0%, #B8860B 50%, #FCE394 100%);
+  clip-path: var(--v5-hex-clip);
+  text-decoration: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  transition: all 0.24s ease;
+}
+
+.v5-btn-detail > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 26px;
+  background: linear-gradient(180deg, #16302B 0%, #0A1B18 100%);
+  clip-path: var(--v5-hex-clip);
+  color: var(--v5-gold-light);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: all 0.24s ease;
+}
+
+.v5-btn-detail:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 14px rgba(252, 227, 148, 0.55));
+}
+
+.v5-btn-detail:hover > span {
+  background: linear-gradient(180deg, #F3D678 0%, #C28E24 100%);
+  color: #140B01;
+}
+
+.v5-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(216, 177, 74, 0.24) 0%, rgba(16, 48, 42, 0.85) 100%);
+  border: 1px solid var(--v5-gold);
+  color: var(--v5-gold-bright);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(216, 177, 74, 0.22);
+}
+
+/* Circular Embossed Gold Pagination */
+body.sonha-xatac-theme .pagination {
+  gap: 9px;
+  justify-content: center;
+}
+
+body.sonha-xatac-theme .pagination .page-item .page-link {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  background: linear-gradient(180deg, #132F2A 0%, #081815 100%);
+  color: var(--v5-text-main);
+  border: 1.5px solid var(--v5-gold-border);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+body.sonha-xatac-theme .pagination .page-item:hover .page-link {
+  border-color: var(--v5-gold-bright);
+  color: var(--v5-gold-bright);
+  box-shadow: 0 0 14px rgba(216, 177, 74, 0.35);
+}
+
+body.sonha-xatac-theme .pagination .page-item.active .page-link {
+  background: linear-gradient(180deg, #FFF3B8 0%, #E2B84B 45%, #A67516 100%);
+  border-color: #FFF8D6;
+  color: #1A0F02;
+  font-weight: 800;
+  box-shadow: 0 0 18px rgba(252, 227, 148, 0.65);
+}
+
+/* Single Post Content & Smart CKEditor Table Styling */
+body.sonha-xatac-theme #single-post-content {
+  color: var(--v5-text-main);
+  font-size: 1.04rem;
+  line-height: 1.82;
+}
+
+body.sonha-xatac-theme #single-post-content h1,
+body.sonha-xatac-theme #single-post-content h2,
+body.sonha-xatac-theme #single-post-content h3,
+body.sonha-xatac-theme #single-post-content h4 {
+  color: var(--v5-gold-light);
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+body.sonha-xatac-theme #single-post-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+  border: 1px solid var(--v5-gold-border);
+  margin: 1rem 0;
+}
+
+body.sonha-xatac-theme #single-post-content table,
+body.sonha-xatac-theme figure.table table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid var(--v5-gold-border) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  margin: 1.25rem 0 !important;
+  background: var(--v5-surface);
+}
+
+body.sonha-xatac-theme #single-post-content table th:not([style*="background"]) {
+  background: rgba(216, 177, 74, 0.2) !important;
+  color: var(--v5-gold-light) !important;
+  font-weight: 700;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--v5-gold-border) !important;
+}
+
+body.sonha-xatac-theme #single-post-content table td:not([style*="background"]) {
+  background: var(--v5-surface) !important;
+  color: var(--v5-text-main) !important;
+  padding: 11px 16px !important;
+  border-bottom: 1px solid var(--v5-border-subtle) !important;
+}
+
+/* Ornate Footer with Glowing Center Diamond Divider */
+.v5-footer {
+  position: relative;
+  background: linear-gradient(180deg, rgba(6, 18, 16, 0.96) 0%, #030A08 100%);
+  border-top: 1px solid rgba(216, 177, 74, 0.45);
+  padding: 36px 0;
+  color: var(--v5-text-muted);
+  font-size: 0.9rem;
+}
+
+.v5-footer::before {
+  content: '❖';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 14px;
+  background: var(--v5-bg);
+  color: var(--v5-gold-light);
+  font-size: 0.95rem;
+  text-shadow: 0 0 12px var(--v5-gold);
+}
+
+.v5-disclaimer {
+  color: #F87171 !important;
+  font-weight: 700;
+}
+
+.v5-fb-float {
+  position: fixed;
+  right: 22px;
+  bottom: 32px;
+  z-index: 1060;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1877F2 0%, #0D6EFD 100%);
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.45);
+  transition: transform 0.25s ease;
+}
+
+.v5-fb-float:hover {
+  transform: scale(1.08);
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   5. HoTro V5 & Auth V5 (Compass Sidebar & Cartography Scroll)
+   ========================================================================== */
+.v5-hotro-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.v5-hotro-sidebar {
+  width: 268px;
+  background: linear-gradient(180deg, #071714 0%, #040D0B 100%);
+  border-right: 1.5px solid var(--v5-gold-border);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1045;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 0 36px rgba(0, 0, 0, 0.68), inset -1px 0 16px rgba(216, 177, 74, 0.08);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v5-hotro-brand {
+  padding: 22px 20px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--v5-border-subtle);
+}
+
+.v5-hotro-brand img {
+  max-height: 68px;
+  max-width: 185px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(252, 227, 148, 0.35));
+}
+
+.v5-compass-emblem {
+  width: 54px;
+  height: 54px;
+  margin: 12px auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252, 227, 148, 0.26) 0%, rgba(8, 24, 21, 0.95) 75%);
+  border: 2px solid var(--v5-gold);
+  color: var(--v5-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 0 0 24px rgba(216, 177, 74, 0.42), inset 0 0 10px rgba(252, 227, 148, 0.25);
+}
+
+.v5-hotro-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 14px;
+}
+
+.v5-hotro-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v5-gold-light);
+  padding: 0 14px;
+  margin-bottom: 8px;
+}
+
+.v5-hotro-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.v5-hotro-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: var(--v5-text-muted) !important;
+  font-weight: 600;
+  font-size: 0.94rem;
+  transition: all 0.22s ease;
+}
+
+.v5-hotro-link i {
+  width: 22px;
+  text-align: center;
+  color: var(--v5-gold);
+}
+
+.v5-hotro-link:hover {
+  background: rgba(20, 184, 166, 0.14);
+  border-color: var(--v5-border-subtle);
+  color: var(--v5-text-heading) !important;
+}
+
+.v5-hotro-link.active {
+  background: linear-gradient(90deg, rgba(20, 184, 166, 0.3) 0%, rgba(13, 36, 32, 0.95) 100%);
+  border-color: var(--v5-gold);
+  border-right: 3px solid var(--v5-gold-bright);
+  color: var(--v5-gold-bright) !important;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 14px rgba(20, 184, 166, 0.16);
+}
+
+.v5-hotro-main {
+  flex: 1;
+  margin-left: 268px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.v5-hotro-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.v5-hotro-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991.98px) {
+  .v5-hotro-sidebar {
+    transform: translateX(-100%);
+  }
+  .v5-hotro-sidebar.show {
+    transform: translateX(0);
+  }
+  .v5-hotro-main {
+    margin-left: 0;
+  }
+}
+
+.v5-hotro-topbar {
+  height: 68px;
+  background: rgba(4, 13, 11, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1.5px solid var(--v5-gold-border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.v5-hotro-content {
+  flex: 1;
+  padding: 28px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .v5-hotro-topbar {
+    padding: 0 16px;
+  }
+  .v5-hotro-content {
+    padding: 16px;
+  }
+}
+
+.v5-user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px 4px 4px;
+  border-radius: 999px;
+  background: var(--v5-surface);
+  border: 1px solid var(--v5-gold);
+  color: var(--v5-text-heading);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.v5-user-pill img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--v5-gold-light);
+}
+
+.v5-dropdown-menu {
+  background: var(--v5-surface-elevated) !important;
+  border: 1.5px solid var(--v5-gold) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.78) !important;
+}
+
+.v5-dropdown-menu .dropdown-item {
+  color: var(--v5-text-main) !important;
+  border-radius: 6px;
+}
+
+.v5-dropdown-menu .dropdown-item:hover {
+  background: rgba(216, 177, 74, 0.16) !important;
+  color: #FFFFFF !important;
+}
+
+.v5-profile-banner {
+  position: relative;
+  min-height: 255px;
+  padding: 34px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.v5-profile-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 13, 11, 0.22) 0%, rgba(7, 22, 20, 0.78) 65%, rgba(11, 33, 29, 0.98) 100%);
+}
+
+.v5-profile-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.v5-avatar-ring {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #FFF3B8 0%, #10B981 48%, #B8860B 100%);
+  box-shadow: 0 0 30px rgba(20, 184, 166, 0.48), 0 0 14px rgba(216, 177, 74, 0.45);
+  margin-bottom: 12px;
+}
+
+.v5-avatar-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--v5-bg-deep);
+  background: var(--v5-bg-deep);
+}
+
+/* Forms & Inputs */
+.v5-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--v5-gold-light);
+  margin-bottom: 6px;
+}
+
+.v5-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.v5-control {
+  width: 100%;
+  background: var(--v5-surface-input) !important;
+  color: var(--v5-text-heading) !important;
+  border: 1px solid rgba(216, 177, 74, 0.4) !important;
+  border-radius: 8px !important;
+  padding: 11px 15px !important;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.v5-control::placeholder {
+  color: var(--v5-text-dim) !important;
+}
+
+.v5-control.has-end-icon {
+  padding-right: 44px !important;
+}
+
+.v5-control:focus {
+  background: #0D2420 !important;
+  border-color: var(--v5-gold-bright) !important;
+  box-shadow: 0 0 0 3px rgba(216, 177, 74, 0.22), 0 0 16px rgba(20, 184, 166, 0.2) !important;
+  outline: none !important;
+}
+
+.v5-control[readonly],
+.v5-control:disabled {
+  background: #050F0D !important;
+  color: var(--v5-text-muted) !important;
+  cursor: not-allowed;
+}
+
+.v5-control.is-invalid {
+  border-color: var(--v5-crimson) !important;
+}
+
+.v5-pw-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--v5-text-muted);
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.v5-pw-toggle:hover {
+  color: var(--v5-gold-light);
+}
+
+.v5-error {
+  color: #FCA5A5;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.v5-alert {
+  padding: 13px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.v5-alert-success {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(94, 234, 212, 0.45);
+  color: #6EE7B7;
+}
+
+.v5-alert-danger {
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #FCA5A5;
+}
+
+/* Auth V5 Split Shell */
+.v5-auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 36px;
+}
+
+.v5-auth-topbar {
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v5-auth-shell {
+  max-width: 1040px;
+  width: 100%;
+  margin: auto;
+}
+
+.v5-auth-art {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-right: 1.5px solid var(--v5-gold-border);
+}
+
+.v5-auth-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 13, 11, 0.08) 0%, rgba(7, 22, 20, 0.78) 72%, rgba(11, 33, 29, 0.96) 100%);
+}
+
+.v5-auth-art > * {
+  position: relative;
+  z-index: 1;
+}
+
+.v5-auth-form {
+  padding: 42px 40px;
+}
+
+@media (max-width: 575.98px) {
+  .v5-auth-form {
+    padding: 28px 20px;
+  }
+}

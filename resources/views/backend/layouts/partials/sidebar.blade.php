@@ -168,6 +168,12 @@
         </li>
       </ul>
     </li>
+    <li class="menu-item {{ (request()->is('admin/sonha-map*')) ? 'active' : '' }}">
+      <a href="{{ route('admin.sonha-map.edit') }}" class="menu-link">
+        <i class="menu-icon fa-solid fa-map-location-dot text-success"></i>
+        <div>Bản Đồ Sơn Hà (V5)</div>
+      </a>
+    </li>
     <li class="menu-item {{ (request()-> is('admin/banners*')) ? 'active open' : '' }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon fa-sharp fa-solid fa-flag-pennant"></i>

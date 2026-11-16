@@ -64,5 +64,8 @@ Route::group([
     Route::get('payments/{$payment}/approve', [PaymentController::class, 'approve'])->name('payments.approve');
     Route::match(['put', 'patch'], 'payments/fast-update/{payment}', [PaymentController::class, 'fastUpdate'])->name('payments.fast-update');
     Route::get('user-audit-logs', [\App\Http\Controllers\Backend\UserAuditLogController::class, 'index'])->name('user-audit-logs.index');
+    Route::get('sonha-map', [\App\Http\Controllers\Backend\SonHaMapController::class, 'edit'])->name('sonha-map.edit');
+    Route::put('sonha-map', [\App\Http\Controllers\Backend\SonHaMapController::class, 'update'])->name('sonha-map.update');
+    Route::post('sonha-map/reset', [\App\Http\Controllers\Backend\SonHaMapController::class, 'reset'])->name('sonha-map.reset');
 });
 

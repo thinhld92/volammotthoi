@@ -43,7 +43,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view(layoutView('auth.login', 'auth.v2.login', 'auth.v3.login'));
+        return view(layoutView('auth.login', 'auth.v2.login', 'auth.v3.login', 'auth.v4.login', 'auth.v5.login'));
     }
 
     public function username()

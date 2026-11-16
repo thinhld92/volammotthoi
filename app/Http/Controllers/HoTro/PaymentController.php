@@ -22,7 +22,7 @@ class PaymentController extends Controller
     }
 
     public function create(){
-        $view = layoutView('hotro.payments.create', 'hotro.v2.payments.create', 'hotro.v3.payments.create');
+        $view = layoutView('hotro.payments.create', 'hotro.v2.payments.create', 'hotro.v3.payments.create', 'hotro.v4.payments.create', 'hotro.v5.payments.create');
         return view($view);
     }
 
@@ -41,7 +41,7 @@ class PaymentController extends Controller
     public function transfer(Payment $payment){
         $user = auth()->user();
         if ($payment->status == PaymentStatus::INIT && $user->cAccName == $payment->cAccName) {
-            $view = layoutView('hotro.payments.transfer', 'hotro.v2.payments.transfer', 'hotro.v3.payments.transfer');
+            $view = layoutView('hotro.payments.transfer', 'hotro.v2.payments.transfer', 'hotro.v3.payments.transfer', 'hotro.v4.payments.transfer', 'hotro.v5.payments.transfer');
             return view($view, compact(
                 'payment'
             ));

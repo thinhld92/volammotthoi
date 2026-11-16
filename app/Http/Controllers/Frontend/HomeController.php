@@ -36,25 +36,15 @@ class HomeController extends Controller
                 $opening_time['hour'] = date('H', $opening_date);
             }
 
-            if ((int) getWebsiteConfig('layout_website') == 3) {
-                return view('frontend.welcome.welcome3', compact(
-                    'welcomeBanners',
-                    'opening_time',
-                ));
-            }
-            if ((int) getWebsiteConfig('layout_website') == 2) {
-                return view('frontend.welcome.welcome2', compact(
-                    'welcomeBanners',
-                    'opening_time',
-                ));
-            }
-            if ((int) getWebsiteConfig('layout_website') == 1) {
-                return view('frontend.welcome.welcome1', compact(
-                    'welcomeBanners',
-                    'opening_time',
-                ));
-            }
-            return view('frontend.welcome.welcome', compact(
+            $view = themeView([
+                1 => 'frontend.welcome.welcome1',
+                2 => 'frontend.welcome.welcome2',
+                3 => 'frontend.welcome.welcome3',
+                4 => 'frontend.welcome.welcome4',
+                5 => 'frontend.welcome.welcome5',
+            ], 'frontend.welcome.welcome');
+
+            return view($view, compact(
                 'welcomeBanners',
                 'opening_time',
             ));
@@ -117,7 +107,7 @@ class HomeController extends Controller
             ->where('type', BannerType::HOMEPAGE)
             ->get();
         
-        $view = layoutView('clients.home', 'clients.home2', 'clients.v3.home');
+        $view = layoutView('clients.home', 'clients.v2.home', 'clients.v3.home', 'clients.v4.home', 'clients.v5.home');
         return view($view, compact(
             'hotPosts',
             'hotBanners',
@@ -142,8 +132,13 @@ class HomeController extends Controller
         $description = $category->description;
         $image = $category->thumbnail;
 
-
-        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.category_posts' : 'clients.category_posts';
+        $view = layoutView(
+            'clients.category_posts',
+            'clients.v2.category_posts',
+            'clients.v3.category_posts',
+            'clients.v4.category_posts',
+            'clients.v5.category_posts'
+        );
         return view($view, compact(
             'posts',
             'category',
@@ -159,7 +154,13 @@ class HomeController extends Controller
         $image = $post->image;
 
         $category = $post->category;
-        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.single_post' : 'clients.single_post';
+        $view = layoutView(
+            'clients.single_post',
+            'clients.v2.single_post',
+            'clients.v3.single_post',
+            'clients.v4.single_post',
+            'clients.v5.single_post'
+        );
         return view($view, compact(
             'post',
             'category',
@@ -186,7 +187,13 @@ class HomeController extends Controller
             ->orderBy('title', 'asc')
             ->paginate(10);
         $posts->appends(['search'=> $search]);
-        $view = ((int) getWebsiteConfig('layout_website') === 3) ? 'clients.v3.search' : 'clients.search';
+        $view = layoutView(
+            'clients.search',
+            'clients.v2.search',
+            'clients.v3.search',
+            'clients.v4.search',
+            'clients.v5.search'
+        );
         return view($view, compact(
             'posts',
             'search',

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ $title ?? getWebsiteConfig('site_title') ?? 'Võ Lâm Tiên Kiếm' }}</title>
-  
+
   <!-- Chặn Google thu thập thông tin theo yêu cầu -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Google Fonts: Be Vietnam Pro (Full Vietnamese Support) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,8 @@
   @yield('css')
 </head>
 <body class="modern-theme d-flex flex-column min-vh-100">
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0"></script>
 
   <!-- Floating Glass Responsive Navbar -->
   <nav class="navbar navbar-expand-lg modern-navbar">
@@ -36,18 +38,15 @@
       </a>
 
       <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
-        <!-- Theme Toggle Button Mobile -->
         <button id="themeToggleBtnMobile" class="btn-theme-toggle" type="button" title="Đổi giao diện sáng/tối">
           <i class="fa-solid fa-moon"></i>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Toggle Button -->
       <button class="navbar-toggler text-warning border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#modernNavMenu" aria-controls="modernNavMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars fs-3 text-gold"></i>
       </button>
 
-      <!-- Collapsible Navbar Body -->
       <div class="collapse navbar-collapse" id="modernNavMenu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
           <li class="nav-item">
@@ -56,7 +55,7 @@
           <li class="nav-item">
             <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Bảng Tin</a>
           </li>
-          
+
           @php
             $globalCategories = \App\Models\Category::all();
           @endphp
@@ -72,9 +71,7 @@
           </li>
         </ul>
 
-        <!-- Action Buttons & Theme Switcher -->
         <div class="d-flex align-items-center gap-2 mobile-action-btns">
-          <!-- Theme Toggle Button Desktop -->
           <button id="themeToggleBtnDesktop" class="btn-theme-toggle d-none d-lg-inline-flex" type="button" title="Đổi giao diện sáng/tối">
             <i class="fa-solid fa-moon"></i>
           </button>
@@ -93,11 +90,9 @@
     </div>
   </nav>
 
-  <!-- Main Container with Fixed Padding Top to prevent Breadcrumb Overlap -->
+  <!-- Main Container -->
   <main class="flex-grow-1 modern-main-content pb-5">
     <div class="container">
-      
-      <!-- Top Search & Quick Bar -->
       <div class="modern-glass-card p-3 mb-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="d-flex align-items-center gap-2 text-muted small">
           <a href="{{ route('home') }}" class="text-gold text-decoration-none">
@@ -117,9 +112,7 @@
         </form>
       </div>
 
-      <!-- Main Content Block -->
       @yield('content')
-
     </div>
   </main>
 
@@ -132,7 +125,6 @@
     </div>
   </footer>
 
-  <!-- Floating Fixed Facebook Widget (Right Edge) -->
   @if(getWebsiteConfig('fanpage_url'))
     <a href="{{ getWebsiteConfig('fanpage_url') }}" target="_blank" class="fixed-facebook-widget" title="Fanpage Facebook Cộng Đồng">
       <i class="fa-brands fa-facebook-f"></i>
@@ -141,8 +133,7 @@
   @endif
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Light/Dark Mode Persistence Script -->
+
   <script>
     (function() {
       const savedTheme = localStorage.getItem('modern_theme') || 'dark';
@@ -153,11 +144,7 @@
       function updateIcons(isLight) {
         const icons = document.querySelectorAll('#themeToggleBtnDesktop i, #themeToggleBtnMobile i');
         icons.forEach(icon => {
-          if (isLight) {
-            icon.className = 'fa-solid fa-sun';
-          } else {
-            icon.className = 'fa-solid fa-moon';
-          }
+          icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
         });
       }
 
@@ -165,14 +152,12 @@
 
       function toggleTheme() {
         const isLight = document.body.classList.toggle('light-theme');
-        const newTheme = isLight ? 'light' : 'dark';
-        localStorage.setItem('modern_theme', newTheme);
+        localStorage.setItem('modern_theme', isLight ? 'light' : 'dark');
         updateIcons(isLight);
       }
 
       const btnDesktop = document.getElementById('themeToggleBtnDesktop');
       const btnMobile = document.getElementById('themeToggleBtnMobile');
-
       if (btnDesktop) btnDesktop.addEventListener('click', toggleTheme);
       if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
     })();

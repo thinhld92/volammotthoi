@@ -52,7 +52,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view(layoutView('auth.register', 'auth.v2.register', 'auth.v3.register'));
+        return view(layoutView('auth.register', 'auth.v2.register', 'auth.v3.register', 'auth.v4.register', 'auth.v5.register'));
     }
 
     /**
